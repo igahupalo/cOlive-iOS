@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
         userRepository.getCurrentUser { [self] currentUser in
             self.currentUser = currentUser
             userRepository.observeUser(user: self.currentUser!)
+
+            
         }
     }
     

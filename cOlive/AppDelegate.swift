@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // Firebase configuration.
+        FirebaseApp.configure()
+
+        // Keyboard manager configuration.
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.layoutIfNeededOnUpdate = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 10.0
+
+        // Navigation bar customization.
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().isTranslucent = true
+
         return true
     }
 

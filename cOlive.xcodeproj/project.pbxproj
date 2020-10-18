@@ -3,18 +3,52 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4208AB29252F89100033B4D3 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208AB28252F890F0033B4D3 /* MaterialTextField.swift */; };
 		421BB37E2508E2AA00AFA664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37D2508E2AA00AFA664 /* AppDelegate.swift */; };
 		421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */; };
-		421BB3822508E2AA00AFA664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB3812508E2AA00AFA664 /* ViewController.swift */; };
+		421BB3822508E2AA00AFA664 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB3812508E2AA00AFA664 /* LogInViewController.swift */; };
 		421BB3852508E2AA00AFA664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421BB3832508E2AA00AFA664 /* Main.storyboard */; };
-		421BB3872508E2B400AFA664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421BB3862508E2B400AFA664 /* Assets.xcassets */; };
 		421BB38A2508E2B400AFA664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421BB3882508E2B400AFA664 /* LaunchScreen.storyboard */; };
 		421BB3952508E2B400AFA664 /* cOliveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB3942508E2B400AFA664 /* cOliveTests.swift */; };
 		421BB3A02508E2B400AFA664 /* cOliveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB39F2508E2B400AFA664 /* cOliveUITests.swift */; };
+		421C04CD25348EC400A18701 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C04CC25348EC300A18701 /* SessionManager.swift */; };
+		422DC73D25379E070056EBD8 /* Now-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72D25379DFC0056EBD8 /* Now-Medium.otf */; };
+		422DC73E25379E070056EBD8 /* Now-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72D25379DFC0056EBD8 /* Now-Medium.otf */; };
+		422DC73F25379E070056EBD8 /* Now-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72D25379DFC0056EBD8 /* Now-Medium.otf */; };
+		422DC74025379E070056EBD8 /* Now-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72E25379DFE0056EBD8 /* Now-Light.otf */; };
+		422DC74125379E070056EBD8 /* Now-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72E25379DFE0056EBD8 /* Now-Light.otf */; };
+		422DC74225379E070056EBD8 /* Now-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72E25379DFE0056EBD8 /* Now-Light.otf */; };
+		422DC74625379E070056EBD8 /* Now-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73025379E000056EBD8 /* Now-Bold.otf */; };
+		422DC74725379E070056EBD8 /* Now-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73025379E000056EBD8 /* Now-Bold.otf */; };
+		422DC74825379E070056EBD8 /* Now-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73025379E000056EBD8 /* Now-Bold.otf */; };
+		422DC74F25379E070056EBD8 /* Now-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73325379E040056EBD8 /* Now-Regular.otf */; };
+		422DC75025379E070056EBD8 /* Now-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73325379E040056EBD8 /* Now-Regular.otf */; };
+		422DC75125379E070056EBD8 /* Now-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73325379E040056EBD8 /* Now-Regular.otf */; };
+		422DC75225379E070056EBD8 /* Now-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73425379E050056EBD8 /* Now-Thin.otf */; };
+		422DC75325379E070056EBD8 /* Now-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73425379E050056EBD8 /* Now-Thin.otf */; };
+		422DC75425379E070056EBD8 /* Now-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73425379E050056EBD8 /* Now-Thin.otf */; };
+		422DC75525379E070056EBD8 /* Now-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73525379E060056EBD8 /* Now-Black.otf */; };
+		422DC75625379E070056EBD8 /* Now-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73525379E060056EBD8 /* Now-Black.otf */; };
+		422DC75725379E070056EBD8 /* Now-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73525379E060056EBD8 /* Now-Black.otf */; };
+		423068A3250F734700624FF4 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423068A2250F734700624FF4 /* UIViewController+NavigationBar.swift */; };
+		423068A52510DE7600624FF4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423068A42510DE7600624FF4 /* StartViewController.swift */; };
+		423068A7251110FA00624FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423068A6251110F900624FF4 /* Assets.xcassets */; };
+		427C239F2539FA93003516AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C239E2539FA92003516AF /* User.swift */; };
+		427C23C4253A3E5C003516AF /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23C3253A3E5C003516AF /* Shared.swift */; };
+		427C23CA253B6DA4003516AF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23C9253B6DA4003516AF /* UserRepository.swift */; };
+		42A90591250B730200D9F2C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A90590250B730100D9F2C4 /* GoogleService-Info.plist */; };
+		42A90593250B824A00D9F2C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90592250B824A00D9F2C4 /* SignUpViewController.swift */; };
+		42A90595250B837200D9F2C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90594250B837200D9F2C4 /* HomeViewController.swift */; };
+		42A90597250BCBDD00D9F2C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90596250BCBDD00D9F2C4 /* Constants.swift */; };
+		42AD83262530824F00E5EC42 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AD83252530824F00E5EC42 /* ToggleButton.swift */; };
+		42D4A7382530DC2B0081A5E3 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */; };
+		7AF1E58168466C07C1744DDC /* Pods_cOlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2128C944749358974876AF /* Pods_cOlive.framework */; };
+		C6EB9991335B5C6E7E289238 /* Pods_cOlive_cOliveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BFF2F5AC2BD4EDED67A895 /* Pods_cOlive_cOliveUITests.framework */; };
+		C81A19C12A381ED3ABC89F42 /* Pods_cOliveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D832D8DB341590D4AFD6BF /* Pods_cOliveTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15BFF2F5AC2BD4EDED67A895 /* Pods_cOlive_cOliveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cOlive_cOliveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4208AA63252293610033B4D3 /* cOlive.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = cOlive.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4208AB28252F890F0033B4D3 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
 		421BB37A2508E2AA00AFA664 /* cOlive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cOlive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		421BB37D2508E2AA00AFA664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		421BB3812508E2AA00AFA664 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		421BB3812508E2AA00AFA664 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		421BB3842508E2AA00AFA664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		421BB3862508E2B400AFA664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		421BB3892508E2B400AFA664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		421BB38B2508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421BB3902508E2B400AFA664 /* cOliveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cOliveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +85,37 @@
 		421BB39B2508E2B400AFA664 /* cOliveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cOliveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		421BB39F2508E2B400AFA664 /* cOliveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cOliveUITests.swift; sourceTree = "<group>"; };
 		421BB3A12508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		421C04CC25348EC300A18701 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		422DC72D25379DFC0056EBD8 /* Now-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Now-Medium.otf"; sourceTree = "<group>"; };
+		422DC72E25379DFE0056EBD8 /* Now-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Now-Light.otf"; sourceTree = "<group>"; };
+		422DC73025379E000056EBD8 /* Now-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Now-Bold.otf"; sourceTree = "<group>"; };
+		422DC73325379E040056EBD8 /* Now-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Now-Regular.otf"; sourceTree = "<group>"; };
+		422DC73425379E050056EBD8 /* Now-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Now-Thin.otf"; sourceTree = "<group>"; };
+		422DC73525379E060056EBD8 /* Now-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Now-Black.otf"; sourceTree = "<group>"; };
+		423068A2250F734700624FF4 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		423068A42510DE7600624FF4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		423068A6251110F900624FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		427C239E2539FA92003516AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		427C23C3253A3E5C003516AF /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		427C23C9253B6DA4003516AF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		42A90564250A7F4B00D9F2C4 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Main.strings"; sourceTree = "<group>"; };
+		42A90565250A7F4B00D9F2C4 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		42A90566250A7FA200D9F2C4 /* en-US-POSIX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US-POSIX"; path = "en-US-POSIX.lproj/Main.strings"; sourceTree = "<group>"; };
+		42A90567250A7FA200D9F2C4 /* en-US-POSIX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US-POSIX"; path = "en-US-POSIX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		42A90590250B730100D9F2C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42A90592250B824A00D9F2C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		42A90594250B837200D9F2C4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		42A90596250BCBDD00D9F2C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		42AD83252530824F00E5EC42 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		478256455FB21FA7704E9A03 /* Pods-cOliveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOliveTests.release.xcconfig"; path = "Target Support Files/Pods-cOliveTests/Pods-cOliveTests.release.xcconfig"; sourceTree = "<group>"; };
+		75D832D8DB341590D4AFD6BF /* Pods_cOliveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cOliveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEA0A72DDC1EEE30A64C2D7 /* Pods-cOlive-cOliveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOlive-cOliveUITests.release.xcconfig"; path = "Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA47A65E57D0102385A243C8 /* Pods-cOlive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOlive.debug.xcconfig"; path = "Target Support Files/Pods-cOlive/Pods-cOlive.debug.xcconfig"; sourceTree = "<group>"; };
+		BD2128C944749358974876AF /* Pods_cOlive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cOlive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBDE7B843EB49AAD26574899 /* Pods-cOlive-cOliveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOlive-cOliveUITests.debug.xcconfig"; path = "Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CDDA281A6CB195EAEFB6B588 /* Pods-cOliveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOliveTests.debug.xcconfig"; path = "Target Support Files/Pods-cOliveTests/Pods-cOliveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F61729B8E0C7FA6FF3FAA60F /* Pods-cOlive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOlive.release.xcconfig"; path = "Target Support Files/Pods-cOlive/Pods-cOlive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF1E58168466C07C1744DDC /* Pods_cOlive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81A19C12A381ED3ABC89F42 /* Pods_cOliveTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +139,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EB9991335B5C6E7E289238 /* Pods_cOlive_cOliveUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04FC010347919BB0285DC9F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA47A65E57D0102385A243C8 /* Pods-cOlive.debug.xcconfig */,
+				F61729B8E0C7FA6FF3FAA60F /* Pods-cOlive.release.xcconfig */,
+				CBDE7B843EB49AAD26574899 /* Pods-cOlive-cOliveUITests.debug.xcconfig */,
+				8FEA0A72DDC1EEE30A64C2D7 /* Pods-cOlive-cOliveUITests.release.xcconfig */,
+				CDDA281A6CB195EAEFB6B588 /* Pods-cOliveTests.debug.xcconfig */,
+				478256455FB21FA7704E9A03 /* Pods-cOliveTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3234AD065D1C016DC0F182CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD2128C944749358974876AF /* Pods_cOlive.framework */,
+				15BFF2F5AC2BD4EDED67A895 /* Pods_cOlive_cOliveUITests.framework */,
+				75D832D8DB341590D4AFD6BF /* Pods_cOliveTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		421BB3712508E2AA00AFA664 = {
 			isa = PBXGroup;
 			children = (
+				4208AA63252293610033B4D3 /* cOlive.playground */,
+				423068A6251110F900624FF4 /* Assets.xcassets */,
 				421BB37C2508E2AA00AFA664 /* cOlive */,
 				421BB3932508E2B400AFA664 /* cOliveTests */,
 				421BB39E2508E2B400AFA664 /* cOliveUITests */,
 				421BB37B2508E2AA00AFA664 /* Products */,
+				04FC010347919BB0285DC9F0 /* Pods */,
+				3234AD065D1C016DC0F182CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +196,18 @@
 		421BB37C2508E2AA00AFA664 /* cOlive */ = {
 			isa = PBXGroup;
 			children = (
+				427C23C8253B6D87003516AF /* Repositories */,
+				421C04CB25348E4100A18701 /* Managers */,
+				42A90568250A89A100D9F2C4 /* Fonts */,
+				42A9058D250ACF0B00D9F2C4 /* Views */,
+				42A9058F250ACFF800D9F2C4 /* Controllers */,
+				42A9058E250ACFEF00D9F2C4 /* Models */,
+				42A90596250BCBDD00D9F2C4 /* Constants.swift */,
 				421BB37D2508E2AA00AFA664 /* AppDelegate.swift */,
 				421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */,
-				421BB3812508E2AA00AFA664 /* ViewController.swift */,
-				421BB3832508E2AA00AFA664 /* Main.storyboard */,
-				421BB3862508E2B400AFA664 /* Assets.xcassets */,
-				421BB3882508E2B400AFA664 /* LaunchScreen.storyboard */,
 				421BB38B2508E2B400AFA664 /* Info.plist */,
+				42A90590250B730100D9F2C4 /* GoogleService-Info.plist */,
+				427C23C3253A3E5C003516AF /* Shared.swift */,
 			);
 			path = cOlive;
 			sourceTree = "<group>";
@@ -128,6 +230,83 @@
 			path = cOliveUITests;
 			sourceTree = "<group>";
 		};
+		421C04CB25348E4100A18701 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				421C04CC25348EC300A18701 /* SessionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		427C23C8253B6D87003516AF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				427C23C9253B6DA4003516AF /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		42A90568250A89A100D9F2C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				422DC73525379E060056EBD8 /* Now-Black.otf */,
+				422DC73025379E000056EBD8 /* Now-Bold.otf */,
+				422DC72E25379DFE0056EBD8 /* Now-Light.otf */,
+				422DC72D25379DFC0056EBD8 /* Now-Medium.otf */,
+				422DC73325379E040056EBD8 /* Now-Regular.otf */,
+				422DC73425379E050056EBD8 /* Now-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		42A90587250A97E500D9F2C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				423068A2250F734700624FF4 /* UIViewController+NavigationBar.swift */,
+				42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		42A9058C250ACA5A00D9F2C4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4208AB28252F890F0033B4D3 /* MaterialTextField.swift */,
+				42AD83252530824F00E5EC42 /* ToggleButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		42A9058D250ACF0B00D9F2C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				421BB3882508E2B400AFA664 /* LaunchScreen.storyboard */,
+				421BB3832508E2AA00AFA664 /* Main.storyboard */,
+				42A90587250A97E500D9F2C4 /* Extensions */,
+				42A9058C250ACA5A00D9F2C4 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		42A9058E250ACFEF00D9F2C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				427C239E2539FA92003516AF /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		42A9058F250ACFF800D9F2C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				423068A42510DE7600624FF4 /* StartViewController.swift */,
+				421BB3812508E2AA00AFA664 /* LogInViewController.swift */,
+				42A90592250B824A00D9F2C4 /* SignUpViewController.swift */,
+				42A90594250B837200D9F2C4 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 421BB3A42508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOlive" */;
 			buildPhases = (
+				8B839D8E2C5AA60938A6C80F /* [CP] Check Pods Manifest.lock */,
 				421BB3762508E2AA00AFA664 /* Sources */,
 				421BB3772508E2AA00AFA664 /* Frameworks */,
 				421BB3782508E2AA00AFA664 /* Resources */,
+				3C96600BCDA0C93A3EF8AC6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 421BB3A72508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOliveTests" */;
 			buildPhases = (
+				042E434C953EEC8C3B76E626 /* [CP] Check Pods Manifest.lock */,
 				421BB38C2508E2B400AFA664 /* Sources */,
 				421BB38D2508E2B400AFA664 /* Frameworks */,
 				421BB38E2508E2B400AFA664 /* Resources */,
@@ -170,9 +352,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 421BB3AA2508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOliveUITests" */;
 			buildPhases = (
+				FA475E9AA02575E054684702 /* [CP] Check Pods Manifest.lock */,
 				421BB3972508E2B400AFA664 /* Sources */,
 				421BB3982508E2B400AFA664 /* Frameworks */,
 				421BB3992508E2B400AFA664 /* Resources */,
+				4D06DA2C2029495E42AE24D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,7 +375,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Iga Hupalo";
 				TargetAttributes = {
 					421BB3792508E2AA00AFA664 = {
@@ -214,6 +398,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pl-PL",
+				"en-US-posix",
 			);
 			mainGroup = 421BB3712508E2AA00AFA664;
 			productRefGroup = 421BB37B2508E2AA00AFA664 /* Products */;
@@ -232,8 +418,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422DC74F25379E070056EBD8 /* Now-Regular.otf in Resources */,
+				42A90591250B730200D9F2C4 /* GoogleService-Info.plist in Resources */,
+				422DC74625379E070056EBD8 /* Now-Bold.otf in Resources */,
+				422DC73D25379E070056EBD8 /* Now-Medium.otf in Resources */,
+				423068A7251110FA00624FF4 /* Assets.xcassets in Resources */,
+				422DC75525379E070056EBD8 /* Now-Black.otf in Resources */,
+				422DC75225379E070056EBD8 /* Now-Thin.otf in Resources */,
+				422DC74025379E070056EBD8 /* Now-Light.otf in Resources */,
 				421BB38A2508E2B400AFA664 /* LaunchScreen.storyboard in Resources */,
-				421BB3872508E2B400AFA664 /* Assets.xcassets in Resources */,
 				421BB3852508E2AA00AFA664 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +435,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422DC75625379E070056EBD8 /* Now-Black.otf in Resources */,
+				422DC73E25379E070056EBD8 /* Now-Medium.otf in Resources */,
+				422DC74125379E070056EBD8 /* Now-Light.otf in Resources */,
+				422DC75325379E070056EBD8 /* Now-Thin.otf in Resources */,
+				422DC74725379E070056EBD8 /* Now-Bold.otf in Resources */,
+				422DC75025379E070056EBD8 /* Now-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,19 +448,140 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422DC75725379E070056EBD8 /* Now-Black.otf in Resources */,
+				422DC73F25379E070056EBD8 /* Now-Medium.otf in Resources */,
+				422DC74225379E070056EBD8 /* Now-Light.otf in Resources */,
+				422DC75425379E070056EBD8 /* Now-Thin.otf in Resources */,
+				422DC74825379E070056EBD8 /* Now-Bold.otf in Resources */,
+				422DC75125379E070056EBD8 /* Now-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		042E434C953EEC8C3B76E626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cOliveTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C96600BCDA0C93A3EF8AC6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cOlive/Pods-cOlive-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cOlive/Pods-cOlive-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cOlive/Pods-cOlive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D06DA2C2029495E42AE24D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B839D8E2C5AA60938A6C80F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cOlive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA475E9AA02575E054684702 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cOlive-cOliveUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		421BB3762508E2AA00AFA664 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				421BB3822508E2AA00AFA664 /* ViewController.swift in Sources */,
+				427C23C4253A3E5C003516AF /* Shared.swift in Sources */,
+				42A90593250B824A00D9F2C4 /* SignUpViewController.swift in Sources */,
+				42D4A7382530DC2B0081A5E3 /* UIView+IBInspectable.swift in Sources */,
+				42AD83262530824F00E5EC42 /* ToggleButton.swift in Sources */,
+				421BB3822508E2AA00AFA664 /* LogInViewController.swift in Sources */,
 				421BB37E2508E2AA00AFA664 /* AppDelegate.swift in Sources */,
+				4208AB29252F89100033B4D3 /* MaterialTextField.swift in Sources */,
+				427C239F2539FA93003516AF /* User.swift in Sources */,
+				427C23CA253B6DA4003516AF /* UserRepository.swift in Sources */,
+				423068A3250F734700624FF4 /* UIViewController+NavigationBar.swift in Sources */,
+				423068A52510DE7600624FF4 /* StartViewController.swift in Sources */,
 				421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */,
+				42A90595250B837200D9F2C4 /* HomeViewController.swift in Sources */,
+				421C04CD25348EC400A18701 /* SessionManager.swift in Sources */,
+				42A90597250BCBDD00D9F2C4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +621,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				421BB3842508E2AA00AFA664 /* Base */,
+				42A90564250A7F4B00D9F2C4 /* pl-PL */,
+				42A90566250A7FA200D9F2C4 /* en-US-POSIX */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -309,6 +631,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				421BB3892508E2B400AFA664 /* Base */,
+				42A90565250A7F4B00D9F2C4 /* pl-PL */,
+				42A90567250A7FA200D9F2C4 /* en-US-POSIX */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -342,6 +667,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -366,7 +692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -402,6 +729,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -420,7 +748,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,11 +760,13 @@
 		};
 		421BB3A52508E2B400AFA664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA47A65E57D0102385A243C8 /* Pods-cOlive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H77979Y8DF;
 				INFOPLIST_FILE = cOlive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,17 +774,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.cOlive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		421BB3A62508E2B400AFA664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61729B8E0C7FA6FF3FAA60F /* Pods-cOlive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H77979Y8DF;
 				INFOPLIST_FILE = cOlive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,12 +794,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.cOlive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		421BB3A82508E2B400AFA664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDA281A6CB195EAEFB6B588 /* Pods-cOliveTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +823,7 @@
 		};
 		421BB3A92508E2B400AFA664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 478256455FB21FA7704E9A03 /* Pods-cOliveTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +846,7 @@
 		};
 		421BB3AB2508E2B400AFA664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBDE7B843EB49AAD26574899 /* Pods-cOlive-cOliveUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +867,7 @@
 		};
 		421BB3AC2508E2B400AFA664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FEA0A72DDC1EEE30A64C2D7 /* Pods-cOlive-cOliveUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

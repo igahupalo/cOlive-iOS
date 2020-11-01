@@ -30,12 +30,14 @@ class StartViewController: UIViewController, StartViewControllerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.loginViewController) as! LogInViewController
         loginViewController.parentDelegate = self
-        self.navigationController?.present(loginViewController, animated: true)
+        self.present(loginViewController, animated: true)
     }
 
     func transitionToSignUp() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signUpViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.signUpViewController) as! SignUpViewController
         signUpViewController.parentDelegate = self
-        self.navigationController?.present(signUpViewController, animated: true)    }
+        self.present(signUpViewController, animated: true)
+        
+    }
 }

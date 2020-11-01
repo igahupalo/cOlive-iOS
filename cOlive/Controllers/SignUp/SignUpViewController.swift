@@ -12,6 +12,7 @@ import FirebaseFirestore
 import Firebase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
+    private let db: Firestore = Firestore.firestore()
 
     private var usernameErrorMessage = ""
     private var emailErrorMessage = ""
@@ -183,7 +184,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     // Create user.
     private func createUser(uid: String, username: String, email: String) {
-        let usersRef = Shared.db.collection("users")
-        usersRef.document(username).setData(["uid": uid, "username": username, "email": email], merge: true)
+        let usersRef = db.collection("users")
+        usersRef.document().setData(["uid": uid, "username": username, "email": email], merge: true)
     }
 }

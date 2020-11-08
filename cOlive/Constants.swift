@@ -12,6 +12,7 @@ struct Constants {
 
     struct Storyboard {
         // MARK: View Controllers.
+        static let welcomeViewController = "WelcomeVC"
         static let homeViewController = "HomeVC"
         static let startViewController = "StartVC"
         static let loginViewController = "LoginVC"
@@ -22,28 +23,41 @@ struct Constants {
 
         // MARK: Segues.
         static let startToLoginSegue = "StartToLoginSeg"
+        static let startToSignUpSegue = "StartToSignUpSeg"
         static let homeToFlatsSegue = "HomeToFlatsSeg"
         static let homeToProfileSegue = "HomeToProfileSeg"
         static let flatsToAddFlatSegue = "FlatsToAddFlatSeg"
+        static let homeToCalendarSegue = "HomeToCalendarSeg"
+    }
+
+    struct StartTexts {
+        static let titles = ["Start cOliving!",
+                             "Split expenses",
+                             "Calendar",
+                             "Info board"]
+        static let descriptions = ["Gather your housemates and never miss anything important.",
+                                   "With cOlive you always know who owes who.",
+                                   "Inform your housemates about your plans or make the cleaning schedule.",
+                                   "Any announcement to make, but you can’t run into each other? Share it in the app!"]
     }
 
     struct LoginErrorMessages {
-        static let emptyEmail = "Email can't be empty"
-        static let emptyPassword = "Password can't be empty"
-        static let invalidEmail = "Email is invalid"
-        static let incorrectEmailPassword = "Email or password is incorrect"
+        static let emptyEmail = "Set your email to create an account"
+        static let emptyPassword = "Set your password to create an account"
+        static let invalidEmail = "Enter a valid email address"
+        static let incorrectEmailPassword = "This email and password combination is incorrect."
     }
 
     struct SignUpErrorMessages {
-        static let emptyUsername = "Username can't be empty"
-        static let emptyEmail = "Email can't be empty"
-        static let emptyPassword = "Password can't be empty"
+        static let emptyUsername = "Set your username to create an account"
+        static let emptyEmail = "Set your email to create an account"
+        static let emptyPassword = "Set your password to create an account"
         static let takenEmail = "Account using this email already exists"
-        static let invalidEmail = "Email is invalid"
+        static let invalidEmail = "Enter a valid email address"
         static let shortPassword = "Password must be at least 6 characters long"
     }
 
     struct AddFlatErrorMessages {
-        static let emptyFlatName = "Flat name can't be empty"
+        static let emptyFlatName = "Set flat name to create a new flat"
     }
 }

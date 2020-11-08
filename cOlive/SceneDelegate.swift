@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Observer handling authentication events.
         _ = Auth.auth().addStateDidChangeListener { auth, user in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let root = storyboard.instantiateViewController(identifier: user != nil ? Constants.Storyboard.mainNavigationController : Constants.Storyboard.startViewController)
+            let root = storyboard.instantiateViewController(identifier: user != nil ? Constants.Storyboard.mainNavigationController : Constants.Storyboard.welcomeViewController)
             self.window?.rootViewController = root
             self.window?.makeKeyAndVisible()
         }

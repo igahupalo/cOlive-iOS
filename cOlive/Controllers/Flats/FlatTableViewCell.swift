@@ -21,20 +21,23 @@ class FlatTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        flatNameLabel.text = ""
+        flatImageImageView.image = UIImage()
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func setContent() {
         guard let membership = membership else {
             return
         }
-        let flat = Flat(documentId: membership.flatId)
-        flat.fetchData {
-            self.flatNameLabel.text = flat.name
-            self.flatImageImageView.image = flat.image
-        }
+        let flat = membership.flat
+        self.flatNameLabel.text = flat.name
+        self.flatImageImageView.image = flat.image
     }
 }

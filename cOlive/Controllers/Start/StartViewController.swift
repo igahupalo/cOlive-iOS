@@ -8,36 +8,63 @@
 
 import UIKit
 
-protocol StartViewControllerDelegate {
-    func transitionToLogin()
-    func transitionToSignUp()
-}
+class StartViewController: UIViewController {
 
-class StartViewController: UIViewController, StartViewControllerDelegate {
+    @IBOutlet weak var slideScrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+
+    var slides: [SlideView] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupSlideScrollView()
+
     }
 
-    @IBAction func loginButtonTapped(_ sender: Any) {
-        transitionToLogin()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Constants.Storyboard.startToLoginSegue:
+            let loginViewController = segue.destination as! LogInViewController
+            loginViewController.parentDelegate = self
+        case Constants.Storyboard.startToSignUpSegue:
+            let signUpViewController = segue.destination as! SignUpViewController
+            signUpViewController.parentDelegate = self
+        default:
+            break
+        }
     }
 
-    @IBAction func createAccountButtonTapped(_ sender: Any) {
-        transitionToSignUp()
+    func createSlides() -> [SlideView] {
+        var slides: [SlideView] = []
+        let images: [UIImage?] = [UIImage(named: "lamp"), UIImage(named: "coin"), UIImage(named: "stickers"), UIImage(named: "bell")]
+
+        for i in 0...3 {
+            let slide = Bundle.main.loadNibNamed("SlideView", owner: self, options: nil)?.first as! SlideView
+            slide.setContent(image: images[i] ?? UIImage(), title: Constants.StartTexts.titles[i], description: Constants.StartTexts.descriptions[i])
+            slides.append(slide)
+        }
+
+        return slides
     }
 
-    func transitionToLogin() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.loginViewController) as! LogInViewController
-        loginViewController.parentDelegate = self
-        self.present(loginViewController, animated: true)
-    }
+    func setupSlideScrollView() {
+        let slides = createSlides()
+        slideScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: 0)
 
-    func transitionToSignUp() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let signUpViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.signUpViewController) as! SignUpViewController
-        signUpViewController.parentDelegate = self
-        self.present(signUpViewController, animated: true)
-        
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: slideScrollView.frame.size.height)
+            slideScrollView.addSubview(slides[i])
+            print(slides[i].frame.height)
+        }
+        pageControl.numberOfPages = slides.count
+        pageControl.currentPage = 0
+    }
+}
+
+extension StartViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = scrollView.contentOffset.x / view.frame.width
+        pageControl.currentPage = Int(pageIndex)
     }
 }

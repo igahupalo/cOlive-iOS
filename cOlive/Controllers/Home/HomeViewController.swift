@@ -12,31 +12,42 @@ import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var userImageImageView: UIImageView!
+    @IBOutlet weak var userGreetingLabel: UILabel!
+    @IBOutlet weak var flatNameLabel: UILabel!
+
     private let sessionManager: SessionManager
-    private var currentUser: User?
+
+    var user: User?
 
     required init?(coder: NSCoder) {
         self.sessionManager = SessionManager()
-        self.currentUser = nil
+        self.user = User()
         super.init(coder: coder)
-
-        self.sessionManager.getCurrentUser { user in
-            self.currentUser = user
-            if user == nil {
-                self.sessionManager.logOut()
-            }
-        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.user?.fetchCurrent {
+            self.setContent()
+            if self.user == nil {
+                self.user?.detachListeners()
+                self.sessionManager.logOut()
+            }
+        }
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.setContent()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case Constants.Storyboard.homeToFlatsSegue:
             let flatsViewController = segue.destination as! FlatsViewController
-            flatsViewController.currentUser = self.currentUser
+            flatsViewController.user = self.user
         case Constants.Storyboard.homeToProfileSegue:
             print("profile")
         default:
@@ -44,7 +55,18 @@ class HomeViewController: UIViewController {
         }
     }
 
+    func setContent() {
+        if let user = self.user {
+            userGreetingLabel.text = "Hi, \(user.username)!"
+            userImageImageView.image = user.image
+            if let flat = self.user?.membership?.flat {
+                flatNameLabel.text = flat.name
+            }
+        }
+    }
+
     @IBAction func logOutTapped(_ sender: Any) {
+        self.user?.detachListeners()
         sessionManager.logOut()
         // dettach observers
     }

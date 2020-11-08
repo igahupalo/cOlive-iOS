@@ -13,7 +13,7 @@ class AddFlatViewController: UIViewController {
     var currentUser: User?
     var memberships: Memberships?
 
-    @IBOutlet weak var flatPhotoImageView: UIImageView!
+    @IBOutlet weak var flatImageImageView: UIImageView!
     @IBOutlet weak var flatNameTextField: MaterialTextField!
 
     private var flatNameErrorMessage: String = ""
@@ -49,6 +49,7 @@ class AddFlatViewController: UIViewController {
         }
 
         let flatName = flatNameTextField.text!
+        let flatImage = flatImageImageView.image
         guard let currentUser = self.currentUser else {
             print("🔴 ERROR: No logged user to assign to the new flat.")
             return
@@ -60,38 +61,21 @@ class AddFlatViewController: UIViewController {
         }
 
         // Create flat.
-        let flat = Flat(name: flatName, ownerId: currentUserId, isActive: true, image: flatPhotoImageView.image)
+        let flat = Flat(name: flatName, ownerId: currentUserId, isActive: true, image: flatImage)
 
         // Save flat.
-        flat.saveData { flatSuccess in
-            // Create membership.
-            guard flatSuccess else {
-                print("🔴 ERROR: No flat to assign to the new membership.")
+        flat.create(owner: currentUser) { (success) in
+            guard success else {
+                print("🔴 ERROR: New flat and membership not created.")
                 return
             }
-            guard let documentId = flat.documentId else {
-                print("🔴 ERROR: No flat id to assign to the new membership.")
-                return
-            }
-
-            // Create membership
-            let membership = Membership(flatId: documentId, lastUsed: Date(), type: Membership.MembershipType.owner)
-
-            membership.saveData(user: currentUser) { membershipSuccess in
-                guard membershipSuccess else {
-                    print("🔴 ERROR: No membership created.")
-                    // Delete created flat, that was suppsed to be assigned to the membership.
-                    flat.delete()
-                    return
-                }
-                self.dismiss(animated: true, completion: nil)
-            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
 
 extension AddFlatViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
-        self.flatPhotoImageView.image = image
+        self.flatImageImageView.image = image
     }
 }

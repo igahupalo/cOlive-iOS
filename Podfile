@@ -15,7 +15,8 @@ target 'cOlive' do
 
   pod 'JVFloatLabeledTextField'
   pod 'IQKeyboardManagerSwift'
-  pod 'SwiftyJSON'
+  pod 'FSCalendar'
+
 
   target 'cOliveTests' do
     inherit! :search_paths

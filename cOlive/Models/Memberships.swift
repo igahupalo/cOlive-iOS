@@ -13,25 +13,29 @@ class Memberships {
     let db: Firestore = Firestore.firestore()
 
     var membershipsArray: [Membership]
+    var listener: ListenerRegistration?
 
     init() {
         self.membershipsArray = []
     }
 
-    func fetchData(user: User, completion: @escaping () -> ()) {
+    deinit {
+        print("🟦 memberships deinit")
+    }
+
+    func fetch(user: User, completion: @escaping () -> ()) {
         guard let userId = user.documentId else {
-            print("🔴 ERROR: fetching memberships")
+            print("🔴 ERROR: Fetching memberships")
             return completion()
         }
 
-        db.collection("users").document(userId).collection("memberships").addSnapshotListener { documentSnapshots, error in
+        self.listener = db.collection("users").document(userId).collection("memberships").addSnapshotListener { documentSnapshots, error in
             guard error == nil else {
                 completion()
                 return
             }
-
             guard let snapshots = documentSnapshots else {
-                print("Error fetching snapshots: \(error!)")
+                print("🔴 ERROR: Fetching snapshots: \(error!)")
                 return
             }
             snapshots.documentChanges.forEach { snapshot in
@@ -46,7 +50,6 @@ class Memberships {
                     self.membershipsArray.append(membership)
                     print("🟢 Added membership \(String(describing: membership.documentId))")
                 }
-
                 if (type == .modified) {
                     if let membershipIndex = self.membershipsArray.firstIndex(where: { $0.documentId == documentId }) {
                         self.membershipsArray[membershipIndex].setData(dictionary: data)
@@ -60,11 +63,35 @@ class Memberships {
                     }
                 }
             }
+
+            self.membershipsArray.sort { $0.lastUsed > $1.lastUsed }
+
             completion()
         }
     }
 
-    func saveData(user: User, completion: @escaping (Bool) -> ()) {
+    func fetchFlats(completion: @escaping () -> ()) {
+        let dispatchGroup = DispatchGroup()
+        membershipsArray.forEach { membership in
+            dispatchGroup.enter()
+            membership.fetchFlat {
+                dispatchGroup.leave()
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            completion()
+        }
+    }
+
+    func save(user: User, completion: @escaping (Bool) -> ()) {
         
+    }
+
+    func detachListeners() {
+        if let listener = self.listener {
+            print("🔷 Listener detached - memberships")
+            listener.remove()
+        }
+        membershipsArray.forEach( { $0.detachListeners() } )
     }
 }

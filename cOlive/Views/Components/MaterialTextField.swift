@@ -19,10 +19,12 @@ class MaterialTextField: JVFloatLabeledTextField {
     ///     - errorColor: UIColor used to highlight text fields with eror flag.
     ///     - hasError: flag saying is textfield carring an error message
 
-    private let padding: CGFloat = 4
+    private let leftPadding: CGFloat = 10
+    private let rightPadding: CGFloat = 4
+    private var fieldHeight: CGFloat = 48
     private let gap: CGFloat = 2
     private let width: CGFloat = 32
-    private let errorColor: UIColor = .red
+    private let errorColor: UIColor = UIColor(named: "red") ?? .red
     private let helpTextColor: UIColor = .black
     private let buttonColor: UIColor = .black
     private let messageFont = UIFont(name: "Now", size: 10)
@@ -36,10 +38,6 @@ class MaterialTextField: JVFloatLabeledTextField {
     private var hasError = false
     private var hasHelpText = false
     private var errorImageView: UIImageView?
-
-//    @IBInspectable var cornerRadius: CGFloat = 5
-//    @IBInspectable var borderColor: UIColor = UIColor.systemGray
-//    @IBInspectable var borderWidth: CGFloat = 0.5
 
     /// Enumerator used for tag distribution and identification of views' elements.
 
@@ -72,21 +70,28 @@ class MaterialTextField: JVFloatLabeledTextField {
         }
         set(index) {
             self.type = ButtonType(rawValue: index) ?? ButtonType.none
-            print(type)
         }
     }
 
     /// Calculated variable describing text rectangle's right inset.
 
     private var rightInset: CGFloat {
-        let rightInset: CGFloat = padding + gap + width
+        let rightInset: CGFloat = rightPadding + gap + width
         return rightInset
     }
 
     /// Overided function calculating and  returning right view's frame.
 
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: self.frame.width - padding - width, y: .zero, width: width, height: self.frame.height)
+        return CGRect(x: self.frame.width - rightPadding - width, y: .zero, width: width, height: self.frame.height)
+    }
+
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.offsetBy(dx: leftPadding, dy: self.text == "" ? .zero : 10)
+    }
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return textRect(forBounds: bounds)
     }
 
     override func layoutSubviews() {
@@ -168,9 +173,7 @@ class MaterialTextField: JVFloatLabeledTextField {
     /// Function sets up text field's elements and attaches handler removing error on beginning of text editing.
 
     private func setup() {
-//        self.layer.borderWidth = borderWidth
-//        self.layer.borderColor = borderColor.cgColor
-//        self.layer.cornerRadius = cornerRadius
+        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: self.fieldHeight)
 
         setupTrailingButton()
         setupErrorLabel()
@@ -209,7 +212,7 @@ class MaterialTextField: JVFloatLabeledTextField {
 
     private func messageLabel() -> UILabel {
         let messageLabel = UILabel()
-        messageLabel.frame = CGRect(x: 5, y: self.frame.height, width: self.frame.width, height: 30)
+        messageLabel.frame = CGRect(x: leftPadding, y: self.frame.height, width: self.frame.width, height: 30)
         messageLabel.font = messageFont
         messageLabel.isHidden = true
         return messageLabel

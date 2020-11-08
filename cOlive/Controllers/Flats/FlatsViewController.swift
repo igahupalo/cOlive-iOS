@@ -13,7 +13,11 @@ class FlatsViewController: UIViewController {
     @IBOutlet weak var flatList: UITableView!
 
     var memberships: Memberships?
-    var currentUser: User?
+    var user: User?
+
+    deinit {
+        print("🟦 flatsVC deinit")
+    }
 
     required init?(coder: NSCoder) {
         self.memberships = Memberships()
@@ -22,15 +26,25 @@ class FlatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let currentUser = user {
+            self.memberships?.fetch(user: currentUser) {
+                self.memberships?.fetchFlats {
+                    self.flatList.reloadData()
+                }
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.flatList.reloadData()
 
-        if let currentUser = currentUser {
-            memberships?.fetchData(user: currentUser) {
-                self.flatList.reloadData()
-            }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        if let memberships = self.memberships {
+            memberships.detachListeners()
         }
     }
 
@@ -38,7 +52,7 @@ class FlatsViewController: UIViewController {
         switch segue.identifier {
         case Constants.Storyboard.flatsToAddFlatSegue:
             let addFlatViewController = segue.destination as! AddFlatViewController
-            addFlatViewController.currentUser = self.currentUser
+            addFlatViewController.currentUser = self.user
             addFlatViewController.memberships = self.memberships
         default:
             break
@@ -59,5 +73,15 @@ extension FlatsViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let membership = memberships?.membershipsArray[indexPath.row] {
+            if let membershipId = membership.documentId {
+                self.user?.setMembership(membershipId: membershipId) { [weak self] in
+                    self?.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
     }
 }

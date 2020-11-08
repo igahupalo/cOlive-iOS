@@ -18,7 +18,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     private var emailErrorMessage = ""
     private var passwordErrorMessage = ""
     private let sessionManager = SessionManager()
-    internal var parentDelegate: StartViewControllerDelegate? = nil
+    var parentDelegate: StartViewController?
 
     private var isValidUsername: Bool {
         if let username = usernameTextField.text {
@@ -53,7 +53,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
             let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             if !emailPredicate.evaluate(with: email) {
-                emailErrorMessage = Constants.LoginErrorMessages.invalidEmail
+                emailErrorMessage = Constants.SignUpErrorMessages.invalidEmail
                 return false
             }
 
@@ -135,8 +135,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true) {
-            self.parentDelegate?.transitionToLogin()
+        self.dismiss(animated: true) { [weak self] in
+            self?.parentDelegate?.performSegue(withIdentifier: "StartToLoginSeg", sender: nil)
         }
     }
 
@@ -155,10 +155,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
         sessionManager.signUp(username: username, email: email, password: password, completionBlock: { (errorCode) in
             if errorCode == nil {
-                if let authResult = Auth.auth().currentUser {
-                    let uid = authResult.uid
-                    self.createUser(uid: uid, username: username, email: email)
-                }
                 print("User signed up successfully.")
             } else {
                 switch errorCode {
@@ -178,13 +174,5 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
-    }
-
-    // MARK: Database queries.
-
-    // Create user.
-    private func createUser(uid: String, username: String, email: String) {
-        let usersRef = db.collection("users")
-        usersRef.document().setData(["uid": uid, "username": username, "email": email], merge: true)
     }
 }

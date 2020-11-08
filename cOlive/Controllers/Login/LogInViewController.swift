@@ -12,7 +12,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     private var emailErrorMessage = ""
     private var passwordErrorMessage = ""
-    var parentDelegate: StartViewControllerDelegate? = nil
+    var parentDelegate: StartViewController?
 
     private let sessionManager = SessionManager()
 
@@ -121,8 +121,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true) {
-            self.parentDelegate?.transitionToSignUp()
+        self.dismiss(animated: true) { [weak self] in
+            self?.parentDelegate?.performSegue(withIdentifier: "StartToSignUpSeg", sender: nil)
         }
     }
 }

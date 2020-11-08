@@ -18,11 +18,11 @@ class Members {
         self.members = []
     }
 
-    func fetchData(flat: Flat, completion: @escaping (Bool) -> ()) {
+    func fetch(flat: Flat, completion: @escaping (Bool) -> ()) {
         // fetch memberships
     }
 
-    func saveData(completion: @escaping (Bool) -> ()) {
+    func save(completion: @escaping (Bool) -> ()) {
         // save array to users membership collection
     }
 }

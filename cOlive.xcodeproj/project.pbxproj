@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4206AA2B2556060000F4D0C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4206AA2A2556060000F4D0C0 /* WelcomeViewController.swift */; };
 		4208AB29252F89100033B4D3 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208AB28252F890F0033B4D3 /* MaterialTextField.swift */; };
 		421BB37E2508E2AA00AFA664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37D2508E2AA00AFA664 /* AppDelegate.swift */; };
 		421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */; };
@@ -44,11 +45,17 @@
 		427C23EB253CD3D4003516AF /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23EA253CD3D3003516AF /* Flat.swift */; };
 		427C23F0253CD50D003516AF /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23EF253CD50D003516AF /* Member.swift */; };
 		427C23F8253CF39B003516AF /* FlatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23F7253CF39B003516AF /* FlatTableViewCell.swift */; };
+		4290E7E72551E038000DEBFC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290E7E62551E038000DEBFC /* Protocols.swift */; };
+		4290E809255431F7000DEBFC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290E808255431F7000DEBFC /* CalendarViewController.swift */; };
+		42A3AC9B2558BB3700F4C661 /* MaterialTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3AC9A2558BB3600F4C661 /* MaterialTextFieldView.swift */; };
+		42A3ACA02558BB5300F4C661 /* MateriaTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A3AC9F2558BB5300F4C661 /* MateriaTextFieldView.xib */; };
 		42A90591250B730200D9F2C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A90590250B730100D9F2C4 /* GoogleService-Info.plist */; };
 		42A90593250B824A00D9F2C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90592250B824A00D9F2C4 /* SignUpViewController.swift */; };
 		42A90595250B837200D9F2C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90594250B837200D9F2C4 /* HomeViewController.swift */; };
 		42A90597250BCBDD00D9F2C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90596250BCBDD00D9F2C4 /* Constants.swift */; };
 		42AD83262530824F00E5EC42 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AD83252530824F00E5EC42 /* ToggleButton.swift */; };
+		42C2775325561F430059AEF6 /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C2775225561F430059AEF6 /* SlideView.xib */; };
+		42C27760255622470059AEF6 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2775F255622470059AEF6 /* SlideView.swift */; };
 		42D4A7382530DC2B0081A5E3 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */; };
 		42DABBF225438CF4008A0AC1 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DABBF125438CF4008A0AC1 /* Members.swift */; };
 		42DABBF725438D02008A0AC1 /* Memberships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DABBF625438D02008A0AC1 /* Memberships.swift */; };
@@ -78,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		15BFF2F5AC2BD4EDED67A895 /* Pods_cOlive_cOliveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cOlive_cOliveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4206AA2A2556060000F4D0C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4208AA63252293610033B4D3 /* cOlive.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = cOlive.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4208AB28252F890F0033B4D3 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
 		421BB37A2508E2AA00AFA664 /* cOlive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cOlive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +118,10 @@
 		427C23EA253CD3D3003516AF /* Flat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
 		427C23EF253CD50D003516AF /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		427C23F7253CF39B003516AF /* FlatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatTableViewCell.swift; sourceTree = "<group>"; };
+		4290E7E62551E038000DEBFC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		4290E808255431F7000DEBFC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		42A3AC9A2558BB3600F4C661 /* MaterialTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextFieldView.swift; sourceTree = "<group>"; };
+		42A3AC9F2558BB5300F4C661 /* MateriaTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateriaTextFieldView.xib; sourceTree = "<group>"; };
 		42A90564250A7F4B00D9F2C4 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Main.strings"; sourceTree = "<group>"; };
 		42A90565250A7F4B00D9F2C4 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		42A90566250A7FA200D9F2C4 /* en-US-POSIX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US-POSIX"; path = "en-US-POSIX.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -119,6 +131,8 @@
 		42A90594250B837200D9F2C4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42A90596250BCBDD00D9F2C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42AD83252530824F00E5EC42 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		42C2775225561F430059AEF6 /* SlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
+		42C2775F255622470059AEF6 /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		42DABBF125438CF4008A0AC1 /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		42DABBF625438D02008A0AC1 /* Memberships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memberships.swift; sourceTree = "<group>"; };
@@ -183,6 +197,14 @@
 				75D832D8DB341590D4AFD6BF /* Pods_cOliveTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4206AA29255605EC00F4D0C0 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				4206AA2A2556060000F4D0C0 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		421BB3712508E2AA00AFA664 = {
@@ -256,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				423068A42510DE7600624FF4 /* StartViewController.swift */,
+				42C2775F255622470059AEF6 /* SlideView.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -294,6 +317,14 @@
 			path = Flats;
 			sourceTree = "<group>";
 		};
+		4290E80D25543200000DEBFC /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4290E808255431F7000DEBFC /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		42A90568250A89A100D9F2C4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +353,7 @@
 				4208AB28252F890F0033B4D3 /* MaterialTextField.swift */,
 				42AD83252530824F00E5EC42 /* ToggleButton.swift */,
 				42DABC0F2545F1D1008A0AC1 /* ImagePicker.swift */,
+				42A3AC9A2558BB3600F4C661 /* MaterialTextFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,6 +365,8 @@
 				421BB3832508E2AA00AFA664 /* Main.storyboard */,
 				42A90587250A97E500D9F2C4 /* Extensions */,
 				42A9058C250ACA5A00D9F2C4 /* Components */,
+				42C2775225561F430059AEF6 /* SlideView.xib */,
+				42A3AC9F2558BB5300F4C661 /* MateriaTextFieldView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +380,7 @@
 				427C23EA253CD3D3003516AF /* Flat.swift */,
 				427C23EF253CD50D003516AF /* Member.swift */,
 				42DABBF125438CF4008A0AC1 /* Members.swift */,
+				4290E7E62551E038000DEBFC /* Protocols.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,12 +388,14 @@
 		42A9058F250ACFF800D9F2C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4206AA29255605EC00F4D0C0 /* Welcome */,
 				42DABC062545D8EA008A0AC1 /* Profile */,
 				427C23CE253CCFEA003516AF /* Start */,
 				427C23CF253CCFFD003516AF /* Login */,
 				427C23D0253CD009003516AF /* SignUp */,
 				427C23D1253CD017003516AF /* Home */,
 				427C23D2253CD023003516AF /* Flats */,
+				4290E80D25543200000DEBFC /* Calendar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -490,8 +527,10 @@
 				422DC75525379E070056EBD8 /* Now-Black.otf in Resources */,
 				422DC75225379E070056EBD8 /* Now-Thin.otf in Resources */,
 				422DC74025379E070056EBD8 /* Now-Light.otf in Resources */,
+				42A3ACA02558BB5300F4C661 /* MateriaTextFieldView.xib in Resources */,
 				421BB38A2508E2B400AFA664 /* LaunchScreen.storyboard in Resources */,
 				421BB3852508E2AA00AFA664 /* Main.storyboard in Resources */,
+				42C2775325561F430059AEF6 /* SlideView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +675,7 @@
 				42D4A7382530DC2B0081A5E3 /* UIView+IBInspectable.swift in Sources */,
 				42AD83262530824F00E5EC42 /* ToggleButton.swift in Sources */,
 				42DABC0B2545D903008A0AC1 /* ProfileViewController.swift in Sources */,
+				4290E809255431F7000DEBFC /* CalendarViewController.swift in Sources */,
 				421BB3822508E2AA00AFA664 /* LogInViewController.swift in Sources */,
 				427C23E1253CD097003516AF /* AddFlatViewController.swift in Sources */,
 				421BB37E2508E2AA00AFA664 /* AppDelegate.swift in Sources */,
@@ -643,15 +683,19 @@
 				427C239F2539FA93003516AF /* User.swift in Sources */,
 				427C23E6253CD1BE003516AF /* Membership.swift in Sources */,
 				427C23EB253CD3D4003516AF /* Flat.swift in Sources */,
+				42C27760255622470059AEF6 /* SlideView.swift in Sources */,
 				423068A3250F734700624FF4 /* UIViewController+NavigationBar.swift in Sources */,
 				423068A52510DE7600624FF4 /* StartViewController.swift in Sources */,
 				42DABC102545F1D1008A0AC1 /* ImagePicker.swift in Sources */,
+				4290E7E72551E038000DEBFC /* Protocols.swift in Sources */,
 				421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */,
 				42A90595250B837200D9F2C4 /* HomeViewController.swift in Sources */,
+				4206AA2B2556060000F4D0C0 /* WelcomeViewController.swift in Sources */,
 				42DABBF725438D02008A0AC1 /* Memberships.swift in Sources */,
 				427C23F8253CF39B003516AF /* FlatTableViewCell.swift in Sources */,
 				427C23DC253CD07B003516AF /* FlatsViewController.swift in Sources */,
 				421C04CD25348EC400A18701 /* SessionManager.swift in Sources */,
+				42A3AC9B2558BB3700F4C661 /* MaterialTextFieldView.swift in Sources */,
 				427C23F0253CD50D003516AF /* Member.swift in Sources */,
 				42A90597250BCBDD00D9F2C4 /* Constants.swift in Sources */,
 			);

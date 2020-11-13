@@ -10,11 +10,10 @@ import UIKit
 
 class FlatTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var flatNameLabel: UILabel!
-    @IBOutlet weak var flatImageImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageImageView: UIImageView!
 
     var membership: Membership?
-    var flat: Flat?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +23,8 @@ class FlatTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        flatNameLabel.text = ""
-        flatImageImageView.image = UIImage()
+        nameLabel.text = ""
+        imageImageView.image = UIImage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,7 +36,7 @@ class FlatTableViewCell: UITableViewCell {
             return
         }
         let flat = membership.flat
-        self.flatNameLabel.text = flat.name
-        self.flatImageImageView.image = flat.image
+        self.nameLabel.text = flat.name
+        self.imageImageView.image = flat.image
     }
 }

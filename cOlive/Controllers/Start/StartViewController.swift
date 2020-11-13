@@ -55,7 +55,6 @@ class StartViewController: UIViewController {
         for i in 0 ..< slides.count {
             slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: slideScrollView.frame.size.height)
             slideScrollView.addSubview(slides[i])
-            print(slides[i].frame.height)
         }
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0

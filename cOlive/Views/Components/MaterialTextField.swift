@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JVFloatLabeledTextField
 
-class MaterialTextField: JVFloatLabeledTextField {
+@IBDesignable class MaterialTextField: JVFloatLabeledTextField {
 
     /// - Constants:
     ///     - padding: space between right edge of the trailing button and the end of the text field.
@@ -21,14 +21,16 @@ class MaterialTextField: JVFloatLabeledTextField {
 
     private let leftPadding: CGFloat = 10
     private let rightPadding: CGFloat = 4
+    private var minFieldHeight: CGFloat = 48
     private var fieldHeight: CGFloat = 48
+    private var labelHeight: CGFloat = 30
     private let gap: CGFloat = 2
-    private let width: CGFloat = 32
-    private let errorColor: UIColor = UIColor(named: "red") ?? .red
+    private let buttonWidth: CGFloat = 32
     private let helpTextColor: UIColor = .black
     private let buttonColor: UIColor = .black
     private let messageFont = UIFont(name: "Now", size: 10)
-    private var initialTintColor = UIColor(named: "MintDark") ?? .systemBlue
+    private let fieldWrapperView = UIView()
+    private let messageLabel = UILabel()
 
     /// - Variables:
     ///     - hasError: flag saying is textfield carring an error message
@@ -38,15 +40,6 @@ class MaterialTextField: JVFloatLabeledTextField {
     private var hasError = false
     private var hasHelpText = false
     private var errorImageView: UIImageView?
-
-    /// Enumerator used for tag distribution and identification of views' elements.
-
-    enum Tag: Int {
-        case errorLabel = 1
-        case helpTextLabel = 2
-        case errorImageView = 3
-        case trailingButton = 4
-    }
 
     /// - Enumerator specifying types of trailing buttons:
     ///     - none: no trailing button
@@ -73,30 +66,76 @@ class MaterialTextField: JVFloatLabeledTextField {
         }
     }
 
+    @IBInspectable var fieldBorderWidth: CGFloat = 1 {
+        didSet { self.fieldWrapperView.layer.borderWidth = fieldBorderWidth }
+    }
+    @IBInspectable var fieldCornerRadius: CGFloat = 8 {
+        didSet { self.fieldWrapperView.layer.cornerRadius = fieldCornerRadius }
+    }
+    @IBInspectable var fieldBorderColor: UIColor = UIColor(named: "Mint") ?? .black {
+        didSet { self.fieldWrapperView.layer.borderColor = fieldBorderColor.cgColor }
+    }
+    @IBInspectable var fieldColor: UIColor = .white {
+        didSet { self.fieldWrapperView.backgroundColor = fieldColor }
+    }
+    @IBInspectable var errorColor: UIColor = UIColor(named: "Red") ?? .red
+
     /// Calculated variable describing text rectangle's right inset.
 
     private var rightInset: CGFloat {
-        let rightInset: CGFloat = rightPadding + gap + width
+        let rightInset: CGFloat = rightPadding + gap + buttonWidth
         return rightInset
     }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.fieldHeight = frame.height - self.labelHeight
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    override var intrinsicContentSize: CGSize {
+        let width = super.intrinsicContentSize.width
+        return CGSize(width: width, height: minFieldHeight + labelHeight)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.setup()
+    }
+
 
     /// Overided function calculating and  returning right view's frame.
 
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: self.frame.width - rightPadding - width, y: .zero, width: width, height: self.frame.height)
+        return CGRect(x: self.frame.width - rightPadding - buttonWidth, y: .zero, width: buttonWidth, height: self.fieldHeight)
     }
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.offsetBy(dx: leftPadding, dy: self.text == "" ? .zero : 10)
+        let x = bounds.origin.x
+        let y = bounds.origin.y
+        let width = type != .none ? bounds.width - rightPadding - buttonWidth - gap : bounds.width
+        let height = bounds.height - self.labelHeight
+        let rect = super.textRect(forBounds: CGRect(x: x, y: y, width: width, height: height))
+        return rect.offsetBy(dx: leftPadding, dy: .zero)
     }
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return textRect(forBounds: bounds)
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setup()
+    /// Function sets up text field's elements and attaches handler removing error on beginning of text editing.
+
+    private func setup() {
+        self.floatingLabelYPadding = 5
+
+        setupTrailingButton()
+        setupMessageLabel()
+        setupFieldWrapperView()
+
+        self.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
     }
 
     /// Function returns current proper rightViewMode for text field of type .clear. It makes the right view invisible if text field is empty, otherwise visible while editing.
@@ -123,11 +162,15 @@ class MaterialTextField: JVFloatLabeledTextField {
         return true
     }
 
+    @objc func editingDidBegin() {
+        removeMessages()
+    }
+
+
     /// Function returns trailing button for text field of type .clear.
 
     private func clearButton() -> UIButton {
         let button = UIButton()
-        button.tag = Tag.trailingButton.rawValue
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         self.addTarget(self, action: #selector(setClearRightViewMode), for: .editingChanged)
         button.addTarget(self, action: #selector(clearButtonTapped), for: .touchUpInside)
@@ -146,7 +189,6 @@ class MaterialTextField: JVFloatLabeledTextField {
 
     private func toggleSecureEntryButton() -> UIButton {
         let button = ToggleButton()
-        button.tag = Tag.trailingButton.rawValue
         button.setImage(UIImage(systemName: "eye.slash"), for: isSecureTextEntry ? .normal : .selected)
         button.setImage(UIImage(systemName: "eye"), for: isSecureTextEntry ? .selected : .normal)
         button.addTarget(self, action: #selector(secureEntryButtonTapped), for: .touchUpInside)
@@ -170,36 +212,43 @@ class MaterialTextField: JVFloatLabeledTextField {
         }
     }
 
-    /// Function sets up text field's elements and attaches handler removing error on beginning of text editing.
+    private func setupFieldWrapperView() {
 
-    private func setup() {
-        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: self.fieldHeight)
+        let x = self.frame.origin.x
+        let y: CGFloat = .zero
+        let width = self.frame.width
+        let height = self.frame.height - self.labelHeight
+        self.fieldWrapperView.frame = CGRect(x: x, y: y, width: width, height: height)
+        self.fieldWrapperView.isUserInteractionEnabled = false
+        self.styleFieldWrapperView()
+        self.addSubview(self.fieldWrapperView)
+        self.sendSubviewToBack(self.fieldWrapperView)
+    }
 
-        setupTrailingButton()
-        setupErrorLabel()
-        setupHelpTextLabel()
-        setupErrorImage()
-
-        self.addTarget(self, action: #selector(removeMessages), for: .editingDidBegin)
+    private func styleFieldWrapperView() {
+        self.fieldWrapperView.layer.borderColor = self.fieldBorderColor.cgColor
+        self.fieldWrapperView.layer.borderWidth = self.fieldBorderWidth
+        self.fieldWrapperView.layer.cornerRadius = self.fieldCornerRadius
+        self.fieldWrapperView.backgroundColor = fieldColor
     }
 
     /// Function sets up proper trailing button depending on text field's type.
 
     private func setupTrailingButton() {
         self.clearButtonMode = UITextField.ViewMode.never
+        let button: UIButton?
         if type != .none {
             if rightView != nil { return }
-            let button: UIButton?
             switch type {
-                case .clear:
-                    button = clearButton()
-                case .toggleSecureEntry:
-                    button = toggleSecureEntryButton()
-                default:
-                    button = nil
+            case .clear:
+                button = clearButton()
+            case .toggleSecureEntry:
+                button = toggleSecureEntryButton()
+            default:
+                button = nil
             }
             button?.tintColor = buttonColor
-            button?.frame = CGRect(x: .zero, y: .zero, width: width, height: self.frame.height)
+            button?.frame = CGRect(x: .zero, y: .zero, width: buttonWidth, height: self.fieldHeight)
             button?.contentMode = .scaleAspectFit
             rightView = UIView()
             if button != nil {
@@ -210,57 +259,22 @@ class MaterialTextField: JVFloatLabeledTextField {
 
     /// Function initializes label attached underneath the textfield, displaying error message.
 
-    private func messageLabel() -> UILabel {
-        let messageLabel = UILabel()
-        messageLabel.frame = CGRect(x: leftPadding, y: self.frame.height, width: self.frame.width, height: 30)
+    private func setupMessageLabel() {
+        let x = leftPadding
+        let y = self.fieldHeight
+        let width = self.frame.width - leftPadding
+        let height = self.labelHeight
+
+        messageLabel.frame = CGRect(x: x, y: y, width: width, height: height)
         messageLabel.font = messageFont
-        messageLabel.isHidden = true
-        return messageLabel
-    }
-
-    private func setupErrorLabel() {
-        let errorLabel = messageLabel()
-        errorLabel.textColor = errorColor
-        errorLabel.tag = Tag.errorLabel.rawValue
-        self.addSubview(errorLabel)
-    }
-
-    private func setupHelpTextLabel() {
-        let helpTextLabel = messageLabel()
-        helpTextLabel.textColor = helpTextColor
-        helpTextLabel.tag = Tag.helpTextLabel.rawValue
-        self.addSubview(helpTextLabel)
-    }
-
-    /// Function adjusts image view displaying exclamation mark symbol. Hidden image is attached to text fields with type other than .none, as it is imposible to create a subview of a nonexisting rightView.
-
-    private func setupErrorImage() {
-        errorImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: self.frame.height))
-        errorImageView!.image = UIImage(systemName: "exclamationmark.circle")!
-        errorImageView!.tintColor = errorColor
-        errorImageView!.contentMode = UIView.ContentMode.scaleAspectFit
-        errorImageView!.tag = Tag.errorImageView.rawValue
-        errorImageView!.isHidden = true
-        if let rightView = rightView {
-            rightView.addSubview(errorImageView!)
-        }
+        self.addSubview(messageLabel)
     }
 
     func setHelpText(message: String) {
         if hasError {
             removeMessages()
         }
-
-        if !hasHelpText {
-            if let helpTextLabel = self.viewWithTag(Tag.helpTextLabel.rawValue) as? UILabel{
-                helpTextLabel.isHidden = false
-            }
-        }
-
-        if let helpTextLabel = self.viewWithTag(Tag.helpTextLabel.rawValue) as? UILabel{
-            helpTextLabel.text = message
-        }
-
+        messageLabel.text = message
         hasHelpText = true
     }
 
@@ -272,67 +286,26 @@ class MaterialTextField: JVFloatLabeledTextField {
         }
 
         if !hasError  {
-            rightViewMode = UITextField.ViewMode.always
+            self.fieldWrapperView.layer.borderColor = self.errorColor.cgColor
+            self.messageLabel.textColor = self.errorColor
         }
 
-        if type == .none {
-            rightView = errorImageView!
-            rightView!.isHidden = false
-        } else if !hasError {
-            if let errorImageView = rightView?.viewWithTag(Tag.errorImageView.rawValue) {
-                errorImageView.isHidden = false
-            }
-            if let trailingButton = rightView?.viewWithTag(Tag.trailingButton.rawValue) {
-                trailingButton.isHidden = true
-            }
-            if let errorLabel = self.viewWithTag(Tag.errorLabel.rawValue) as? UILabel{
-                errorLabel.isHidden = false
-            }
-        }
-
-        self.tintColor = errorColor
-
-        if let errorLabel = self.viewWithTag(Tag.errorLabel.rawValue) as? UILabel{
-            errorLabel.text = message
-        }
-
+        messageLabel.text = message
         hasError = true
-
         self.wiggle()
     }
 
     /// Function used for the removal of an existing error, fired on every beginning of editing text of a text field with error flag.
 
     @objc func removeMessages() {
+        messageLabel.text = ""
         if hasError {
             hasError = false
-            self.tintColor = initialTintColor
-
-            if let errorImageView = rightView?.viewWithTag(Tag.errorImageView.rawValue) {
-                errorImageView.isHidden = true
-            }
-            if let errorLabel = self.viewWithTag(Tag.errorLabel.rawValue) {
-                (errorLabel as? UILabel)?.text = ""
-                errorLabel.isHidden = true
-            }
-            if let trailingButton = rightView?.viewWithTag(Tag.trailingButton.rawValue) {
-                trailingButton.isHidden = false
-            }
-            switch type {
-                case .clear:
-                    setClearRightViewMode()
-                case .toggleSecureEntry:
-                    rightViewMode = UITextField.ViewMode.always
-                case .none:
-                    rightView = nil
-                    rightViewMode = UITextField.ViewMode.never
-            }
+            self.fieldWrapperView.layer.borderColor = self.fieldBorderColor.cgColor
+            self.fieldWrapperView.layer.borderWidth = self.fieldBorderWidth
+            self.messageLabel.textColor = self.helpTextColor
         } else if hasHelpText {
             hasHelpText = false
-            if let helpTextLabel = self.viewWithTag(Tag.helpTextLabel.rawValue) {
-                (helpTextLabel as? UILabel)?.text = ""
-                helpTextLabel.isHidden = true
-            }
         }
     }
 

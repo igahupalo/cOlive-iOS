@@ -25,11 +25,8 @@ class User: UserProtocol {
     var membershipId: String?
     var membership: Membership?
     var imageUrl: String?
-    var image: UIImage? {
-        didSet {
-            self.imageUrl = nil
-        }
-    }
+    var image: UIImage?
+    
 
     var dictionary: [String: Any] {
         let dictionary =  ["uid": uid, "username": username, "email": email, "first_name": firstName, "last_name": lastName, "image_url": imageUrl, "membership_id": membershipId]
@@ -88,7 +85,8 @@ class User: UserProtocol {
             membership.detachListeners()
         }
         self.membership = Membership(documentId: membershipId)
-        self.membership?.fetch(user: self) {
+        self.fetchMembership {
+            self.membershipId = self.membership?.documentId
             self.save { success in
                 guard success else {
                     print("🔴 DATABASE ERROR: Setting user's membership")
@@ -99,11 +97,10 @@ class User: UserProtocol {
                 completion()
             }
         }
-
     }
 
     func fetchMembership(completion: @escaping () -> ()) {
-        if self.membership?.documentId == "" { self.membership?.documentId = self.membershipId }
+        if self.membership?.documentId == "" ||  self.membership?.documentId == nil { self.membership?.documentId = self.membershipId }
         self.membership?.fetch(user: self) {
             completion()
         }
@@ -114,16 +111,19 @@ class User: UserProtocol {
             self.listener = db.collection("users").whereField("uid", isEqualTo: currentUser.uid).limit(to: 1).addSnapshotListener { documentSnapshots, error in
                 guard error == nil else {
                     print("🔴 DATABASE ERROR: Fetching current user \(String(describing: error?.localizedDescription))")
+                    completion()
                     return
                 }
 
                 guard documentSnapshots != nil else {
                     print("🔴 DATABASE ERROR: Fetching current user as document does not exist.")
+                    completion()
                     return
                 }
 
                 guard documentSnapshots!.documents.count == 1 else {
                     print("🔴 DATABASE ERROR: Fetching current user as more than one current user.")
+                    completion()
                     return
                 }
 
@@ -144,6 +144,9 @@ class User: UserProtocol {
                             completion()
                         }
                     }
+                } else {
+                    print("🔴 DATABASE ERROR: Fetching user image - no user image url in database.")
+                    completion()
                 }
 
             }

@@ -11,8 +11,11 @@ import UIKit
 class FlatsViewController: UIViewController {
 
     @IBOutlet weak var flatList: UITableView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var buttonStackView: UIStackView!
 
-    var memberships: Memberships?
+    var memberships: Memberships
+
     var user: User?
 
     deinit {
@@ -26,9 +29,13 @@ class FlatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let currentUser = user {
-            self.memberships?.fetch(user: currentUser) {
-                self.memberships?.fetchFlats {
+        if let user = user {
+            guard let _ = user.membershipId else {
+                setupNoMembershipLayout()
+                return
+            }
+            self.memberships.fetch(user: user) {
+                self.memberships.fetchFlats {
                     self.flatList.reloadData()
                 }
             }
@@ -43,9 +50,7 @@ class FlatsViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        if let memberships = self.memberships {
-            memberships.detachListeners()
-        }
+        memberships.detachListeners()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,29 +63,38 @@ class FlatsViewController: UIViewController {
             break
         }
     }
+
+    private func setupNoMembershipLayout() {
+        self.backgroundImageView.isHidden = false
+        self.flatList.isHidden = true
+        self.buttonStackView.axis = .vertical
+        for constraint in self.view.constraints {
+            if constraint.identifier == "myConstraint" {
+               constraint.constant = 50
+            }
+        }
+        myView.layoutIfNeeded()
+    }
 }
 
 extension FlatsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memberships?.membershipsArray.count ?? 0
+        return memberships.membershipsArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FlatTableViewCell") as! FlatTableViewCell
-        if let membership = memberships?.membershipsArray[indexPath.row] {
-            cell.membership = membership
-            cell.setContent()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.flatTableViewCell) as! FlatTableViewCell
+        let membership = memberships.membershipsArray[indexPath.row]
+        cell.membership = membership
+        cell.setContent()
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let membership = memberships?.membershipsArray[indexPath.row] {
-            if let membershipId = membership.documentId {
-                self.user?.setMembership(membershipId: membershipId) { [weak self] in
-                    self?.navigationController?.popViewController(animated: true)
-                }
+        if let membershipId = memberships.membershipsArray[indexPath.row].documentId {
+            self.user?.setMembership(membershipId: membershipId) { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
             }
         }
     }

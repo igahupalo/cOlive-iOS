@@ -26,8 +26,12 @@ struct Constants {
         static let startToSignUpSegue = "StartToSignUpSeg"
         static let homeToFlatsSegue = "HomeToFlatsSeg"
         static let homeToProfileSegue = "HomeToProfileSeg"
-        static let flatsToAddFlatSegue = "FlatsToAddFlatSeg"
+        static let homeToFinancesSegue = "HomeToFinancesSeg"
         static let homeToCalendarSegue = "HomeToCalendarSeg"
+        static let homeToBoardSegue = "HomeToBoardSeg"
+        static let flatsToAddFlatSegue = "FlatsToAddFlatSeg"
+        static let calendarToAddEventSegue = "CalendarToAddEventSeg"
+
     }
 
     struct StartTexts {
@@ -59,5 +63,19 @@ struct Constants {
 
     struct AddFlatErrorMessages {
         static let emptyFlatName = "Set flat name to create a new flat"
+    }
+
+    struct AddEventErrorMessages {
+        static let emptyEventTitle = "Set title to create a new event"
+    }
+
+    struct CellIdentifiers {
+        static let flatTableViewCell = "FlatTableViewCell"
+        static let featureCollectionViewCell = "FeatureCollectionViewCell"
+        static let eventTableViewCell = "EventTableViewCell"
+    }
+
+    struct ConstraintIdentifiers {
+        struct let flatsButtonStackViewTop
     }
 }

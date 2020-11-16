@@ -39,7 +39,7 @@ class Membership: MembershipProtocol {
         self.isActive = isActive
         self.lastUsed = lastUsed
         self.type = type
-        self.flat = Flat(documentId: flatId)
+        self.flat = Flat(documentId: flatId != "" ? flatId : nil)
     }
 
     convenience init(flatId: String, lastUsed: Date, type: MembershipType) {
@@ -47,7 +47,7 @@ class Membership: MembershipProtocol {
         self.init(flatId: flatId, isActive: isActive, lastUsed: lastUsed, type: type)
     }
 
-    convenience init(documentId: String) {
+    convenience init(documentId: String?) {
         self.init(flatId: "", isActive: true, lastUsed: Date(), type: .normal)
         self.documentId = documentId
     }
@@ -80,7 +80,7 @@ class Membership: MembershipProtocol {
     // MARK: Firebase functions.
 
     func fetchFlat(completion: @escaping () -> ()) {
-        if flat.documentId == "" { flat.documentId = self.flatId }
+        if flat.documentId == nil { flat.documentId = self.flatId }
         self.flat.fetch {
             completion()
         }
@@ -142,6 +142,21 @@ class Membership: MembershipProtocol {
                 self.documentId = ref.documentID
                 print("🟢 DATABASE: Created membership \(String(describing: self.documentId))")
                 completion(true)
+            }
+        }
+    }
+
+    func delete(user: User) {
+        if let documentId = documentId {
+            if let userId = user.documentId {
+                let ref = db.collection("users").document(userId).collection("memberships").document(documentId)
+                ref.delete() { error in
+                    if let error = error {
+                        print("🔴 DATABASE ERROR: deleting flat \(documentId) \(error.localizedDescription)")
+                        return
+                    }
+                    print("🟢 DATABASE: Deleted flat \(String(describing: documentId))")
+                }
             }
         }
     }

@@ -20,11 +20,8 @@ class Flat {
     var ownerId: String
     var isActive: Bool
     var imageUrl: String?
-    var image: UIImage? {
-        didSet {
-            self.imageUrl = nil
-        }
-    }
+    var image: UIImage?
+    var members: Members
 
     var dictionary: [String: Any] {
         let dictionary = ["name": name, "owner_id": ownerId, "is_active": isActive, "image_url": imageUrl] as [String: Any?]
@@ -40,11 +37,18 @@ class Flat {
         self.ownerId = ownerId
         self.isActive = isActive
         self.image = image
+        self.members = Members()
     }
 
-    convenience init(documentId: String) {
+    convenience init(documentId: String?) {
         self.init(name: "", ownerId: "", isActive: true, image: nil)
         self.documentId = documentId
+    }
+
+    func fetchMembers(currentUser: User, completion: @escaping () -> ()) {
+        self.members.fetch(flat: self, currentUser: currentUser) {
+            completion()
+        }
     }
 
     func fetch(completion: @escaping () -> ()) {
@@ -65,18 +69,24 @@ class Flat {
                     self.isActive = data["is_active"] as? Bool ?? true
                     self.imageUrl = data["image_url"] as! String?
 
-                    if let imageUrl = self.imageUrl {
-                        let ref = self.storage.reference(forURL: imageUrl)
-                        self.getImageData(ref: ref) { (data) in
-                            guard data != nil else {
-                                completion()
-                                return
-                            }
-                            let image = UIImage(data: data!)
-                            self.image = image
-                            completion()
-                        }
-                    }
+                    completion()
+
+
+//  TO JEST ZDJECIE
+//                    if let imageUrl = self.imageUrl {
+//                        let ref = self.storage.reference(forURL: imageUrl)
+//                        self.getImageData(ref: ref) { (data) in
+//                            guard data != nil else {
+//                                completion()
+//                                return
+//                            }
+//                            let image = UIImage(data: data!)
+//                            self.image = image
+//
+//                        }
+//                    }
+
+
                 }
             }
         }
@@ -234,11 +244,32 @@ class Flat {
                 guard membershipSuccess else {
                     print("🔴 ERROR: No membership created.")
                     completion(false)
-                    // Delete created flat, that was suppsed to be assigned to the membership.
                     self.delete()
                     return
                 }
-                completion(true)
+
+                // Create member
+                guard let userId = user.documentId else {
+                    print("🔴 ERROR: No membership created.")
+                    completion(false)
+                    membership.delete(user: user)
+                    self.delete()
+                    return
+                }
+
+                let member = Member(userId: userId, isActive: true)
+
+                member.save(flat: self) { (memberSuccess) in
+                    guard memberSuccess else {
+                        print("🔴 ERROR: No member created.")
+                        completion(false)
+                        membership.delete(user: user)
+                        self.delete()
+                        return
+                    }
+
+                    completion(true)
+                }
             }
         }
     }

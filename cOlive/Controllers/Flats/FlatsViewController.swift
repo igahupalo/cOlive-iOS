@@ -13,9 +13,9 @@ class FlatsViewController: UIViewController {
     @IBOutlet weak var flatList: UITableView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var buttonStackView: UIStackView!
+    @IBOutlet weak var headerLabel: UILabel!
 
     var memberships: Memberships
-
     var user: User?
 
     deinit {
@@ -29,27 +29,22 @@ class FlatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let user = user {
-            guard let _ = user.membershipId else {
-                setupNoMembershipLayout()
-                return
-            }
-            self.memberships.fetch(user: user) {
-                self.memberships.fetchFlats {
-                    self.flatList.reloadData()
-                }
-            }
-        }
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if let user = user {
+            self.memberships.fetch(user: user) {
+                self.flatList.reloadData()
+            }
+        }
         self.flatList.reloadData()
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+
         memberships.detachListeners()
     }
 
@@ -62,18 +57,6 @@ class FlatsViewController: UIViewController {
         default:
             break
         }
-    }
-
-    private func setupNoMembershipLayout() {
-        self.backgroundImageView.isHidden = false
-        self.flatList.isHidden = true
-        self.buttonStackView.axis = .vertical
-        for constraint in self.view.constraints {
-            if constraint.identifier == "myConstraint" {
-               constraint.constant = 50
-            }
-        }
-        myView.layoutIfNeeded()
     }
 }
 

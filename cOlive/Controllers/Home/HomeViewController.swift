@@ -16,7 +16,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var userGreetingLabel: UILabel!
     @IBOutlet weak var flatNameLabel: UILabel!
     @IBOutlet weak var featuresCollectionView: UICollectionView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var membersTableView: UITableView!
+
     var user: User?
     var flat: Flat?
 
@@ -34,15 +36,21 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.activityIndicator.isHidden = false
+        membersTableView.tableFooterView = UIView()
         setupFeatures()
 
         self.user?.fetchCurrent {
-            self.flat = self.user?.membership?.flat
-            self.setContent()
-            if self.user == nil {
+            if self.user?.documentId == nil {
                 self.user?.detachListeners()
                 self.sessionManager.logOut()
+                return
+            }
+            self.flat = self.user?.membership?.flat
+            self.flat?.fetchMembers(currentUser: self.user!) {
+                self.setContent()
+                self.membersTableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -58,7 +66,6 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isHidden = true
         self.setContent()
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,4 +127,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         self.performSegue(withIdentifier: featureSegueIdentifiers[indexPath.row], sender: self)
     }
 
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return flat?.members.membersArray.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.memberTableViewCell) as! MemberTableViewCell
+        let member = flat?.members.membersArray[indexPath.row]
+        cell.member = member
+        cell.setContent()
+
+        return cell
+    }
 }

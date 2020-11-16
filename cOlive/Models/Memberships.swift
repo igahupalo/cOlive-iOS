@@ -38,6 +38,8 @@ class Memberships {
                 print("🔴 ERROR: Fetching snapshots: \(error!)")
                 return
             }
+
+            let dispatchGroup = DispatchGroup()
             snapshots.documentChanges.forEach { snapshot in
                 let type = snapshot.type
                 let document = snapshot.document
@@ -45,10 +47,15 @@ class Memberships {
                 let data = document.data()
 
                 if (type == .added) {
+                    dispatchGroup.enter()
                     let membership = Membership(dictionary: document.data())
                     membership.documentId = document.documentID
-                    self.membershipsArray.append(membership)
-                    print("🟢 Added membership \(String(describing: membership.documentId))")
+                    membership.fetchFlat {
+                        self.membershipsArray.append(membership)
+                        print("🟢 Added membership \(String(describing: membership.documentId))")
+                        dispatchGroup.leave()
+                    }
+
                 }
                 if (type == .modified) {
                     if let membershipIndex = self.membershipsArray.firstIndex(where: { $0.documentId == documentId }) {
@@ -65,8 +72,9 @@ class Memberships {
             }
 
             self.membershipsArray.sort { $0.lastUsed > $1.lastUsed }
-
-            completion()
+            dispatchGroup.notify(queue: .main) {
+                completion()
+            }
         }
     }
 

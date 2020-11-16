@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JVFloatLabeledTextField
 
-@IBDesignable class MaterialTextField: JVFloatLabeledTextField {
+class MaterialTextField: JVFloatLabeledTextField {
 
     /// - Constants:
     ///     - padding: space between right edge of the trailing button and the end of the text field.

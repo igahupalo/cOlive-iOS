@@ -41,11 +41,20 @@ class User: UserProtocol {
         self.lastName = lastName
         self.imageUrl = imageUrl
         self.membershipId = membershipId
-        self.membership = Membership(documentId: membershipId ?? "")
+    }
+
+    deinit {
+        print("🟦 user deinit")
+    }
+
+    convenience init(documentId: String) {
+        self.init(uid: "", username: "", email: "", firstName: nil, lastName: nil, imageUrl: nil, membershipId: nil)
+        self.documentId = documentId
     }
 
     convenience init() {
         self.init(uid: "", username: "", email: "", firstName: nil, lastName: nil, imageUrl: nil, membershipId: nil)
+        self.membership = Membership(documentId: membershipId)
     }
 
     convenience init(uid: String, username: String, email: String) {
@@ -116,6 +125,12 @@ class User: UserProtocol {
                 }
 
                 guard documentSnapshots != nil else {
+                    print("🔴 DATABASE ERROR: Fetching current user.")
+                    completion()
+                    return
+                }
+
+                guard documentSnapshots!.documents.count > 0 else {
                     print("🔴 DATABASE ERROR: Fetching current user as document does not exist.")
                     completion()
                     return
@@ -154,7 +169,7 @@ class User: UserProtocol {
     }
 
     func fetch(completion: @escaping () -> ()) {
-        guard documentId != nil else {
+        guard documentId != nil  else {
             print("🔴 ERROR: Fetching user as no user id was given")
             return completion()
         }

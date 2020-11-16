@@ -32,6 +32,11 @@ struct Constants {
         static let flatsToAddFlatSegue = "FlatsToAddFlatSeg"
         static let calendarToAddEventSegue = "CalendarToAddEventSeg"
 
+        // MARK: Constraints.
+        static let flatsStackViewTopConstraint = "flatsStackViewTopCons"
+        static let flatsStackViewBottomConstraint = "flatsStackViewBottomCons"
+        static let flatsStackViewVerticalCenterConstraint = "flatsStackViewVerticalCenterCons"
+
     }
 
     struct StartTexts {
@@ -73,9 +78,6 @@ struct Constants {
         static let flatTableViewCell = "FlatTableViewCell"
         static let featureCollectionViewCell = "FeatureCollectionViewCell"
         static let eventTableViewCell = "EventTableViewCell"
-    }
-
-    struct ConstraintIdentifiers {
-        struct let flatsButtonStackViewTop
+        static let memberTableViewCell = "MemberTableViewCell"
     }
 }

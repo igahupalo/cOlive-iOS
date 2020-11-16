@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JVFloatLabeledTextField
 
-@IBDesignable class MaterialTextView: JVFloatLabeledTextView {
+class MaterialTextView: JVFloatLabeledTextView {
 
     private let padding: CGFloat = 10
     private var hasError = false

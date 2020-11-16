@@ -57,8 +57,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 return false
             }
 
-            // Check if email is not already in use.
-
             // Email is valid.
             emailErrorMessage = ""
             return true
@@ -88,6 +86,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return false
     }
 
+    
     @IBOutlet weak var usernameTextField: MaterialTextField!
     @IBOutlet weak var emailTextField: MaterialTextField!
     @IBOutlet weak var passwordTextField: MaterialTextField!

@@ -12,21 +12,18 @@ import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var userImageButton: UIButton!
+    @IBOutlet weak var userImageView: ProfileImageView!
     @IBOutlet weak var userGreetingLabel: UILabel!
-    @IBOutlet weak var flatNameLabel: UILabel!
-    @IBOutlet weak var featuresCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var membersTableView: UITableView!
-
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var scrollView: OverlayingScrollView!
+    @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
+    
     var user: User?
-    var flat: Flat?
 
+    private var isLoadedFirstTime = false
     private let sessionManager: SessionManager
-    private var featureImages: [UIImage] = []
-    private var featureNames: [String] = []
-    private var featureSegueIdentifiers: [String] = []
-
+    private var containerContent: UIViewController?
 
     required init?(coder: NSCoder) {
         self.sessionManager = SessionManager()
@@ -36,110 +33,137 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.hideHairline()
+//        self.navigationController?.hideNavigationItemBackground()
+        let userImageTap = UITapGestureRecognizer(target: self, action: #selector(userImageTapped))
+        self.userImageView.addGestureRecognizer(userImageTap)
+        self.scrollView.underlyingViewReference = self.userImageView
         self.activityIndicator.isHidden = false
-        membersTableView.tableFooterView = UIView()
-        setupFeatures()
-
+        self.setupContainerShadow()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.isLoadedFirstTime = true
         self.user?.fetchCurrent {
             if self.user?.documentId == nil {
-                self.user?.detachListeners()
                 self.sessionManager.logOut()
                 return
             }
-            self.flat = self.user?.membership?.flat
-            self.flat?.fetchMembers(currentUser: self.user!) {
-                self.setContent()
-                self.membersTableView.reloadData()
-                self.activityIndicator.stopAnimating()
+            self.setupUserInfo()
+            self.setupViewContainer()
+            self.user?.addMembershipListener {
+                self.setupViewContainer()
+            }
+            self.user?.addProfileListener {
+                self.setupUserInfo()
+                (self.containerContent as? DashboardViewController)?.reload()
             }
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.barStyle = .default
         self.navigationController?.navigationBar.isHidden = false
+        self.user?.detachProfileListener()
     }
 
+
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         super.viewWillAppear(true)
-        self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isHidden = true
-        self.setContent()
+        if !self.isLoadedFirstTime {
+            self.user?.addProfileListener {
+                self.setupUserInfo()
+                (self.containerContent as? DashboardViewController)?.reload()
+            }
+        }
+        self.isLoadedFirstTime = false
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case Constants.Storyboard.homeToFlatsSegue:
-            let flatsViewController = segue.destination as! FlatsViewController
-            flatsViewController.user = self.user
         case Constants.Storyboard.homeToProfileSegue:
-            let profileViewController = segue.destination as! ProfileViewController
+            let navigationController = segue.destination as! UINavigationController
+            let profileViewController = navigationController.viewControllers.first as! ProfileViewController
             profileViewController.user = self.user
-        case Constants.Storyboard.homeToCalendarSegue:
-            let calendarViewController = segue.destination as! CalendarViewController
-            calendarViewController.user = self.user
-            calendarViewController.flat = self.flat
+            profileViewController.listenerDetacherDelegate = self
         default:
             break
         }
     }
 
-    func setContent() {
-        if let user = self.user {
-            userGreetingLabel.text = "Hi, \(user.username)!"
-            userImageButton.setImage(user.image, for: .normal)
-            if let flat = self.flat {
-                flatNameLabel.text = flat.name
-            }
+    private func setupViewContainer() {
+        self.user?.membership?.flat.detachListeners()
+        (self.containerContent as? FlatlessDashboardViewController)?.memberships?.detachListeners()
+        self.containerContent?.removeFromParent()
+        self.containerContent?.view.subviews.forEach({ $0.removeFromSuperview() })
+        if self.user?.membershipId != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let dashboardViewController: DashboardViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.dashboardViewController) as! DashboardViewController
+            dashboardViewController.user = self.user
+            dashboardViewController.activityIndicator = self.activityIndicator
+            dashboardViewController.containerViewHeightDelegate = self
+            self.containerContent = dashboardViewController
+            self.addChild(dashboardViewController)
+            self.containerView.addSubview(dashboardViewController.view)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.containerViewHeightConstraint.constant = self.view.frame.height - 120
+            let flatlessDashboardViewController: FlatlessDashboardViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.flatlessDashboardViewController) as! FlatlessDashboardViewController
+            flatlessDashboardViewController.user = self.user
+            flatlessDashboardViewController.activityIndicator = self.activityIndicator
+            flatlessDashboardViewController.view.frame = self.containerView.bounds
+            self.containerContent = flatlessDashboardViewController
+            self.addChild(flatlessDashboardViewController)
+            self.containerView.addSubview(flatlessDashboardViewController.view)
         }
     }
 
-    func setupFeatures() {
-        featureImages = [UIImage(named: "bell.small") ?? UIImage(),
-                         UIImage(named: "coin.small") ?? UIImage(),
-                         UIImage(named: "stickers.small") ?? UIImage()]
-
-        featureNames = ["Board", "Finances", "Calendar"]
-
-        featureSegueIdentifiers = [Constants.Storyboard.homeToBoardSegue,
-                                   Constants.Storyboard.homeToFinancesSegue,
-                                   Constants.Storyboard.homeToCalendarSegue]
-    }
-}
-
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.featureNames.count
+    private func setupUserInfo() {
+        self.userImageView.user = self.user
+        self.userImageView.setContent()
+        self.userGreetingLabel.text = "Hi, \(self.user?.displayName ?? "user")!"
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = featuresCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.featureCollectionViewCell, for: indexPath) as! FeatureCollectionViewCell
+    private func setupContainerShadow() {
 
-        cell.imageView.image = featureImages[indexPath.row]
-        cell.nameLabel.text = featureNames[indexPath.row]
-
-        return cell
+        let shadowLayer = self.containerView.layer
+        shadowLayer.shadowColor = UIColor(red: 0.149, green: 0.251, blue: 0.229, alpha: 0.1).cgColor
+        shadowLayer.shadowOpacity = 1
+        shadowLayer.shadowRadius = 20
+        shadowLayer.shadowOffset = CGSize(width: 0, height: -10)
+        self.containerView.layer.masksToBounds = false
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: featureSegueIdentifiers[indexPath.row], sender: self)
-    }
+    @objc func userImageTapped(sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: Constants.Storyboard.homeToProfileSegue, sender: self)
+      }
+
+    @IBAction func unwindToDashboard( _ seg: UIStoryboardSegue) {}
 
 }
 
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flat?.members.membersArray.count ?? 0
+extension HomeViewController: ContainerViewHeightDelegate {
+    func updateHeight(height: CGFloat) {
+        if height + 120 < self.view.frame.height {
+            self.containerViewHeightConstraint.constant = self.view.frame.height - 120
+        } else {
+            self.containerViewHeightConstraint.constant = height
+
+        }
+    }
+}
+
+extension HomeViewController: ListenerDetacherDelegate {
+    func detachListeners() {
+        self.user?.detachMembershipListener()
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.memberTableViewCell) as! MemberTableViewCell
-        let member = flat?.members.membersArray[indexPath.row]
-        cell.member = member
-        cell.setContent()
-
-        return cell
+    func detachMembershipsListener() {
+        (self.containerContent as? FlatlessDashboardViewController)?.memberships?.detachListeners()
     }
+}
+
+protocol ListenerDetacherDelegate: class {
+    func detachListeners()
+    func detachMembershipsListener()
 }

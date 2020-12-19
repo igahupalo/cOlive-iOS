@@ -18,14 +18,14 @@ class SessionManager {
         return Auth.auth().currentUser != nil
     }
 
-    func signUp(username: String, email: String, password: String, completionBlock: @escaping ((_ error: AuthErrorCode?) -> ())) {
+    func signUp(displayName: String, email: String, password: String, completionBlock: @escaping ((_ error: AuthErrorCode?) -> ())) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error as NSError? {
                 completionBlock(AuthErrorCode(rawValue: error.code))
             } else {
                 if let authResult = Auth.auth().currentUser {
                     let uid = authResult.uid
-                    let user = User(uid: uid, username: username, email: email)
+                    let user = User(uid: uid, displayName: displayName, email: email)
                     user.save { success in
                         guard success else {
                             print("🔴 DATABASE ERROR: Saving new user")
@@ -50,6 +50,23 @@ class SessionManager {
             })
         }
     }
+
+//    func changeEmail(email: String, completion: @escaping ((_ error: AuthErrorCode?) -> ())) {
+//
+//
+//        let credential = EmailAuthProvider.credential(withEmail: email, password: "pass")
+//
+//        if let user = Auth.auth().currentUser {
+//            user.reauthenticate(with: credential) { authResult, error in
+//                if let error = error as NSError? {
+//                    completion(AuthErrorCode(rawValue: error.code))
+//                } else {
+//                    completion(nil)
+//                }
+//            }
+//        }
+//    }
+
 
     func logOut() {
         do {

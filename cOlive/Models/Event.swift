@@ -15,10 +15,11 @@ class Event {
     var listener: ListenerRegistration?
     
     var title: String
-    var description: String
+    var description: String?
     var isAllDay: Bool
     var startDate: Date
     var endDate: Date
+    var date: Date?
     var author: User?
     var authorId: String
     var isActive: Bool
@@ -26,27 +27,34 @@ class Event {
     var dictionary: [String: Any] {
         let startTimeInterval = startDate.timeIntervalSince1970
         let endTimeInterval = endDate.timeIntervalSince1970
-        return ["title": title, "description": description, "is_all_day": isAllDay, "start_date": startTimeInterval, "end_date": endTimeInterval, "author_id": authorId, "is_active": isActive]
+        let dateTimeInterval = Date().timeIntervalSince1970
+
+        let dictionary: [String: Any?] = ["title": title, "description": description, "is_all_day": isAllDay, "start_date": startTimeInterval, "end_date": endTimeInterval, "date": dateTimeInterval, "author_id": authorId, "is_active": isActive]
+        return dictionary.filter { $0.value != nil } .mapValues { $0! }
     }
 
     deinit {
         print("🟦 event deinit")
     }
 
-    init(title: String, description: String, isAllDay: Bool, startDate: Date, endDate: Date, authorId: String, isActive: Bool) {
+    init(title: String, description: String?, isAllDay: Bool, startDate: Date, endDate: Date, date: Date, authorId: String, isActive: Bool) {
         self.title = title
         self.description = description
         self.isAllDay = isAllDay
         self.startDate = startDate
         self.endDate = endDate
+        self.date = date
         self.authorId = authorId
         self.isActive = isActive
+    }
 
-        if isAllDay { self.roundUpDateRange() }
+    convenience init(title: String, description: String, isAllDay: Bool, startDate: Date, endDate: Date, authorId: String, isActive: Bool) {
+        let date = Date()
+        self.init(title: title, description: description, isAllDay: isAllDay, startDate: startDate, endDate: endDate, date: date, authorId: authorId, isActive: isActive)
     }
 
     convenience init(documentId: String) {
-        self.init(title: "", description: "", isAllDay: false, startDate: Date(), endDate: Date(), authorId: "", isActive: true)
+        self.init(title: "", description: nil, isAllDay: false, startDate: Date(), endDate: Date(), date: Date(), authorId: "", isActive: true)
         self.documentId = documentId
     }
 
@@ -58,11 +66,22 @@ class Event {
         let startDate = Date(timeIntervalSince1970: startTimeIntervalDate)
         let endTimeIntervalDate = dictionary["end_date"] as! TimeInterval? ?? TimeInterval()
         let endDate = Date(timeIntervalSince1970: endTimeIntervalDate)
+        let dateTimeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        let date = Date(timeIntervalSince1970: dateTimeIntervalDate)
         let authorId = dictionary["author_id"] as! String? ?? ""
         let isActive = dictionary["is_active"] as! Bool? ?? true
 
-        self.init(title: title, description: description, isAllDay: isAllDay, startDate: startDate, endDate: endDate, authorId: authorId, isActive: isActive)
+        self.init(title: title, description: description, isAllDay: isAllDay, startDate: startDate, endDate: endDate, date: date, authorId: authorId, isActive: isActive)
     }
+
+    func setData(title: String, description: String?, isAllDay: Bool, startDate: Date, endDate: Date) {
+        self.title = title
+        self.description = description
+        self.isAllDay = isAllDay
+        self.startDate = startDate
+        self.endDate = endDate
+    }
+
 
     func setData(dictionary: [String: Any]) {
         self.title = dictionary["title"] as! String? ?? ""
@@ -72,6 +91,8 @@ class Event {
         self.startDate = Date(timeIntervalSince1970: startTimeIntervalDate)
         let endTimeIntervalDate = dictionary["end_date"] as! TimeInterval? ?? TimeInterval()
         self.endDate = Date(timeIntervalSince1970: endTimeIntervalDate)
+        let dateTimeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        self.date = Date(timeIntervalSince1970: dateTimeIntervalDate)
         self.authorId = dictionary["author_id"] as! String? ?? ""
         self.isActive = dictionary["is_active"] as! Bool? ?? true
     }
@@ -104,8 +125,10 @@ class Event {
 
     // MARK: Database functions
 
-    func save(flat: Flat, completion: @escaping (Bool) -> ()) {
-        guard let flatId = flat.documentId else {
+    func save(flatId: String?, completion: @escaping (Bool) -> ()) {
+        if self.isAllDay { self.roundUpDateRange() }
+
+        guard let flatId = flatId else {
             print("🔴 DATABASE ERROR: updating event \(String(describing: documentId))")
             return completion(false)
         }
@@ -120,6 +143,7 @@ class Event {
                 completion(true)
             }
         } else {
+            self.date = Date()
             let ref = db.collection("flats").document(flatId).collection("events").document()
             ref.setData(self.dictionary) { error in
                 if let error = error {

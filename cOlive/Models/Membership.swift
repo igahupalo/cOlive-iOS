@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-class Membership: MembershipProtocol {
+class Membership {
     let db: Firestore = Firestore.firestore()
     var documentId: String?
     var listener: ListenerRegistration?
@@ -52,6 +52,10 @@ class Membership: MembershipProtocol {
         self.documentId = documentId
     }
 
+    convenience init(flatId: String) {
+        self.init(flatId: flatId, isActive: true, lastUsed: Date(), type: .normal)
+    }
+
     convenience init (_ membership: Membership) {
         self.init(flatId: membership.flatId, isActive: membership.isActive, lastUsed: membership.lastUsed, type: membership.type)
         if let documentId = membership.documentId {
@@ -78,7 +82,7 @@ class Membership: MembershipProtocol {
     }
 
     // MARK: Firebase functions.
-
+    
     func fetchFlat(completion: @escaping () -> ()) {
         if flat.documentId == nil { flat.documentId = self.flatId }
         self.flat.fetch {
@@ -86,76 +90,85 @@ class Membership: MembershipProtocol {
         }
     }
 
-    func fetch(user: User, completion: @escaping () -> ()) {
+    func deactivate(user: User, completion: @escaping () -> ()) {
+        self.isActive = false
+        guard let userId = user.documentId else {
+            print("🔴 DATABASE ERROR: Deactivating membership \(String(describing: documentId))")
+            return completion()
+        }
+        let ref = db.collection("users").document(userId).collection("memberships").document(flatId)
+        ref.updateData(["is_active": false]) { error in
+            if let error = error {
+                print("🔴 ERROR: Deactivating membership \(self.flatId) \(error.localizedDescription)")
+                completion()
+            }
+            print("🟢 DATABASE: Deactivated membership \(String(describing: self.flatId))")
+            completion()
+        }
+    }
+
+    func fetch(user: User, completion: @escaping (Bool) -> ()) {
         guard let userId = user.documentId else {
             print("🔴 ERROR: Fetching membership as no user id was given")
-            return completion()
+            return completion(false)
         }
 
         guard let documentId = documentId else {
             print("🔴 ERROR: Fetching membership as no membership id was given")
-            return completion()
+            return completion(false)
         }
-        self.listener = db.collection("users").document(userId).collection("memberships").document(documentId).addSnapshotListener { documentSnapshot, error in
+        
+        db.collection("users").document(userId).collection("memberships").document(documentId).getDocument { documentSnapshot, error in
             guard error == nil else {
                 print("🔴 ERROR: Adding membership snapshot listener")
-                completion()
+                completion(false)
                 return
             }
             if let document = documentSnapshot {
                 if let data = document.data() {
-                    self.flatId = data["flat_id"] as! String? ?? ""
-                    self.isActive = data["is_active"] as! Bool? ?? true
-                    let timeIntervalDate = data["last_used"] as! TimeInterval? ?? TimeInterval()
-                    self.lastUsed = Date(timeIntervalSince1970: timeIntervalDate)
-                    self.type = data["type"] as? String ?? "" == "normal" ? MembershipType.normal : MembershipType.owner
+                    self.setData(dictionary: data)
                     self.fetchFlat {
-                        completion()
+                        completion(true)
                     }
                 }
+            } else {
+                completion(false)
+                print("🔴 ERROR: Fetching membership.")
             }
         }
     }
+
+    
 
     func save(user: User, completion: @escaping (Bool) -> ()) {
         guard let userId = user.documentId else {
             print("🔴 DATABASE ERROR: updating membership \(String(describing: documentId))")
             return completion(false)
         }
-        if let documentId = documentId {
-            let ref = db.collection("users").document(userId).collection("memberships").document(documentId)
-            ref.setData(self.dictionary) { error in
-                if let error = error {
-                    print("🔴 ERROR: updating membership \(documentId) \(error.localizedDescription)")
-                    completion(false)
-                }
-                print("🟢 DATABASE: Updated membership \(String(describing: documentId))")
-                completion(true)
+        let ref = db.collection("users").document(userId).collection("memberships").document(flatId)
+        ref.setData(self.dictionary) { error in
+            if let error = error {
+                print("🔴 ERROR: updating membership \(self.flatId) \(error.localizedDescription)")
+                completion(false)
             }
-        } else {
-            let ref = db.collection("users").document(userId).collection("memberships").document()
-            ref.setData(self.dictionary) { error in
-                if let error = error {
-                    print("🔴 DATABASE ERROR: creating membership \(error.localizedDescription)")
-                    completion(false)
-                }
-                self.documentId = ref.documentID
-                print("🟢 DATABASE: Created membership \(String(describing: self.documentId))")
-                completion(true)
-            }
+            print("🟢 DATABASE: Updated membership \(String(describing: self.flatId))")
+            completion(true)
         }
     }
 
-    func delete(user: User) {
+    func delete(user: User, completion: @escaping () -> ()) {
         if let documentId = documentId {
             if let userId = user.documentId {
                 let ref = db.collection("users").document(userId).collection("memberships").document(documentId)
                 ref.delete() { error in
                     if let error = error {
                         print("🔴 DATABASE ERROR: deleting flat \(documentId) \(error.localizedDescription)")
+                        completion()
                         return
                     }
                     print("🟢 DATABASE: Deleted flat \(String(describing: documentId))")
+                    completion()
+
                 }
             }
         }

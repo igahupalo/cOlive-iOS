@@ -31,11 +31,11 @@ class Memberships {
 
         self.listener = db.collection("users").document(userId).collection("memberships").whereField("is_active", isEqualTo: true).addSnapshotListener { documentSnapshots, error in
             guard error == nil else {
+                print("🔴 ERROR: Fetching snapshots: \(error!)")
                 completion()
                 return
             }
             guard let snapshots = documentSnapshots else {
-                print("🔴 ERROR: Fetching snapshots: \(error!)")
                 return
             }
 
@@ -49,30 +49,30 @@ class Memberships {
                 if (type == .added) {
                     dispatchGroup.enter()
                     let membership = Membership(dictionary: document.data())
-                    membership.documentId = document.documentID
+                    membership.documentId = documentId
                     membership.fetchFlat {
                         self.membershipsArray.append(membership)
-                        print("🟢 Added membership \(String(describing: membership.documentId))")
+                        print("🟢 Added membership \(String(describing: membership.flatId))")
                         dispatchGroup.leave()
                     }
 
                 }
                 if (type == .modified) {
-                    if let membershipIndex = self.membershipsArray.firstIndex(where: { $0.documentId == documentId }) {
+                    if let membershipIndex = self.membershipsArray.firstIndex(where: { $0.flatId == documentId }) {
                         self.membershipsArray[membershipIndex].setData(dictionary: data)
                         print("🟢 Updated membership \(String(describing: documentId))")
                     }
                 }
                 if (type == .removed) {
-                    if let membershipIndex = self.membershipsArray.firstIndex(where: { $0.documentId == documentId }) {
+                    if let membershipIndex = self.membershipsArray.firstIndex(where: { $0.flatId == documentId }) {
                         self.membershipsArray.remove(at: membershipIndex)
                         print("🟢 Deleted membership \(String(describing: documentId))")
                     }
                 }
             }
 
-            self.membershipsArray.sort { $0.lastUsed > $1.lastUsed }
             dispatchGroup.notify(queue: .main) {
+                self.membershipsArray.sort { $0.lastUsed > $1.lastUsed }
                 completion()
             }
         }

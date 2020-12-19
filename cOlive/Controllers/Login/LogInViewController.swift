@@ -12,7 +12,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     private var emailErrorMessage = ""
     private var passwordErrorMessage = ""
-    var parentDelegate: StartViewController?
+    weak var parentDelegate: StartViewController?
 
     private let sessionManager = SessionManager()
 
@@ -53,13 +53,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupElements()
      }
-
-    func setupElements() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-    }
 
     @IBAction func crossButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

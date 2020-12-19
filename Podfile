@@ -16,6 +16,8 @@ target 'cOlive' do
   pod 'IQKeyboardManagerSwift'
   pod 'FSCalendar'
   pod 'KKPinCodeTextField'
+  pod 'PhoneNumberKit', '~> 3.3'
+
 
   target 'cOliveTests' do
     inherit! :search_paths

@@ -12,29 +12,25 @@ import FirebaseFirestore
 import Firebase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
-    private let db: Firestore = Firestore.firestore()
 
-    private var usernameErrorMessage = ""
+    weak var parentDelegate: StartViewController?
+
+    private var displayNameErrorMessage = ""
     private var emailErrorMessage = ""
     private var passwordErrorMessage = ""
     private let sessionManager = SessionManager()
-    var parentDelegate: StartViewController?
 
     private var isValidUsername: Bool {
-        if let username = usernameTextField.text {
+        if let displayName = displayNameTextField.text {
 
-            // Check if username is not empty.
-            if username.isEmpty {
-                usernameErrorMessage = Constants.SignUpErrorMessages.emptyUsername
+            // Check if displayName is not empty.
+            if displayName.isEmpty {
+                displayNameErrorMessage = Constants.SignUpErrorMessages.emptyName
                 return false
             }
 
-            // Check if username is taken.
-            // ...
-
-
             // Username is valid.
-            usernameErrorMessage = ""
+            displayNameErrorMessage = ""
             return true
         }
         return false
@@ -87,25 +83,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    @IBOutlet weak var usernameTextField: MaterialTextField!
+    @IBOutlet weak var displayNameTextField: MaterialTextField!
     @IBOutlet weak var emailTextField: MaterialTextField!
     @IBOutlet weak var passwordTextField: MaterialTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupElements()
      }
-
-    func setupElements() {
-        usernameTextField.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-    }
-
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case usernameTextField:
+        case displayNameTextField:
             let _ = emailTextField.becomeFirstResponder()
         case emailTextField:
             let _ = passwordTextField.becomeFirstResponder()
@@ -117,8 +105,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return false
     }
 
-    @IBAction func usernameEditingDidEnd(_ sender: Any) {
-        if !isValidUsername { usernameTextField.setHelpText(message: usernameErrorMessage) }
+    @IBAction func displayNameEditingDidEnd(_ sender: Any) {
+        if !isValidUsername { displayNameTextField.setHelpText(message: displayNameErrorMessage) }
     }
 
     @IBAction func emailEditingDidEnd(_ sender: Any) {
@@ -140,11 +128,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func sighUpButtonTapped(_ sender: Any) {
-        let username = usernameTextField.text ?? ""
+        let displayName = displayNameTextField.text ?? ""
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
 
-        if !isValidUsername { usernameTextField.setError(message: usernameErrorMessage) }
+        if !isValidUsername { displayNameTextField.setError(message: displayNameErrorMessage) }
         if !isValidEmail { emailTextField.setError(message: emailErrorMessage) }
         if !isValidPassword { passwordTextField.setError(message: passwordErrorMessage) }
 
@@ -152,7 +140,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
-        sessionManager.signUp(username: username, email: email, password: password, completionBlock: { (errorCode) in
+        sessionManager.signUp(displayName: displayName, email: email, password: password, completionBlock: { (errorCode) in
             if errorCode == nil {
                 print("User signed up successfully.")
             } else {

@@ -11,8 +11,11 @@ import UIKit
 class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var userImageView: ProfileImageView!
 
     var event: Event?
+    var author: Member?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +29,12 @@ class EventTableViewCell: UITableViewCell {
     }
 
     func setContent() {
+        let formatter = DateIntervalFormatter()
+        formatter.dateStyle = .medium
+        let startDate = self.event?.startDate ?? Date()
+        let endDate = self.event?.endDate ?? Date()
+        self.eventDateLabel.text = formatter.string(from: startDate, to: endDate)
         eventTitleLabel.text = event?.title
+        userImageView.user = author?.user
     }
-
 }

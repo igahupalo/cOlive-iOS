@@ -19,7 +19,11 @@ class Members {
         self.membersArray = []
     }
 
-    func fetch(flat: Flat, currentUser: User, completion: @escaping () -> ()) {
+    deinit {
+        print("🟦 members deinit")
+    }
+
+    func addListener(flat: Flat, currentUser: User, completion: @escaping () -> ()) {
         guard let flatId = flat.documentId else {
             print("🔴 ERROR: Fetching members")
             return completion()
@@ -34,9 +38,9 @@ class Members {
                 print("🔴 ERROR: Fetching snapshots: \(error!)")
                 return
             }
+
             let dispatchGroup = DispatchGroup()
 
-            
             snapshots.documentChanges.forEach { snapshot in
                 let type = snapshot.type
                 let document = snapshot.document
@@ -44,18 +48,19 @@ class Members {
                 let data = document.data()
 
                 if (type == .added) {
-                    dispatchGroup.enter()
-                    let member = Member(dictionary: document.data())
-                    member.documentId = document.documentID
-                    if member.userId == currentUser.documentId {
+                    if documentId == currentUser.documentId {
+                        let member = CurrentMember(dictionary: document.data())
+                        member.documentId = document.documentID
                         member.user = currentUser
                         self.membersArray.append(member)
                         print("🟢 Added current member \(String(describing: member.documentId))")
-                        dispatchGroup.leave()
                     } else {
+                        dispatchGroup.enter()
+                        let member = Member(dictionary: document.data())
+                        member.documentId = document.documentID
+                        self.membersArray.append(member)
+                        print("🟢 Added member \(String(describing: member.documentId))")
                         member.fetchUser {
-                            self.membersArray.append(member)
-                            print("🟢 Added member \(String(describing: member.documentId))")
                             dispatchGroup.leave()
                         }
                     }
@@ -75,6 +80,60 @@ class Members {
             }
 
             dispatchGroup.notify(queue: .main) {
+                let currentMemberIndex = self.membersArray.firstIndex(where: { $0.userId == currentUser.documentId } )
+                if let currentMemberIndex = currentMemberIndex {
+                    let currentMember = self.membersArray.remove(at: currentMemberIndex)
+                    self.membersArray.insert(currentMember, at: self.membersArray.count)
+                }
+                completion()
+            }
+        }
+    }
+
+    func fetch(flat: Flat, currentUser: User, completion: @escaping () -> ()) {
+        guard let flatId = flat.documentId else {
+            print("🔴 ERROR: Fetching members")
+            return completion()
+        }
+
+        db.collection("flats").document(flatId).collection("members").whereField("is_active", isEqualTo: true).getDocuments { documentSnapshots, error in
+            guard error == nil else {
+                completion()
+                return
+            }
+            guard let snapshots = documentSnapshots else {
+                print("🔴 ERROR: Fetching snapshots: \(error!)")
+                return
+            }
+
+            let dispatchGroup = DispatchGroup()
+            snapshots.documents.forEach { document in
+                let documentId = document.documentID
+                let data = document.data()
+                if documentId == currentUser.documentId {
+                    let member = CurrentMember(dictionary: data)
+                    member.documentId = document.documentID
+                    member.user = currentUser
+                    self.membersArray.append(member)
+                    print("🟢 Added current member \(String(describing: member.documentId))")
+                } else {
+                    dispatchGroup.enter()
+                    let member = Member(dictionary: document.data())
+                    member.documentId = document.documentID
+                    self.membersArray.append(member)
+                    print("🟢 Added member \(String(describing: member.documentId))")
+                    member.fetchUser {
+                        dispatchGroup.leave()
+                    }
+                }
+            }
+
+            dispatchGroup.notify(queue: .main) {
+                let currentMemberIndex = self.membersArray.firstIndex(where: { $0.userId == currentUser.documentId } )
+                if let currentMemberIndex = currentMemberIndex {
+                    let currentMember = self.membersArray.remove(at: currentMemberIndex)
+                    self.membersArray.insert(currentMember, at: self.membersArray.count)
+                }
                 completion()
             }
         }
@@ -85,6 +144,6 @@ class Members {
             listener.remove()
             print("🔷 Listener detached - members")
         }
-//        membersArray.forEach( { $0.detachListeners() } )
+        membersArray.forEach( { $0.detachListeners() } )
     }
 }

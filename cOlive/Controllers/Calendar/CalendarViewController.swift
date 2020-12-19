@@ -14,6 +14,9 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var selectedDateLabel: UILabel!
+    @IBOutlet var upSwipeGestureRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet var downGestureRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
 
     var user: User?
     var flat: Flat?
@@ -30,42 +33,64 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCalendar()
-
+        eventsTableView.tableFooterView = UIView()
+        
         if let flat = flat {
             self.events.fetch(flat: flat) {
-                print(self.events.eventsArray)
+                self.selectedDateEvents = self.events.eventsArray.filter( { $0.isHappeningOn(dayOf: Date()) } )
+                self.eventsTableView.reloadData()
                 self.calendar.reloadData()
             }
         }
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.events.detachListeners()
+
+        if self.isMovingFromParent {
+            self.events.detachListeners()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case Constants.Storyboard.calendarToAddEventSegue:
-            let addEventViewController = segue.destination as! AddEventViewController
+        case Constants.Storyboard.calendarToEditEventSegue:
+            let addEventViewController = segue.destination as! EditEventViewController
             addEventViewController.user = self.user
-            addEventViewController.flat = self.flat
+            addEventViewController.flatId = self.flat?.documentId
+        case Constants.Storyboard.calendarToEventSegue:
+            let eventViewController = segue.destination as! EventViewController
+            eventViewController.user = self.user
+            eventViewController.event = (sender as! EventTableViewCell).event
+            eventViewController.author = (sender as! EventTableViewCell).author
         default:
             break
         }
     }
 
+    @IBAction func upSwipe(_ sender: Any) {
+        self.calendar.setScope(.week, animated: true)
+        self.eventsTableView.isScrollEnabled = true
+    }
 
-    func setupCalendar() {
-        calendar.appearance.titleFont = UIFont(name: "Now", size: 16)
+    @IBAction func downSwipe(_ sender: Any) {
+        self.calendar.setScope(.month, animated: true)
+        if self.selectedDateEvents?.count ?? 0 > 0 { self.eventsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true) }
+        self.eventsTableView.isScrollEnabled = false
+
+    }
+
+    @IBAction func rightSwipe(_ sender: Any) {
+    }
+
+    @IBAction func leftSwipe(_ sender: Any) {
+    }
+
+    private func setupCalendar() {
+        calendar.appearance.titleFont = UIFont(name: "Now", size: 14)
         calendar.appearance.headerTitleFont = UIFont(name: "Now-Bold", size: 16)
-        calendar.appearance.weekdayFont = UIFont(name: "Now", size: 12)
+        calendar.appearance.weekdayFont = UIFont(name: "Now", size: 14)
         calendar.appearance.subtitleFont = UIFont(name: "Now", size: 12)
-
-//        calendar.scope = .week
-
     }
 }
 
@@ -74,6 +99,10 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let events = self.events.eventsArray.filter( { $0.isHappeningOn(dayOf: date) } )
         return events.count
+    }
+
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) { self.calendarHeightConstraint.constant = bounds.height
+        self.view.layoutIfNeeded()
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -85,10 +114,6 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         formatter.dateFormat = "EEEE, d MMM yyyy"
         self.selectedDateLabel.text = formatter.string(from: date)
     }
-//
-//    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-//
-//    }
 }
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
@@ -100,10 +125,15 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.eventTableViewCell) as! EventTableViewCell
         let event = self.selectedDateEvents?[indexPath.row]
         cell.event = event
+        cell.author = self.flat?.members?.membersArray.first(where: { $0.userId == event?.authorId } )
         cell.setContent()
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell else { return }
+        cell.isSelected = false
+        self.performSegue(withIdentifier: Constants.Storyboard.calendarToEventSegue, sender: cell)
+    }
 }
-
-

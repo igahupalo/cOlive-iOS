@@ -14,16 +14,27 @@ class Member {
     var documentId: String?
     var userId: String
     var isActive: Bool
-    var user: User
+    var user: User?
+
+    var listener: ListenerRegistration?
 
     var dictionary: [String: Any] {
         return ["user_id": self.userId, "is_active": self.isActive]
     }
 
+    deinit {
+        print("🟦 member deinit")
+    }
+
     init(userId: String, isActive: Bool) {
         self.userId = userId
         self.isActive = isActive
-        self.user = User(documentId: userId)
+    }
+
+    convenience init(userId: String) {
+        let userId = userId
+        let isActive = true
+        self.init(userId: userId, isActive: isActive)
     }
 
     convenience init(dictionary: [String: Any]) {
@@ -39,9 +50,77 @@ class Member {
     }
 
     func fetchUser(completion: @escaping () -> ()) {
-        if user.documentId == "" { user.documentId = self.userId }
-        self.user.fetch {
+        if self.user == nil { self.user = User() }
+        if self.user?.documentId == nil { user?.documentId = self.userId }
+        self.user?.fetch {
             completion()
+        }
+    }
+
+    func removeFrom(flat: Flat, completion: @escaping () -> ()) {
+        guard let flatId = flat.documentId else {
+            completion()
+            return
+        }
+        self.user?.deactivateMembership(flat: flat) {
+           if self.user?.membershipId == flatId {
+                self.user?.changeMembershipId(membershipId: nil) {
+                    self.user?.membership?.detachListeners()
+                    self.user?.membership = nil
+                    self.user = nil
+                    self.detachListeners()
+                    self.deactivate(flat: flat) {
+                        completion()
+                    }
+                    return
+                }
+           } else {
+               self.user?.membership?.detachListeners()
+               self.user = nil
+               self.detachListeners()
+               self.deactivate(flat: flat) {
+                   completion()
+               }
+           }
+        }
+    }
+
+    func deactivate(flat: Flat, completion: @escaping () -> ()) {
+        self.isActive = false
+        guard let flatId = flat.documentId else {
+            print("🔴 DATABASE ERROR: Deactivating member \(String(describing: documentId))")
+            return completion()
+        }
+        let ref = db.collection("flats").document(flatId).collection("members").document(userId)
+        ref.updateData(["is_active": false]) { error in
+            if let error = error {
+                print("🔴 DATABASE ERROR: Deactivating member \(self.userId) \(error.localizedDescription)")
+                completion()
+            }
+            print("🟢 DATABASE: Deactivated member \(String(describing: self.userId))")
+            completion()
+        }
+    }
+
+
+    func fetch(flat: Flat, completion: @escaping (Bool) -> ()) {
+        guard let flatId = flat.documentId else {
+            print("🔴 ERROR: Fetching member as no flat id was given")
+            return completion(false)
+        }
+        db.collection("flat").document(flatId).collection("members").document(userId).getDocument { documentSnapshot, error in
+            guard error == nil else {
+                print("🔴 ERROR: Adding membership snapshot listener")
+                completion(false)
+                return
+            }
+            if let document = documentSnapshot {
+                if let data = document.data() {
+                    self.setData(dictionary: data)
+                    completion(true)
+                }
+            }
+            completion(false)
         }
     }
 
@@ -50,34 +129,48 @@ class Member {
             print("🔴 DATABASE ERROR: updating member \(String(describing: documentId))")
             return completion(false)
         }
-        if let documentId = documentId {
-            let ref = db.collection("flats").document(flatId).collection("members").document(documentId)
-            ref.setData(self.dictionary) { error in
-                if let error = error {
-                    print("🔴 ERROR: updating member \(documentId) \(error.localizedDescription)")
-                    completion(false)
-                }
-                print("🟢 DATABASE: Updated member \(String(describing: documentId))")
-                completion(true)
+        let ref = db.collection("flats").document(flatId).collection("members").document(userId)
+        ref.setData(self.dictionary) { error in
+            if let error = error {
+                print("🔴 ERROR: updating member \(self.userId) \(error.localizedDescription)")
+                completion(false)
             }
-        } else {
-            let ref = db.collection("flats").document(flatId).collection("members").document()
-            ref.setData(self.dictionary) { error in
-                if let error = error {
-                    print("🔴 DATABASE ERROR: creating member \(error.localizedDescription)")
-                    completion(false)
+            print("🟢 DATABASE: Updated member \(String(describing: self.userId))")
+            completion(true)
+        }
+    }
+
+    func delete(flat: Flat) {
+        if let documentId = documentId {
+            if let flatId = flat.documentId {
+                let ref = db.collection("flats").document(flatId).collection("members").document(documentId)
+                ref.delete() { error in
+                    if let error = error {
+                        print("🔴 DATABASE ERROR: deleting member \(documentId) \(error.localizedDescription)")
+                        return
+                    }
+                    print("🟢 DATABASE: Deleted member \(String(describing: documentId))")
                 }
-                self.documentId = ref.documentID
-                print("🟢 DATABASE: Created member \(String(describing: self.documentId))")
-                completion(true)
             }
         }
     }
 
-//    func detachListeners() {
-//        if let listener = self.listener {
-//            listener.remove()
-//            print("🔷 Listener detached - member")
-//        }
-//    }
+    func detachListeners() {
+        if let listener = self.listener {
+            listener.remove()
+            print("🔷 Listener detached - member")
+        }
+    }
+}
+
+class CurrentMember: Member {
+    weak var currentUser: User?
+    override var user: User? {
+        get {
+            return self.currentUser
+        }
+        set {
+            currentUser = newValue
+        }
+    }
 }

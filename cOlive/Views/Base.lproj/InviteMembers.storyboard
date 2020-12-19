@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXa-U1-bjy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Now-Bold.otf">
+            <string>Now-Bold</string>
+        </array>
+        <array key="Now-Medium.otf">
+            <string>Now-Medium</string>
+        </array>
+        <array key="Now-Regular.otf">
+            <string>Now-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Invite View Controller-->
+        <scene sceneID="xm2-a4-S8T">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="aXa-U1-bjy" customClass="InviteViewController" customModule="cOlive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tc6-R5-HlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite members" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-oD-kUO">
+                                <rect key="frame" x="24" y="116" width="366" height="33"/>
+                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2o-Sg-mKf">
+                                <rect key="frame" x="24" y="152" width="366" height="17"/>
+                                <fontDescription key="fontDescription" name="Now-Medium" family="Now" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRk-3v-sn3">
+                                <rect key="frame" x="140.5" y="212" width="133.5" height="56"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="12345">
+                                        <attributes>
+                                            <color key="NSColor" name="MintDark"/>
+                                            <font key="NSFont" size="48" name="Now-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukP-xh-Z9E">
+                                <rect key="frame" x="24" y="790" width="366" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="QX8-eX-CgV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="d3j-xy-b5k" kind="unwind" animates="NO" unwindAction="unwindToDashboard:" id="NRC-Jm-HOJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waK-aa-HNN">
+                                <rect key="frame" x="24" y="292" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1YT-XZ-hlN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                <state key="normal" title="Share with your flatmates">
+                                    <color key="titleColor" name="MintDark"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="MintDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="aXa-U1-bjy" eventType="touchUpInside" id="f22-VX-boL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk4-Mg-QaG">
+                                <rect key="frame" x="24" y="372" width="366" height="56"/>
+                                <string key="text">Share the invitation code with your flatmates by clicking the button above.
+
+You can always do it later in the apartment’s settings.</string>
+                                <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="12"/>
+                                <color key="textColor" name="Black 30%"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QJP-d6-GR1">
+                                <rect key="frame" x="197" y="230" width="20" height="20"/>
+                                <color key="color" name="MintDark"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yOC-a9-5PS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ukP-xh-Z9E" secondAttribute="trailing" constant="24" id="4Ta-gC-s1N"/>
+                            <constraint firstItem="QRk-3v-sn3" firstAttribute="centerX" secondItem="Tc6-R5-HlJ" secondAttribute="centerX" id="5Vu-QW-vVN"/>
+                            <constraint firstItem="hk4-Mg-QaG" firstAttribute="leading" secondItem="yOC-a9-5PS" secondAttribute="leading" constant="24" id="7AU-2B-NxW"/>
+                            <constraint firstItem="yOC-a9-5PS" firstAttribute="trailing" secondItem="kN3-oD-kUO" secondAttribute="trailing" constant="24" id="7oY-13-Lkz"/>
+                            <constraint firstItem="yOC-a9-5PS" firstAttribute="bottom" secondItem="ukP-xh-Z9E" secondAttribute="bottom" constant="24" id="C9i-nh-MM7"/>
+                            <constraint firstItem="ukP-xh-Z9E" firstAttribute="leading" secondItem="yOC-a9-5PS" secondAttribute="leading" constant="24" id="Fps-Dy-Vhg"/>
+                            <constraint firstItem="yOC-a9-5PS" firstAttribute="trailing" secondItem="hk4-Mg-QaG" secondAttribute="trailing" constant="24" id="LhM-Jr-g4W"/>
+                            <constraint firstItem="kN3-oD-kUO" firstAttribute="top" secondItem="Tc6-R5-HlJ" secondAttribute="top" constant="116" id="Pvl-s7-zNO"/>
+                            <constraint firstItem="QJP-d6-GR1" firstAttribute="centerX" secondItem="QRk-3v-sn3" secondAttribute="centerX" id="RRe-Bh-rKA"/>
+                            <constraint firstItem="waK-aa-HNN" firstAttribute="leading" secondItem="Tc6-R5-HlJ" secondAttribute="leading" constant="24" id="TwR-yy-SpP"/>
+                            <constraint firstItem="QJP-d6-GR1" firstAttribute="centerY" secondItem="QRk-3v-sn3" secondAttribute="centerY" id="Yyf-UI-vJt"/>
+                            <constraint firstItem="yOC-a9-5PS" firstAttribute="trailing" secondItem="waK-aa-HNN" secondAttribute="trailing" constant="24" id="a7Q-TQ-K4u"/>
+                            <constraint firstItem="yOC-a9-5PS" firstAttribute="trailing" secondItem="l2o-Sg-mKf" secondAttribute="trailing" constant="24" id="bRU-T8-K3d"/>
+                            <constraint firstItem="waK-aa-HNN" firstAttribute="top" secondItem="QRk-3v-sn3" secondAttribute="bottom" constant="24" id="bkb-tA-oox"/>
+                            <constraint firstItem="kN3-oD-kUO" firstAttribute="leading" secondItem="yOC-a9-5PS" secondAttribute="leading" constant="24" id="iN0-wP-yzg"/>
+                            <constraint firstItem="hk4-Mg-QaG" firstAttribute="top" secondItem="waK-aa-HNN" secondAttribute="bottom" constant="32" id="lEE-c2-Tsn"/>
+                            <constraint firstItem="QRk-3v-sn3" firstAttribute="top" secondItem="l2o-Sg-mKf" secondAttribute="bottom" constant="43" id="o4T-iw-j5F"/>
+                            <constraint firstItem="l2o-Sg-mKf" firstAttribute="top" secondItem="kN3-oD-kUO" secondAttribute="bottom" constant="3" id="rLA-Bm-Usj"/>
+                            <constraint firstItem="l2o-Sg-mKf" firstAttribute="leading" secondItem="yOC-a9-5PS" secondAttribute="leading" constant="24" id="yCD-0m-oA2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qHk-do-wjS"/>
+                    <connections>
+                        <outlet property="flatNameLabel" destination="l2o-Sg-mKf" id="dQz-Ne-QLd"/>
+                        <outlet property="invitationCodeActivityIndicator" destination="QJP-d6-GR1" id="XbX-CJ-eiE"/>
+                        <outlet property="invitationCodeLabel" destination="QRk-3v-sn3" id="Q42-L2-4HO"/>
+                        <outlet property="shareButton" destination="waK-aa-HNN" id="mNy-HY-Gug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hN-ZF-cVQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="d3j-xy-b5k" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6393" y="931"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="MintDark"/>
+    <resources>
+        <namedColor name="Black 30%">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MintDark">
+            <color red="0.35686274509803922" green="0.69019607843137254" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MintDark">
+            <color red="0.35686274509803922" green="0.69019607843137254" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

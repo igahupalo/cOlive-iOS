@@ -8,27 +8,44 @@
 
 import UIKit
 
+protocol MembersTableViewDelegate: class {
+    func removeButtonTapped(cell: MemberTableViewCell?)
+    func leaveButtonTapped(cell: CurrentMemberTableViewCell?)
+}
+
 class MemberTableViewCell: UITableViewCell {
 
-    var member: Member?
+    weak var member: Member?
+    weak var membersTableViewDelegate: MembersTableViewDelegate?
 
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var userImageView: ProfileImageView!
+    @IBOutlet weak var displayNameLabel: UILabel!
 
-    func setContent() {
-        self.usernameLabel.text = member?.user.username
-        self.userImageView.image = member?.user.image
+    deinit {
+        print("Member cell deinit")
     }
 
+    func setContent() {
+        self.displayNameLabel.text = member?.user?.displayName
+        self.userImageView.user = member?.user
+        self.userImageView.setContent()
+    }
+
+    @IBAction func removeButtonTapped(_ sender: Any) {
+        weak var weakSelf = self
+        membersTableViewDelegate?.removeButtonTapped(cell: weakSelf)
+    }
 }
 
 class CurrentMemberTableViewCell: MemberTableViewCell {
 
     override func setContent() {
         super.setContent()
-        self.usernameLabel.text = "\(String(describing: usernameLabel.text)) (you)"
-        self.removeButton.setTitle("Leave", for: .normal)
+    }
+    
+    @IBAction func leaveButtonTapped(_ sender: Any) {
+        weak var weakSelf = self
+        membersTableViewDelegate?.leaveButtonTapped(cell: weakSelf)
     }
 
 }

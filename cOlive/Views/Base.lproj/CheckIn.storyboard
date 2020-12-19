@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GF3-kA-S4V">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Now-Bold.otf">
+            <string>Now-Bold</string>
+        </array>
+        <array key="Now-Medium.otf">
+            <string>Now-Medium</string>
+        </array>
+        <array key="Now-Regular.otf">
+            <string>Now-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Check In View Controller-->
+        <scene sceneID="5gc-j6-mDn">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="GF3-kA-S4V" customClass="CheckInViewController" customModule="cOlive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="miP-Td-ZdO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXx-XS-xpb">
+                                <rect key="frame" x="24" y="44" width="366" height="33"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Check-in to the flat">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="28" name="Now-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX1-As-f5Z" customClass="KKPinCodeTextField">
+                                <rect key="frame" x="24" y="197.5" width="366" height="71.5"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="MintDark"/>
+                                <fontDescription key="fontDescription" name="Now-Medium" family="Now" pointSize="48"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyDigitBorderColor">
+                                        <color key="value" name="MintDark 30%"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledDigitBorderColor">
+                                        <color key="value" name="MintDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bordersSpacing">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="invitationCodeEditingChanged:" destination="GF3-kA-S4V" eventType="editingChanged" id="ZFL-I6-85b"/>
+                                    <action selector="invitationCodeEditingDidBegin:" destination="GF3-kA-S4V" eventType="editingDidBegin" id="W7M-Xy-6DQ"/>
+                                    <outlet property="delegate" destination="GF3-kA-S4V" id="Hj3-TQ-oyN"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYi-aW-GJ1">
+                                <rect key="frame" x="24" y="790" width="366" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1Qe-Cy-lzv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                <state key="normal" title="Check-in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="checkInButtonTapped:" destination="GF3-kA-S4V" eventType="touchUpInside" id="rA3-ef-ZrG"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're already a member of this flat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfu-5T-5Cy">
+                                <rect key="frame" x="112.5" y="284" width="189.5" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="kGy-7W-tgZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="12"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NE-OR-3Rp">
+                                <rect key="frame" x="24" y="101" width="366" height="52.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Enter the 5-digit code that you’ve received from your flatmates.">
+                                        <attributes>
+                                            <color key="NSColor" name="Black 30%"/>
+                                            <font key="NSFont" size="14" name="Now-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u7S-Lz-t9v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IX1-As-f5Z" firstAttribute="leading" secondItem="u7S-Lz-t9v" secondAttribute="leading" constant="24" id="5AP-Qy-EtN"/>
+                            <constraint firstItem="vXx-XS-xpb" firstAttribute="leading" secondItem="miP-Td-ZdO" secondAttribute="leading" constant="24" id="5Km-je-PaK"/>
+                            <constraint firstItem="6NE-OR-3Rp" firstAttribute="leading" secondItem="u7S-Lz-t9v" secondAttribute="leading" constant="24" id="F4r-ly-lyw"/>
+                            <constraint firstItem="u7S-Lz-t9v" firstAttribute="trailing" secondItem="vXx-XS-xpb" secondAttribute="trailing" constant="24" id="HP4-Ww-HsL"/>
+                            <constraint firstItem="u7S-Lz-t9v" firstAttribute="trailing" secondItem="DYi-aW-GJ1" secondAttribute="trailing" constant="24" id="K7s-CD-Tzq"/>
+                            <constraint firstItem="u7S-Lz-t9v" firstAttribute="trailing" secondItem="6NE-OR-3Rp" secondAttribute="trailing" constant="24" id="V7W-IZ-FJT"/>
+                            <constraint firstItem="IX1-As-f5Z" firstAttribute="top" secondItem="6NE-OR-3Rp" secondAttribute="bottom" constant="44" id="Xch-2u-CTW"/>
+                            <constraint firstItem="DYi-aW-GJ1" firstAttribute="leading" secondItem="u7S-Lz-t9v" secondAttribute="leading" constant="24" id="acF-Po-4Mg"/>
+                            <constraint firstItem="Zfu-5T-5Cy" firstAttribute="centerX" secondItem="miP-Td-ZdO" secondAttribute="centerX" id="edC-NU-BNN"/>
+                            <constraint firstItem="Zfu-5T-5Cy" firstAttribute="top" secondItem="IX1-As-f5Z" secondAttribute="bottom" constant="15" id="f94-eg-ntl"/>
+                            <constraint firstItem="6NE-OR-3Rp" firstAttribute="top" secondItem="vXx-XS-xpb" secondAttribute="bottom" constant="24" id="gJc-VS-wi3"/>
+                            <constraint firstItem="vXx-XS-xpb" firstAttribute="top" secondItem="u7S-Lz-t9v" secondAttribute="top" id="kbJ-eS-XgH"/>
+                            <constraint firstItem="u7S-Lz-t9v" firstAttribute="bottom" secondItem="DYi-aW-GJ1" secondAttribute="bottom" constant="24" id="mID-Yr-oS9"/>
+                            <constraint firstItem="u7S-Lz-t9v" firstAttribute="trailing" secondItem="IX1-As-f5Z" secondAttribute="trailing" constant="24" id="s3O-bB-72F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Os9-VE-6bU"/>
+                    <connections>
+                        <outlet property="invitationCodeErrorLabel" destination="Zfu-5T-5Cy" id="K16-Jn-2TA"/>
+                        <outlet property="invitationCodeTextField" destination="IX1-As-f5Z" id="pZe-dA-B37"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3p-f6-vdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5614" y="829"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="IX1-As-f5Z">
+            <size key="intrinsicContentSize" width="34" height="71.5"/>
+        </designable>
+    </designables>
+    <color key="tintColor" name="MintDark"/>
+    <resources>
+        <namedColor name="Black 30%">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MintDark">
+            <color red="0.35686274509803922" green="0.69019607843137254" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MintDark 30%">
+            <color red="0.35699999332427979" green="0.68999999761581421" blue="0.72500002384185791" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.72200000286102295" green="0.046999998390674591" blue="0.035000000149011612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

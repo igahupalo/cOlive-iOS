@@ -17,20 +17,46 @@ struct Constants {
         static let startViewController = "StartVC"
         static let loginViewController = "LoginVC"
         static let signUpViewController = "SignUpVC"
+        static let dashboardViewController = "DashboardVC"
+        static let flatlessDashboardViewController = "FlatlessDashboardVC"
+
 
         // MARK: Navigation Controllers.
         static let mainNavigationController = "MainNC"
+        static let checkInOptionsNavigationController = "CheckInOptionsNC"
 
         // MARK: Segues.
         static let startToLoginSegue = "StartToLoginSeg"
         static let startToSignUpSegue = "StartToSignUpSeg"
+        static let homeToDashboardSegue = "HomeToDashboardSeg"
+        static let homeToNoFlatSegue = "HomeToNoFlatboardSeg"
         static let homeToFlatsSegue = "HomeToFlatsSeg"
         static let homeToProfileSegue = "HomeToProfileSeg"
-        static let homeToFinancesSegue = "HomeToFinancesSeg"
-        static let homeToCalendarSegue = "HomeToCalendarSeg"
-        static let homeToBoardSegue = "HomeToBoardSeg"
+        static let dashboardToInviteSegue = "DashboardToInviteSeg"
+        static let dashboardToLeaveFlatSegue = "DashboardToLeaveFlatSeg"
+        static let dashboardToRemoveUserSegue = "DashboardToRemoveUserSeg"
+        static let dashboardToFinancesSegue = "DashboardToFinancesSeg"
+        static let dashboardToCalendarSegue = "DashboardToCalendarSeg"
+        static let dashboardToChangeFlatNameSegue = "DashboardToChangeFlatNameSeg"
+        static let flatlessDashboardToCreateFlatSegue = "FlatlessDashboardToCreateFlatSeg"
+        static let flatlessDashboardToCheckInSegue = "FlatlessDashboardToCheckInSeg"
+        static let createFlatToInviteSegue = "CreateFlatToInviteSeg"
+        static let dashboardToBoardSegue = "DashboardToBoardSeg"
         static let flatsToAddFlatSegue = "FlatsToAddFlatSeg"
-        static let calendarToAddEventSegue = "CalendarToAddEventSeg"
+        static let calendarToEditEventSegue = "CalendarToEditEventSeg"
+        static let calendarToEventSegue = "CalendarToEventSeg"
+        static let eventToEditEventSegue = "EventToEditEventSeg"
+        static let boardToEditPostSegue = "BoardToEditPostSeg"
+        static let boardToPostSegue = "BoardToPostSeg"
+        static let postToEditPostSegue = "PostToEditPostSeg"
+        static let profileToChangeNameSegue = "ProfileToChangeNameSeg"
+        static let profileToChangeEmailSegue = "ProfileToChangeEmailSeg"
+        static let profileToChangePasswordSegue = "ProfileToChangePasswordSeg"
+        static let profileToChangePhoneNumberSegue = "ProfileToChangePhoneNumberSeg"
+        static let profileToChangeBirthdaySegue = "ProfileToChangeBirthdaySeg"
+        static let profileToCheckInOptionsSegue = "ProfileToCheckInOptionsSeg"
+        static let profileToCreateFlatSegue = "ProfileToCreateFlatSeg"
+        static let profileToCheckInSegue = "ProfileToCheckInSeg"
 
         // MARK: Constraints.
         static let flatsStackViewTopConstraint = "flatsStackViewTopCons"
@@ -58,7 +84,7 @@ struct Constants {
     }
 
     struct SignUpErrorMessages {
-        static let emptyUsername = "Set your username to create an account"
+        static let emptyName = "Set your name to create an account"
         static let emptyEmail = "Set your email to create an account"
         static let emptyPassword = "Set your password to create an account"
         static let takenEmail = "Account using this email already exists"
@@ -70,14 +96,37 @@ struct Constants {
         static let emptyFlatName = "Set flat name to create a new flat"
     }
 
+    struct CheckInErrorMessages {
+        static let shortCode = "Enter 5-digit code to check-in"
+        static let invalidCode = "Invalid invitation code"
+        static let alreadyMember = "You're already a member of this flat group"
+    }
+
     struct AddEventErrorMessages {
         static let emptyEventTitle = "Set title to create a new event"
+    }
+
+    struct EditPostErrorMessages {
+        static let emptyPostTitle = "Set title to create a new post"
+    }
+
+    struct FormPopoversErrorMessages {
+        static let emptyName = "Set your new name"
+        static let emptyOldPassword = "Give your old password"
+        static let emptyNewPassword = "Give your new password"
+        static let emptyFlatName = "Set new flat name"
+
+
     }
 
     struct CellIdentifiers {
         static let flatTableViewCell = "FlatTableViewCell"
         static let featureCollectionViewCell = "FeatureCollectionViewCell"
         static let eventTableViewCell = "EventTableViewCell"
+        static let postTableViewCell = "PostTableViewCell"
         static let memberTableViewCell = "MemberTableViewCell"
+        static let commentTableViewCell = "CommentTableViewCell"
+        static let currentMemberTableViewCell = "CurrentMemberTableViewCell"
+
     }
 }

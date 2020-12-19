@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42052E68257428EC007C4FFB /* InviteMembers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42052E66257428EC007C4FFB /* InviteMembers.storyboard */; };
 		4206AA2B2556060000F4D0C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4206AA2A2556060000F4D0C0 /* WelcomeViewController.swift */; };
 		4208AB29252F89100033B4D3 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208AB28252F890F0033B4D3 /* MaterialTextField.swift */; };
 		4209FAB0255C9BB1008D98D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209FAAF255C9BB1008D98D3 /* Event.swift */; };
 		4209FAB5255CA0DF008D98D3 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209FAB4255CA0DF008D98D3 /* Events.swift */; };
+		4211B7D825731E8A00A01A3D /* ProfilePersonalization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4211B7D725731E8A00A01A3D /* ProfilePersonalization.storyboard */; };
+		4211B7DE25731EE000A01A3D /* CheckIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4211B7DC25731EE000A01A3D /* CheckIn.storyboard */; };
+		4211B7E3257320D600A01A3D /* CheckInOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4211B7E2257320D600A01A3D /* CheckInOptionsViewController.swift */; };
 		421BB37E2508E2AA00AFA664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37D2508E2AA00AFA664 /* AppDelegate.swift */; };
 		421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */; };
 		421BB3822508E2AA00AFA664 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB3812508E2AA00AFA664 /* LogInViewController.swift */; };
@@ -40,22 +44,52 @@
 		423068A3250F734700624FF4 /* UINavigationController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423068A2250F734700624FF4 /* UINavigationController+NavigationBar.swift */; };
 		423068A52510DE7600624FF4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423068A42510DE7600624FF4 /* StartViewController.swift */; };
 		423068A7251110FA00624FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423068A6251110F900624FF4 /* Assets.xcassets */; };
-		42473071255CABFE00C4132F /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42473070255CABFE00C4132F /* AddEventViewController.swift */; };
+		4230A8A82569784F0070E74A /* ProfileImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4230A8A72569784F0070E74A /* ProfileImageView.xib */; };
+		4230A8AD256979450070E74A /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230A8AC256979450070E74A /* ProfileImageView.swift */; };
+		4230A8B52569AD280070E74A /* UIButton+LetterSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230A8B42569AD280070E74A /* UIButton+LetterSpacing.swift */; };
+		4230E4D125646A4100957943 /* UILabel+LetterSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230E4D025646A4100957943 /* UILabel+LetterSpacing.swift */; };
+		4230E4D725647F1C00957943 /* CreateFlat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4230E4D525647F1C00957943 /* CreateFlat.storyboard */; };
+		4230E4E32564848E00957943 /* UIView+Wiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230E4E22564848E00957943 /* UIView+Wiggle.swift */; };
+		4230E4E825648C4800957943 /* UIImage+Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230E4E725648C4800957943 /* UIImage+Insets.swift */; };
+		4230E4ED2564929500957943 /* InvitationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230E4EC2564929500957943 /* InvitationCode.swift */; };
+		4230E4FE25649AE200957943 /* InvitationCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230E4FD25649AE200957943 /* InvitationCodes.swift */; };
+		42314830256B3597009C3ECF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4231482F256B3597009C3ECF /* Post.swift */; };
+		42314835256B39DE009C3ECF /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314834256B39DE009C3ECF /* Posts.swift */; };
+		4231483B256B3C17009C3ECF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4231483A256B3C17009C3ECF /* BoardViewController.swift */; };
+		42314843256B3C35009C3ECF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314842256B3C35009C3ECF /* PostTableViewCell.swift */; };
+		42314848256B3FBD009C3ECF /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314847256B3FBD009C3ECF /* EditPostViewController.swift */; };
+		4231484D256B4003009C3ECF /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4231484C256B4003009C3ECF /* PostViewController.swift */; };
+		42473071255CABFE00C4132F /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42473070255CABFE00C4132F /* EditEventViewController.swift */; };
+		424F413D25642CE800A9A218 /* RemoveUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F413C25642CE800A9A218 /* RemoveUserViewController.swift */; };
+		424F414225642CFD00A9A218 /* LeaveFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F414125642CFD00A9A218 /* LeaveFlatViewController.swift */; };
+		425F07C8256564DB00586F0E /* CheckInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F07C7256564DB00586F0E /* CheckInError.swift */; };
+		425F4180256AA1410091F621 /* FormPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F417F256AA1410091F621 /* FormPopoverViewController.swift */; };
+		425F4185256B08FB0091F621 /* ChangeBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F4184256B08FB0091F621 /* ChangeBirthdayViewController.swift */; };
+		425F418A256B09160091F621 /* ChangePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F4189256B09160091F621 /* ChangePhoneNumberViewController.swift */; };
+		425F418F256B09250091F621 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F418E256B09250091F621 /* ChangePasswordViewController.swift */; };
+		425F4194256B09380091F621 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F4193256B09380091F621 /* ChangeEmailViewController.swift */; };
 		4262A7572561B57200251F7C /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4262A7562561B57200251F7C /* MemberTableViewCell.swift */; };
+		4268A70E256458DE003B079D /* CreateFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268A70D256458DE003B079D /* CreateFlatViewController.swift */; };
+		4268A71325645CA6003B079D /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268A71225645CA6003B079D /* InviteViewController.swift */; };
 		427C239F2539FA93003516AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C239E2539FA92003516AF /* User.swift */; };
 		427C23DC253CD07B003516AF /* FlatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23DB253CD07B003516AF /* FlatsViewController.swift */; };
 		427C23E1253CD097003516AF /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23E0253CD097003516AF /* AddFlatViewController.swift */; };
 		427C23E6253CD1BE003516AF /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23E5253CD1BE003516AF /* Membership.swift */; };
 		427C23EB253CD3D4003516AF /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23EA253CD3D3003516AF /* Flat.swift */; };
 		427C23F0253CD50D003516AF /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23EF253CD50D003516AF /* Member.swift */; };
-		427C23F8253CF39B003516AF /* FlatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23F7253CF39B003516AF /* FlatTableViewCell.swift */; };
-		4290E7E72551E038000DEBFC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290E7E62551E038000DEBFC /* Protocols.swift */; };
+		427C23F8253CF39B003516AF /* MembershipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C23F7253CF39B003516AF /* MembershipTableViewCell.swift */; };
 		4290E809255431F7000DEBFC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290E808255431F7000DEBFC /* CalendarViewController.swift */; };
+		429A6F88256A97AC00264EA3 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A6F87256A97AC00264EA3 /* ChangeNameViewController.swift */; };
+		429B0863256F10AD0031CD57 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429B0862256F10AC0031CD57 /* TextField.swift */; };
+		429B0868256F12810031CD57 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429B0867256F12810031CD57 /* Comment.swift */; };
+		429B0870256F19CB0031CD57 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429B086F256F19CB0031CD57 /* Comments.swift */; };
+		429B0875256F1F7B0031CD57 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429B0874256F1F7B0031CD57 /* CommentTableViewCell.swift */; };
 		42A90591250B730200D9F2C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A90590250B730100D9F2C4 /* GoogleService-Info.plist */; };
 		42A90593250B824A00D9F2C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90592250B824A00D9F2C4 /* SignUpViewController.swift */; };
 		42A90595250B837200D9F2C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90594250B837200D9F2C4 /* HomeViewController.swift */; };
 		42A90597250BCBDD00D9F2C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A90596250BCBDD00D9F2C4 /* Constants.swift */; };
 		42AD83262530824F00E5EC42 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AD83252530824F00E5EC42 /* ToggleButton.swift */; };
+		42B3C7C02572F7D0005AF02F /* ChangeFlatNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3C7BF2572F7D0005AF02F /* ChangeFlatNameViewController.swift */; };
 		42C2775325561F430059AEF6 /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C2775225561F430059AEF6 /* SlideView.xib */; };
 		42C27760255622470059AEF6 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C2775F255622470059AEF6 /* SlideView.swift */; };
 		42C84F96255F49D2009CE6F3 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C84F94255F49D2009CE6F3 /* Calendar.storyboard */; };
@@ -63,7 +97,7 @@
 		42C84FA1255F4A2F009CE6F3 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C84F9F255F4A2F009CE6F3 /* Board.storyboard */; };
 		42C84FA6255F4A4B009CE6F3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C84FA5255F4A4B009CE6F3 /* Profile.storyboard */; };
 		42C84FAC255F4A78009CE6F3 /* Flat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C84FAA255F4A78009CE6F3 /* Flat.storyboard */; };
-		42C84FDD255F50C3009CE6F3 /* JoinFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C84FDC255F50C3009CE6F3 /* JoinFlatViewController.swift */; };
+		42C84FDD255F50C3009CE6F3 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C84FDC255F50C3009CE6F3 /* CheckInViewController.swift */; };
 		42D06600255D923700118FCB /* MaterialTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D065FF255D923700118FCB /* MaterialTextView.swift */; };
 		42D4A7382530DC2B0081A5E3 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */; };
 		42DABBF225438CF4008A0AC1 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DABBF125438CF4008A0AC1 /* Members.swift */; };
@@ -73,6 +107,10 @@
 		42DC73CA255CAEF800142420 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42DC73C9255CAEF800142420 /* Authentication.storyboard */; };
 		42E5244A255E11B800A32DA1 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E52449255E11B800A32DA1 /* EventTableViewCell.swift */; };
 		42ED41072561939E0008F06D /* UIViewController+UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ED41062561939E0008F06D /* UIViewController+UIActivityIndicatorView.swift */; };
+		42EEDC082568665C00FCF148 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEDC072568665C00FCF148 /* EventViewController.swift */; };
+		42F289452562D93C00EA8F20 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F289442562D93C00EA8F20 /* DashboardViewController.swift */; };
+		42F2894A2562D96800EA8F20 /* FlatlessDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F289492562D96800EA8F20 /* FlatlessDashboardViewController.swift */; };
+		42F53D652563428300C33C43 /* OverlayingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F53D642563428300C33C43 /* OverlayingScrollView.swift */; };
 		42F6670D255C1A92008BC7E4 /* FeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6670C255C1A92008BC7E4 /* FeatureCollectionViewCell.swift */; };
 		61F4128E1EB40CC3A9049C55 /* Pods_cOliveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216DA1EC596B4C9AC81CE53E /* Pods_cOliveTests.framework */; };
 		B70263EE706CB5E54C348562 /* Pods_cOlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC5385542D393D882458352 /* Pods_cOlive.framework */; };
@@ -98,10 +136,14 @@
 
 /* Begin PBXFileReference section */
 		216DA1EC596B4C9AC81CE53E /* Pods_cOliveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cOliveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42052E67257428EC007C4FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InviteMembers.storyboard; sourceTree = "<group>"; };
 		4206AA2A2556060000F4D0C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4208AB28252F890F0033B4D3 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
 		4209FAAF255C9BB1008D98D3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		4209FAB4255CA0DF008D98D3 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		4211B7D725731E8A00A01A3D /* ProfilePersonalization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfilePersonalization.storyboard; sourceTree = SOURCE_ROOT; };
+		4211B7DD25731EE000A01A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckIn.storyboard; sourceTree = "<group>"; };
+		4211B7E2257320D600A01A3D /* CheckInOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInOptionsViewController.swift; sourceTree = "<group>"; };
 		421BB37A2508E2AA00AFA664 /* cOlive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cOlive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		421BB37D2508E2AA00AFA664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,22 +167,52 @@
 		423068A2250F734700624FF4 /* UINavigationController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+NavigationBar.swift"; sourceTree = "<group>"; };
 		423068A42510DE7600624FF4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		423068A6251110F900624FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42473070255CABFE00C4132F /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		4230A8A72569784F0070E74A /* ProfileImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileImageView.xib; sourceTree = "<group>"; };
+		4230A8AC256979450070E74A /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		4230A8B42569AD280070E74A /* UIButton+LetterSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+LetterSpacing.swift"; sourceTree = "<group>"; };
+		4230E4D025646A4100957943 /* UILabel+LetterSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LetterSpacing.swift"; sourceTree = "<group>"; };
+		4230E4D625647F1C00957943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateFlat.storyboard; sourceTree = "<group>"; };
+		4230E4E22564848E00957943 /* UIView+Wiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Wiggle.swift"; sourceTree = "<group>"; };
+		4230E4E725648C4800957943 /* UIImage+Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Insets.swift"; sourceTree = "<group>"; };
+		4230E4EC2564929500957943 /* InvitationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCode.swift; sourceTree = "<group>"; };
+		4230E4FD25649AE200957943 /* InvitationCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCodes.swift; sourceTree = "<group>"; };
+		4231482F256B3597009C3ECF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		42314834256B39DE009C3ECF /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		4231483A256B3C17009C3ECF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		42314842256B3C35009C3ECF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		42314847256B3FBD009C3ECF /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		4231484C256B4003009C3ECF /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		42473070255CABFE00C4132F /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		424F413C25642CE800A9A218 /* RemoveUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUserViewController.swift; sourceTree = "<group>"; };
+		424F414125642CFD00A9A218 /* LeaveFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveFlatViewController.swift; sourceTree = "<group>"; };
+		425F07C7256564DB00586F0E /* CheckInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInError.swift; sourceTree = "<group>"; };
+		425F417F256AA1410091F621 /* FormPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPopoverViewController.swift; sourceTree = "<group>"; };
+		425F4184256B08FB0091F621 /* ChangeBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBirthdayViewController.swift; sourceTree = "<group>"; };
+		425F4189256B09160091F621 /* ChangePhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberViewController.swift; sourceTree = "<group>"; };
+		425F418E256B09250091F621 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		425F4193256B09380091F621 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		4262A7562561B57200251F7C /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		4268A70D256458DE003B079D /* CreateFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlatViewController.swift; sourceTree = "<group>"; };
+		4268A71225645CA6003B079D /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		427C239E2539FA92003516AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		427C23DB253CD07B003516AF /* FlatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatsViewController.swift; sourceTree = "<group>"; };
 		427C23E0253CD097003516AF /* AddFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
 		427C23E5253CD1BE003516AF /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		427C23EA253CD3D3003516AF /* Flat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
 		427C23EF253CD50D003516AF /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		427C23F7253CF39B003516AF /* FlatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatTableViewCell.swift; sourceTree = "<group>"; };
-		4290E7E62551E038000DEBFC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		427C23F7253CF39B003516AF /* MembershipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipTableViewCell.swift; sourceTree = "<group>"; };
 		4290E808255431F7000DEBFC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		429A6F87256A97AC00264EA3 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		429B0862256F10AC0031CD57 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		429B0867256F12810031CD57 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		429B086F256F19CB0031CD57 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		429B0874256F1F7B0031CD57 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		42A90590250B730100D9F2C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42A90592250B824A00D9F2C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		42A90594250B837200D9F2C4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42A90596250BCBDD00D9F2C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42AD83252530824F00E5EC42 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		42B3C7BF2572F7D0005AF02F /* ChangeFlatNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFlatNameViewController.swift; sourceTree = "<group>"; };
 		42C2775225561F430059AEF6 /* SlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
 		42C2775F255622470059AEF6 /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		42C84F95255F49D2009CE6F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
@@ -148,7 +220,7 @@
 		42C84FA0255F4A2F009CE6F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Board.storyboard; sourceTree = "<group>"; };
 		42C84FA5255F4A4B009CE6F3 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		42C84FAB255F4A78009CE6F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Flat.storyboard; sourceTree = "<group>"; };
-		42C84FDC255F50C3009CE6F3 /* JoinFlatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinFlatViewController.swift; sourceTree = "<group>"; };
+		42C84FDC255F50C3009CE6F3 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		42D065FF255D923700118FCB /* MaterialTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextView.swift; sourceTree = "<group>"; };
 		42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		42DABBF125438CF4008A0AC1 /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
@@ -158,6 +230,10 @@
 		42DC73C9255CAEF800142420 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		42E52449255E11B800A32DA1 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		42ED41062561939E0008F06D /* UIViewController+UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIActivityIndicatorView.swift"; sourceTree = "<group>"; };
+		42EEDC072568665C00FCF148 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		42F289442562D93C00EA8F20 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		42F289492562D96800EA8F20 /* FlatlessDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatlessDashboardViewController.swift; sourceTree = "<group>"; };
+		42F53D642563428300C33C43 /* OverlayingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayingScrollView.swift; sourceTree = "<group>"; };
 		42F6670C255C1A92008BC7E4 /* FeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CF42D06C6232D0B9B2BE937 /* Pods-cOliveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOliveTests.debug.xcconfig"; path = "Target Support Files/Pods-cOliveTests/Pods-cOliveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69D9D8C9E7F94E2E72261A5C /* Pods-cOlive-cOliveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cOlive-cOliveUITests.release.xcconfig"; path = "Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +360,27 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		4230E4DE2564807200957943 /* CreateFlat */ = {
+			isa = PBXGroup;
+			children = (
+				4268A70D256458DE003B079D /* CreateFlatViewController.swift */,
+				4268A71225645CA6003B079D /* InviteViewController.swift */,
+			);
+			path = CreateFlat;
+			sourceTree = "<group>";
+		};
+		42314839256B3BED009C3ECF /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				4231483A256B3C17009C3ECF /* BoardViewController.swift */,
+				429B0874256F1F7B0031CD57 /* CommentTableViewCell.swift */,
+				42314842256B3C35009C3ECF /* PostTableViewCell.swift */,
+				42314847256B3FBD009C3ECF /* EditPostViewController.swift */,
+				4231484C256B4003009C3ECF /* PostViewController.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
 		427C23CE253CCFEA003516AF /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +412,11 @@
 				42A90594250B837200D9F2C4 /* HomeViewController.swift */,
 				42F6670C255C1A92008BC7E4 /* FeatureCollectionViewCell.swift */,
 				4262A7562561B57200251F7C /* MemberTableViewCell.swift */,
+				42F289442562D93C00EA8F20 /* DashboardViewController.swift */,
+				42F289492562D96800EA8F20 /* FlatlessDashboardViewController.swift */,
+				424F413C25642CE800A9A218 /* RemoveUserViewController.swift */,
+				424F414125642CFD00A9A218 /* LeaveFlatViewController.swift */,
+				42B3C7BF2572F7D0005AF02F /* ChangeFlatNameViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -324,8 +426,6 @@
 			children = (
 				427C23DB253CD07B003516AF /* FlatsViewController.swift */,
 				427C23E0253CD097003516AF /* AddFlatViewController.swift */,
-				427C23F7253CF39B003516AF /* FlatTableViewCell.swift */,
-				42C84FDC255F50C3009CE6F3 /* JoinFlatViewController.swift */,
 			);
 			path = Flats;
 			sourceTree = "<group>";
@@ -334,10 +434,24 @@
 			isa = PBXGroup;
 			children = (
 				4290E808255431F7000DEBFC /* CalendarViewController.swift */,
-				42473070255CABFE00C4132F /* AddEventViewController.swift */,
+				42473070255CABFE00C4132F /* EditEventViewController.swift */,
 				42E52449255E11B800A32DA1 /* EventTableViewCell.swift */,
+				42EEDC072568665C00FCF148 /* EventViewController.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		429A6F8C256A97B200264EA3 /* Popovers */ = {
+			isa = PBXGroup;
+			children = (
+				429A6F87256A97AC00264EA3 /* ChangeNameViewController.swift */,
+				425F4184256B08FB0091F621 /* ChangeBirthdayViewController.swift */,
+				425F4189256B09160091F621 /* ChangePhoneNumberViewController.swift */,
+				425F418E256B09250091F621 /* ChangePasswordViewController.swift */,
+				425F4193256B09380091F621 /* ChangeEmailViewController.swift */,
+				4211B7E2257320D600A01A3D /* CheckInOptionsViewController.swift */,
+			);
+			path = Popovers;
 			sourceTree = "<group>";
 		};
 		42A90568250A89A100D9F2C4 /* Fonts */ = {
@@ -359,6 +473,10 @@
 				423068A2250F734700624FF4 /* UINavigationController+NavigationBar.swift */,
 				42D4A7372530DC2B0081A5E3 /* UIView+IBInspectable.swift */,
 				42ED41062561939E0008F06D /* UIViewController+UIActivityIndicatorView.swift */,
+				4230E4D025646A4100957943 /* UILabel+LetterSpacing.swift */,
+				4230E4E22564848E00957943 /* UIView+Wiggle.swift */,
+				4230E4E725648C4800957943 /* UIImage+Insets.swift */,
+				4230A8B42569AD280070E74A /* UIButton+LetterSpacing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -366,10 +484,12 @@
 		42A9058C250ACA5A00D9F2C4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				429B0862256F10AC0031CD57 /* TextField.swift */,
 				4208AB28252F890F0033B4D3 /* MaterialTextField.swift */,
 				42D065FF255D923700118FCB /* MaterialTextView.swift */,
 				42AD83252530824F00E5EC42 /* ToggleButton.swift */,
 				42DABC0F2545F1D1008A0AC1 /* ImagePicker.swift */,
+				42F53D642563428300C33C43 /* OverlayingScrollView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -377,16 +497,22 @@
 		42A9058D250ACF0B00D9F2C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42052E66257428EC007C4FFB /* InviteMembers.storyboard */,
+				4211B7DC25731EE000A01A3D /* CheckIn.storyboard */,
 				421BB3882508E2B400AFA664 /* LaunchScreen.storyboard */,
 				42C84FE1255F50EC009CE6F3 /* Authentication */,
 				421BB3832508E2AA00AFA664 /* Main.storyboard */,
+				4230E4D525647F1C00957943 /* CreateFlat.storyboard */,
 				42C84FAA255F4A78009CE6F3 /* Flat.storyboard */,
 				42C84FA5255F4A4B009CE6F3 /* Profile.storyboard */,
+				4211B7D725731E8A00A01A3D /* ProfilePersonalization.storyboard */,
 				42C84F9F255F4A2F009CE6F3 /* Board.storyboard */,
 				42C84F9A255F4A13009CE6F3 /* Finances.storyboard */,
 				42C84F94255F49D2009CE6F3 /* Calendar.storyboard */,
 				42A90587250A97E500D9F2C4 /* Extensions */,
 				42A9058C250ACA5A00D9F2C4 /* Components */,
+				4230A8A72569784F0070E74A /* ProfileImageView.xib */,
+				4230A8AC256979450070E74A /* ProfileImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,9 +526,15 @@
 				427C23EA253CD3D3003516AF /* Flat.swift */,
 				427C23EF253CD50D003516AF /* Member.swift */,
 				42DABBF125438CF4008A0AC1 /* Members.swift */,
-				4290E7E62551E038000DEBFC /* Protocols.swift */,
 				4209FAAF255C9BB1008D98D3 /* Event.swift */,
 				4209FAB4255CA0DF008D98D3 /* Events.swift */,
+				4230E4EC2564929500957943 /* InvitationCode.swift */,
+				4230E4FD25649AE200957943 /* InvitationCodes.swift */,
+				425F07C7256564DB00586F0E /* CheckInError.swift */,
+				4231482F256B3597009C3ECF /* Post.swift */,
+				42314834256B39DE009C3ECF /* Posts.swift */,
+				429B0867256F12810031CD57 /* Comment.swift */,
+				429B086F256F19CB0031CD57 /* Comments.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +542,7 @@
 		42A9058F250ACFF800D9F2C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				425F417F256AA1410091F621 /* FormPopoverViewController.swift */,
 				4206AA29255605EC00F4D0C0 /* Welcome */,
 				42DABC062545D8EA008A0AC1 /* Profile */,
 				427C23CE253CCFEA003516AF /* Start */,
@@ -417,7 +550,10 @@
 				427C23D0253CD009003516AF /* SignUp */,
 				427C23D1253CD017003516AF /* Home */,
 				427C23D2253CD023003516AF /* Flats */,
+				42314839256B3BED009C3ECF /* Board */,
 				4290E80D25543200000DEBFC /* Calendar */,
+				4230E4DE2564807200957943 /* CreateFlat */,
+				42C84FDC255F50C3009CE6F3 /* CheckInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -434,6 +570,8 @@
 		42DABC062545D8EA008A0AC1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				429A6F8C256A97B200264EA3 /* Popovers */,
+				427C23F7253CF39B003516AF /* MembershipTableViewCell.swift */,
 				42DABC0A2545D903008A0AC1 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -558,15 +696,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4230A8A82569784F0070E74A /* ProfileImageView.xib in Resources */,
 				42DC73CA255CAEF800142420 /* Authentication.storyboard in Resources */,
 				42C84FA1255F4A2F009CE6F3 /* Board.storyboard in Resources */,
 				422DC74F25379E070056EBD8 /* Now-Regular.otf in Resources */,
 				42A90591250B730200D9F2C4 /* GoogleService-Info.plist in Resources */,
+				42052E68257428EC007C4FFB /* InviteMembers.storyboard in Resources */,
 				42C84F9B255F4A13009CE6F3 /* Finances.storyboard in Resources */,
+				4230E4D725647F1C00957943 /* CreateFlat.storyboard in Resources */,
 				422DC74625379E070056EBD8 /* Now-Bold.otf in Resources */,
 				422DC73D25379E070056EBD8 /* Now-Medium.otf in Resources */,
+				4211B7D825731E8A00A01A3D /* ProfilePersonalization.storyboard in Resources */,
 				423068A7251110FA00624FF4 /* Assets.xcassets in Resources */,
 				422DC75525379E070056EBD8 /* Now-Black.otf in Resources */,
+				4211B7DE25731EE000A01A3D /* CheckIn.storyboard in Resources */,
 				422DC75225379E070056EBD8 /* Now-Thin.otf in Resources */,
 				42C84FA6255F4A4B009CE6F3 /* Profile.storyboard in Resources */,
 				422DC74025379E070056EBD8 /* Now-Light.otf in Resources */,
@@ -715,41 +858,74 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D06600255D923700118FCB /* MaterialTextView.swift in Sources */,
-				42473071255CABFE00C4132F /* AddEventViewController.swift in Sources */,
+				4268A70E256458DE003B079D /* CreateFlatViewController.swift in Sources */,
+				42473071255CABFE00C4132F /* EditEventViewController.swift in Sources */,
 				42DABBF225438CF4008A0AC1 /* Members.swift in Sources */,
 				42A90593250B824A00D9F2C4 /* SignUpViewController.swift in Sources */,
 				42D4A7382530DC2B0081A5E3 /* UIView+IBInspectable.swift in Sources */,
 				42AD83262530824F00E5EC42 /* ToggleButton.swift in Sources */,
+				42314843256B3C35009C3ECF /* PostTableViewCell.swift in Sources */,
 				42DABC0B2545D903008A0AC1 /* ProfileViewController.swift in Sources */,
+				4231484D256B4003009C3ECF /* PostViewController.swift in Sources */,
+				42F53D652563428300C33C43 /* OverlayingScrollView.swift in Sources */,
+				42EEDC082568665C00FCF148 /* EventViewController.swift in Sources */,
 				4290E809255431F7000DEBFC /* CalendarViewController.swift in Sources */,
+				424F414225642CFD00A9A218 /* LeaveFlatViewController.swift in Sources */,
 				421BB3822508E2AA00AFA664 /* LogInViewController.swift in Sources */,
+				4230E4D125646A4100957943 /* UILabel+LetterSpacing.swift in Sources */,
 				427C23E1253CD097003516AF /* AddFlatViewController.swift in Sources */,
+				429A6F88256A97AC00264EA3 /* ChangeNameViewController.swift in Sources */,
 				421BB37E2508E2AA00AFA664 /* AppDelegate.swift in Sources */,
 				4208AB29252F89100033B4D3 /* MaterialTextField.swift in Sources */,
 				42ED41072561939E0008F06D /* UIViewController+UIActivityIndicatorView.swift in Sources */,
+				425F4185256B08FB0091F621 /* ChangeBirthdayViewController.swift in Sources */,
+				425F4194256B09380091F621 /* ChangeEmailViewController.swift in Sources */,
 				42E5244A255E11B800A32DA1 /* EventTableViewCell.swift in Sources */,
+				425F07C8256564DB00586F0E /* CheckInError.swift in Sources */,
+				42F2894A2562D96800EA8F20 /* FlatlessDashboardViewController.swift in Sources */,
 				427C239F2539FA93003516AF /* User.swift in Sources */,
+				4230A8AD256979450070E74A /* ProfileImageView.swift in Sources */,
 				427C23E6253CD1BE003516AF /* Membership.swift in Sources */,
 				427C23EB253CD3D4003516AF /* Flat.swift in Sources */,
 				42C27760255622470059AEF6 /* SlideView.swift in Sources */,
+				4268A71325645CA6003B079D /* InviteViewController.swift in Sources */,
 				423068A3250F734700624FF4 /* UINavigationController+NavigationBar.swift in Sources */,
+				4211B7E3257320D600A01A3D /* CheckInOptionsViewController.swift in Sources */,
 				423068A52510DE7600624FF4 /* StartViewController.swift in Sources */,
+				42B3C7C02572F7D0005AF02F /* ChangeFlatNameViewController.swift in Sources */,
 				42DABC102545F1D1008A0AC1 /* ImagePicker.swift in Sources */,
-				4290E7E72551E038000DEBFC /* Protocols.swift in Sources */,
+				425F418A256B09160091F621 /* ChangePhoneNumberViewController.swift in Sources */,
 				421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */,
+				42314848256B3FBD009C3ECF /* EditPostViewController.swift in Sources */,
 				4209FAB0255C9BB1008D98D3 /* Event.swift in Sources */,
+				429B0875256F1F7B0031CD57 /* CommentTableViewCell.swift in Sources */,
 				42A90595250B837200D9F2C4 /* HomeViewController.swift in Sources */,
 				4206AA2B2556060000F4D0C0 /* WelcomeViewController.swift in Sources */,
 				42F6670D255C1A92008BC7E4 /* FeatureCollectionViewCell.swift in Sources */,
+				424F413D25642CE800A9A218 /* RemoveUserViewController.swift in Sources */,
 				42DABBF725438D02008A0AC1 /* Memberships.swift in Sources */,
-				42C84FDD255F50C3009CE6F3 /* JoinFlatViewController.swift in Sources */,
+				4230A8B52569AD280070E74A /* UIButton+LetterSpacing.swift in Sources */,
+				425F418F256B09250091F621 /* ChangePasswordViewController.swift in Sources */,
+				42C84FDD255F50C3009CE6F3 /* CheckInViewController.swift in Sources */,
+				425F4180256AA1410091F621 /* FormPopoverViewController.swift in Sources */,
 				4209FAB5255CA0DF008D98D3 /* Events.swift in Sources */,
-				427C23F8253CF39B003516AF /* FlatTableViewCell.swift in Sources */,
+				4230E4ED2564929500957943 /* InvitationCode.swift in Sources */,
+				427C23F8253CF39B003516AF /* MembershipTableViewCell.swift in Sources */,
 				4262A7572561B57200251F7C /* MemberTableViewCell.swift in Sources */,
+				4230E4E32564848E00957943 /* UIView+Wiggle.swift in Sources */,
+				42F289452562D93C00EA8F20 /* DashboardViewController.swift in Sources */,
+				42314830256B3597009C3ECF /* Post.swift in Sources */,
 				427C23DC253CD07B003516AF /* FlatsViewController.swift in Sources */,
 				421C04CD25348EC400A18701 /* SessionManager.swift in Sources */,
+				4230E4FE25649AE200957943 /* InvitationCodes.swift in Sources */,
+				4230E4E825648C4800957943 /* UIImage+Insets.swift in Sources */,
+				429B0870256F19CB0031CD57 /* Comments.swift in Sources */,
+				429B0863256F10AD0031CD57 /* TextField.swift in Sources */,
+				429B0868256F12810031CD57 /* Comment.swift in Sources */,
 				427C23F0253CD50D003516AF /* Member.swift in Sources */,
 				42A90597250BCBDD00D9F2C4 /* Constants.swift in Sources */,
+				42314835256B39DE009C3ECF /* Posts.swift in Sources */,
+				4231483B256B3C17009C3ECF /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +961,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		42052E66257428EC007C4FFB /* InviteMembers.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42052E67257428EC007C4FFB /* Base */,
+			);
+			name = InviteMembers.storyboard;
+			sourceTree = "<group>";
+		};
+		4211B7DC25731EE000A01A3D /* CheckIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4211B7DD25731EE000A01A3D /* Base */,
+			);
+			name = CheckIn.storyboard;
+			sourceTree = "<group>";
+		};
 		421BB3832508E2AA00AFA664 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -799,6 +991,14 @@
 				421BB3892508E2B400AFA664 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4230E4D525647F1C00957943 /* CreateFlat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4230E4D625647F1C00957943 /* Base */,
+			);
+			name = CreateFlat.storyboard;
 			sourceTree = "<group>";
 		};
 		42C84F94255F49D2009CE6F3 /* Calendar.storyboard */ = {

@@ -21,6 +21,8 @@ open class ImagePicker: NSObject {
 
     public init(presentationController: UIViewController, delegate: ImagePickerDelegate) {
         self.pickerController = UIImagePickerController()
+        self.pickerController.navigationBar.isTranslucent = false
+        self.pickerController.navigationBar.backgroundColor = .white
 
         super.init()
 
@@ -46,6 +48,7 @@ open class ImagePicker: NSObject {
     public func present(from sourceView: UIView) {
 
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.view.tintColor = UIColor(named: "MintDark")
 
         if let action = self.action(for: .camera, title: "Take photo") {
             alertController.addAction(action)

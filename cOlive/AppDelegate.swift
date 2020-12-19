@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Firebase configuration.
         FirebaseApp.configure()
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = false
+        Firestore.firestore().settings = settings
 
         // Keyboard manager configuration.
         IQKeyboardManager.shared.enable = true
@@ -26,9 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 10.0
 
         // Navigation bar customization.
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().backgroundColor = .clear
+        let font = UIFont(name: "Now-Medium", size: 14.0) ?? UIFont()
+        let largeFont = UIFont(name: "Now-Bold", size: 28.0) ?? UIFont()
+        let style = UINavigationBarAppearance()
+        style.buttonAppearance.normal.titleTextAttributes = [.font: font]
+        style.doneButtonAppearance.normal.titleTextAttributes = [.font: font]
+        style.titleTextAttributes = [.font: font]
+        style.largeTitleTextAttributes = [.font: largeFont]
+        style.setBackIndicatorImage(UIImage(named: "back"), transitionMaskImage: UIImage(named: "back"))
+        style.backgroundColor = .systemBackground
+        UINavigationBar.appearance().standardAppearance = style
+        UINavigationBar.appearance().layoutMargins.left = 24
+        UINavigationBar.appearance().layoutMargins.right = 24
         UINavigationBar.appearance().isTranslucent = true
 
         return true

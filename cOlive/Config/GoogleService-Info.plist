@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>562271055900-6d9d0el2it3p4p1e4i7ksi7uauvd2133.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.562271055900-6d9d0el2it3p4p1e4i7ksi7uauvd2133</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>562271055900-6blnq9l5vnceql6rt3gaihd5pccsa626.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDS0-b0wQZOvx_9hciYDESRHXz-Z5dBqEg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>562271055900</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>one.igahupalo.cOlive</string>
+	<key>PROJECT_ID</key>
+	<string>colive-b5efa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>colive-b5efa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:562271055900:ios:a0960220e0153eae6e6fd9</string>
+	<key>DATABASE_URL</key>
+	<string>https://colive-b5efa.firebaseio.com</string>
+</dict>
+</plist>

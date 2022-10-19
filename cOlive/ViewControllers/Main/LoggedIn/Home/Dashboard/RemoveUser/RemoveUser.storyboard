@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GA3-s1-Vvs">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Now-Bold.otf">
+            <string>Now-Bold</string>
+        </array>
+        <array key="Now-Regular.otf">
+            <string>Now-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Remove User View Controller-->
+        <scene sceneID="U7U-jU-gOB">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="GA3-s1-Vvs" customClass="RemoveUserViewController" customModule="cOlive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WZv-S1-SD6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svO-zF-hBa">
+                                <rect key="frame" x="24" y="251" width="342" height="342"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XcL-JO-UM9">
+                                        <rect key="frame" x="24" y="36" width="294" height="282"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove User?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-WS-ncd">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="29"/>
+                                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to remove User from your flat group?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax2-VS-2An">
+                                                <rect key="frame" x="0.0" y="45" width="294" height="34.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orr-fR-gbj">
+                                                <rect key="frame" x="0.0" y="95.333333333333314" width="294" height="58.666666666666657"/>
+                                                <string key="text">User will still be able to check-in in the apartment. His posts and events will stay visible. His balance with all the other members is going to be marked as settled up.</string>
+                                                <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="12"/>
+                                                <color key="textColor" name="black-opaque"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-DI-cq5">
+                                                <rect key="frame" x="0.0" y="170" width="294" height="48"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="udn-ba-xky"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                                <state key="normal" title="Remove">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" name="Black"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="removeButtonTapped:" destination="GA3-s1-Vvs" eventType="touchUpInside" id="UAI-9H-YKO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwO-Vz-oGG">
+                                                <rect key="frame" x="0.0" y="234" width="294" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="eBe-sT-8Aw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" name="Black"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="Black"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="GA3-s1-Vvs" eventType="touchUpInside" id="K2V-BY-v3a"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XcL-JO-UM9" firstAttribute="centerX" secondItem="svO-zF-hBa" secondAttribute="centerX" id="EnO-4V-UJt"/>
+                                    <constraint firstAttribute="trailing" secondItem="XcL-JO-UM9" secondAttribute="trailing" constant="24" id="Kmq-Yt-Vmb"/>
+                                    <constraint firstAttribute="bottom" secondItem="XcL-JO-UM9" secondAttribute="bottom" constant="24" id="fVG-96-M4D"/>
+                                    <constraint firstItem="XcL-JO-UM9" firstAttribute="top" secondItem="svO-zF-hBa" secondAttribute="top" constant="36" id="hel-vV-5n8"/>
+                                    <constraint firstItem="XcL-JO-UM9" firstAttribute="leading" secondItem="svO-zF-hBa" secondAttribute="leading" constant="24" id="mav-hl-mE4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="djZ-qj-4th"/>
+                        <color key="backgroundColor" name="Black 30%"/>
+                        <constraints>
+                            <constraint firstItem="svO-zF-hBa" firstAttribute="centerY" secondItem="WZv-S1-SD6" secondAttribute="centerY" id="88H-CJ-TjZ"/>
+                            <constraint firstItem="djZ-qj-4th" firstAttribute="trailing" secondItem="svO-zF-hBa" secondAttribute="trailing" constant="24" id="iXg-me-jA1"/>
+                            <constraint firstItem="svO-zF-hBa" firstAttribute="leading" secondItem="djZ-qj-4th" secondAttribute="leading" constant="24" id="qIz-m6-D6Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="Ax2-VS-2An" id="dBA-Az-5s4"/>
+                        <outlet property="textLabel" destination="orr-fR-gbj" id="QdB-I2-EQ2"/>
+                        <outlet property="titleLabel" destination="ASG-WS-ncd" id="ExP-AN-rx0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dip-Zo-nSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8223.3644859813085" y="-358.31533477321818"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black 30%">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black-opaque">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

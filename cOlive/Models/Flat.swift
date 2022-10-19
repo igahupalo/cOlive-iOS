@@ -45,7 +45,7 @@ class Flat {
 
     func fetchMembers(currentUser: User, completion: @escaping () -> ()) {
         if self.members == nil { self.members = Members() }
-        self.members!.fetch(flat: self, currentUser: currentUser) {
+        self.members!.addListener(flat: self, currentUser: currentUser) {
             completion()
         }
     }

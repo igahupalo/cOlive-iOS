@@ -22,7 +22,7 @@ class Member {
         return ["user_id": self.userId, "is_active": self.isActive]
     }
 
-    deinit {
+    deinit { 
         print("🟦 member deinit")
     }
 

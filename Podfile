@@ -6,7 +6,6 @@ target 'cOlive' do
   use_frameworks!
 
   # Pods for cOlive
-  pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'

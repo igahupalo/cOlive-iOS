@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Nw-Wh-Rkj">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Now-Medium.otf">
+            <string>Now-Medium</string>
+        </array>
+        <array key="Now-Regular.otf">
+            <string>Now-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Event View Controller-->
+        <scene sceneID="ulR-Vm-Xlg">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="2Nw-Wh-Rkj" customClass="EventViewController" customModule="cOlive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uTA-Ca-b4l">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="6fV-gm-n7v">
+                                <rect key="frame" x="24" y="71.000000000000014" width="342" height="196.33333333333337"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fRA-CG-MkR">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbd-k1-ed6" customClass="ProfileImageView" customModule="cOlive" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="TUU-OQ-Qkn"/>
+                                                    <constraint firstAttribute="height" constant="40" id="V5I-xP-Qtr"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eNf-Yo-xQp">
+                                                <rect key="frame" x="54" y="0.0" width="288" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geG-k1-mPC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="Now-Medium" family="Now" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zit-R4-kde">
+                                                        <rect key="frame" x="0.0" y="25.333333333333332" width="288" height="14.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iWi-vb-s86">
+                                        <rect key="frame" x="0.0" y="78" width="342" height="63"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9gN-ca-iPC">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="33.666666666666664"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Event title">
+                                                        <attributes>
+                                                            <font key="NSFont" size="28" name="Now-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1m-u0-TMP">
+                                                <rect key="frame" x="0.0" y="45.666666666666657" width="342" height="17.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="14"/>
+                                                <color key="textColor" name="black-opaque"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-j9-3Eg">
+                                        <rect key="frame" x="0.0" y="179" width="342" height="17.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="14"/>
+                                        <color key="textColor" name="Black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ibb-vJ-WPW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6fV-gm-n7v" firstAttribute="top" secondItem="Ibb-vJ-WPW" secondAttribute="top" constant="24" id="4xm-h5-Cn9"/>
+                            <constraint firstItem="Ibb-vJ-WPW" firstAttribute="trailing" secondItem="6fV-gm-n7v" secondAttribute="trailing" constant="24" id="BDi-Ma-06A"/>
+                            <constraint firstItem="6fV-gm-n7v" firstAttribute="leading" secondItem="Ibb-vJ-WPW" secondAttribute="leading" constant="24" id="W8C-qQ-pJT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="umL-eh-ldl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="2IM-P3-fh4"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="edit" id="SIf-Z2-xms">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="2Nw-Wh-Rkj" id="c6e-bF-93K"/>
+                                <segue destination="Efe-hn-nSE" kind="show" identifier="EventToEditEventSeg" id="VRM-I7-US5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorImageView" destination="dbd-k1-ed6" id="mfJ-CO-zNW"/>
+                        <outlet property="authorNameLabel" destination="geG-k1-mPC" id="6L2-Zp-FJA"/>
+                        <outlet property="createdDateLabel" destination="zit-R4-kde" id="iiB-d6-oDA"/>
+                        <outlet property="dateLabel" destination="G1m-u0-TMP" id="mJf-wI-rcn"/>
+                        <outlet property="descriptionLabel" destination="PRv-j9-3Eg" id="AjH-gW-FDY"/>
+                        <outlet property="editBarButtonItem" destination="SIf-Z2-xms" id="dkI-WA-BZe"/>
+                        <outlet property="titleLabel" destination="9gN-ca-iPC" id="QNa-T3-Tha"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLM-Ca-dmJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6281" y="1254"/>
+        </scene>
+        <!--EditEvent-->
+        <scene sceneID="cBe-SN-bNI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditEvent" id="Efe-hn-nSE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jeS-Um-Q1u"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8S-Od-0Hn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7420" y="590"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edit" width="24" height="24"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black-opaque">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

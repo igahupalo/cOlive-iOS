@@ -51,23 +51,6 @@ class SessionManager {
         }
     }
 
-//    func changeEmail(email: String, completion: @escaping ((_ error: AuthErrorCode?) -> ())) {
-//
-//
-//        let credential = EmailAuthProvider.credential(withEmail: email, password: "pass")
-//
-//        if let user = Auth.auth().currentUser {
-//            user.reauthenticate(with: credential) { authResult, error in
-//                if let error = error as NSError? {
-//                    completion(AuthErrorCode(rawValue: error.code))
-//                } else {
-//                    completion(nil)
-//                }
-//            }
-//        }
-//    }
-
-
     func logOut() {
         do {
             try Auth.auth().signOut()

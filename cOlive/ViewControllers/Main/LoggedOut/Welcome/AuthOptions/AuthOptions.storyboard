@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Now-Bold.otf">
+            <string>Now-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Auth Options View Controller-->
+        <scene sceneID="yrn-W7-gzT">
+            <objects>
+                <viewController storyboardIdentifier="StartVC" modalPresentationStyle="fullScreen" id="47e-KR-S4p" customClass="AuthOptionsViewController" customModule="cOlive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="nqG-Ye-mIv">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="QA8-yM-jSG">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="qkf-A8-L92">
+                                <rect key="frame" x="125" y="763" width="180" height="101"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-Dk-dJd">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="wY2-21-4zc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="zwE-XH-T9Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                        <state key="normal" title="Create account">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="9M4-x8-vdO" kind="presentation" identifier="StartToSignUpSeg" id="Aqy-HH-0bx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYG-0q-WWB">
+                                        <rect key="frame" x="0.0" y="72" width="180" height="29"/>
+                                        <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="14"/>
+                                        <state key="normal" title="Log in">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="rfF-pM-fL8" kind="presentation" identifier="StartToLoginSeg" id="qN2-53-EfJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGb-vN-uAL">
+                                <rect key="frame" x="0.0" y="143" width="430" height="540"/>
+                                <connections>
+                                    <outlet property="delegate" destination="47e-KR-S4p" id="CGS-Ml-eNN"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Xh-hC-zFy">
+                                <rect key="frame" x="157.33333333333334" y="707" width="115.66666666666666" height="26"/>
+                                <color key="pageIndicatorTintColor" name="MintFaded"/>
+                                <color key="currentPageIndicatorTintColor" name="pink"/>
+                            </pageControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo.small" translatesAutoresizingMaskIntoConstraints="NO" id="CvK-fC-KZf">
+                                <rect key="frame" x="20.000000000000004" y="79" width="47.333333333333343" height="24"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7uJ-PL-4lu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XGb-vN-uAL" firstAttribute="top" secondItem="CvK-fC-KZf" secondAttribute="bottom" constant="40" id="1Ui-e5-xrc"/>
+                            <constraint firstItem="9Xh-hC-zFy" firstAttribute="top" secondItem="XGb-vN-uAL" secondAttribute="bottom" constant="24" id="2l5-eL-fgI"/>
+                            <constraint firstItem="QA8-yM-jSG" firstAttribute="top" secondItem="nqG-Ye-mIv" secondAttribute="top" id="4NA-0a-C6B"/>
+                            <constraint firstItem="7uJ-PL-4lu" firstAttribute="bottom" secondItem="qkf-A8-L92" secondAttribute="bottom" constant="34" id="6EK-ia-3Rp"/>
+                            <constraint firstItem="7uJ-PL-4lu" firstAttribute="trailing" secondItem="QA8-yM-jSG" secondAttribute="trailing" id="7wh-Qi-nH0"/>
+                            <constraint firstItem="XGb-vN-uAL" firstAttribute="trailing" secondItem="nqG-Ye-mIv" secondAttribute="trailing" id="C0T-9e-FmZ"/>
+                            <constraint firstItem="qkf-A8-L92" firstAttribute="top" secondItem="9Xh-hC-zFy" secondAttribute="bottom" constant="30" id="FLs-wC-m2s"/>
+                            <constraint firstItem="XGb-vN-uAL" firstAttribute="leading" secondItem="nqG-Ye-mIv" secondAttribute="leading" id="ILL-nS-6WE"/>
+                            <constraint firstItem="qkf-A8-L92" firstAttribute="centerX" secondItem="nqG-Ye-mIv" secondAttribute="centerX" id="Vzi-HS-EFf"/>
+                            <constraint firstItem="QA8-yM-jSG" firstAttribute="leading" secondItem="7uJ-PL-4lu" secondAttribute="leading" id="mhi-ZV-TWV"/>
+                            <constraint firstItem="9Xh-hC-zFy" firstAttribute="centerX" secondItem="nqG-Ye-mIv" secondAttribute="centerX" id="n0r-Pn-oeT"/>
+                            <constraint firstAttribute="bottom" secondItem="QA8-yM-jSG" secondAttribute="bottom" id="vXk-20-N7W"/>
+                            <constraint firstItem="CvK-fC-KZf" firstAttribute="leading" secondItem="7uJ-PL-4lu" secondAttribute="leading" constant="20" id="vdT-k4-5Zq"/>
+                            <constraint firstItem="CvK-fC-KZf" firstAttribute="top" secondItem="7uJ-PL-4lu" secondAttribute="top" constant="20" id="wfw-tP-4HV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="rRC-iX-eqq"/>
+                    <connections>
+                        <outlet property="pageControl" destination="9Xh-hC-zFy" id="bcz-JL-Kqm"/>
+                        <outlet property="slideScrollView" destination="XGb-vN-uAL" id="kwz-ld-ezf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtm-H8-qyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="-54.422788605697157"/>
+        </scene>
+        <!--SignUpVC-->
+        <scene sceneID="dPx-0v-4rx">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SignUpVC" storyboardName="SignUp" referencedIdentifier="SignUpVC" id="9M4-x8-vdO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUw-7R-MCl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595.3846153846152" y="732.93838862559244"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="ZAM-mS-KBU">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LoginVC" storyboardName="LogIn" referencedIdentifier="LoginVC" id="rfF-pM-fL8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFA-aV-ZRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535.1999999999998" y="-54.422788605697157"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="mint-dark"/>
+    <resources>
+        <image name="background-gradient" width="414" height="896"/>
+        <image name="logo.small" width="47.333332061767578" height="24"/>
+        <namedColor name="MintFaded">
+            <color red="0.21176470588235294" green="0.55294117647058827" blue="0.46666666666666667" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint-dark">
+            <color red="0.34901960784313724" green="0.65098039215686276" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pink">
+            <color red="0.90196078431372551" green="0.66666666666666663" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i9P-Eh-J4z">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Finances-->
+        <scene sceneID="lVa-W9-keT">
+            <objects>
+                <viewController id="i9P-Eh-J4z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Xz-xj-4uv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="pFk-v0-N8R">
+                                <rect key="frame" x="131.33333333333337" y="334.66666666666669" width="130.66666666666663" height="183.00000000000006"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cactus" translatesAutoresizingMaskIntoConstraints="NO" id="3Bc-ds-81c">
+                                        <rect key="frame" x="18.333333333333314" y="0.0" width="94" height="119.33333333333333"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxT-Cp-FnG">
+                                        <rect key="frame" x="0.0" y="163.33333333333331" width="130.66666666666666" height="19.666666666666657"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Nothing here yet">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="16" name="Now-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SqO-Z0-Kfh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pFk-v0-N8R" firstAttribute="centerX" secondItem="1Xz-xj-4uv" secondAttribute="centerX" id="VMc-Os-cCj"/>
+                            <constraint firstItem="pFk-v0-N8R" firstAttribute="centerY" secondItem="1Xz-xj-4uv" secondAttribute="centerY" id="vVy-KS-wbP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Finances" id="nxS-0H-vyL">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="pTu-YS-xMI"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMm-kf-Ukj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5392.8000000000002" y="784.85757121439292"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cactus" width="94" height="119.33333587646484"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

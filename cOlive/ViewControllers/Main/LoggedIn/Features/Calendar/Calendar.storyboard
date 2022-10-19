@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iiq-EE-EhH">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Now-Bold.otf">
+            <string>Now-Bold</string>
+        </array>
+        <array key="Now-Regular.otf">
+            <string>Now-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="DPz-0j-jMe">
+            <objects>
+                <viewController id="iiq-EE-EhH" customClass="CalendarViewController" customModule="cOlive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ceF-kE-jNp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-NZ-zBy" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="59" width="393" height="320"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="VJ4-kL-OM5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" name="dark-mint"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" name="Black"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                        <color key="value" name="Black"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                                        <color key="value" name="dark-mint"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                        <color key="value" name="green-dark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iiq-EE-EhH" id="4mm-Qd-VMx"/>
+                                    <outlet property="delegate" destination="iiq-EE-EhH" id="MnE-Qf-M0Q"/>
+                                </connections>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CdJ-wX-cHf">
+                                <rect key="frame" x="0.0" y="439.66666666666674" width="393" height="412.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" name="MintAccent"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="EventTableViewCell" id="deA-iG-0es" customClass="EventTableViewCell" customModule="cOlive" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="deA-iG-0es" id="pf9-0u-T3f">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-QV-3cJ">
+                                                    <rect key="frame" x="76" y="19" width="293" height="42"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 May - 9 May" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3T-CC-aSm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="293" height="12.333333333333334"/>
+                                                            <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="10"/>
+                                                            <color key="textColor" name="black-opaque"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event's title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjz-zJ-rXN">
+                                                            <rect key="frame" x="0.0" y="22.333333333333336" width="293" height="19.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="Now-Regular" family="Now" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIM-3h-DnT" customClass="ProfileImageView" customModule="cOlive" customModuleProvider="target">
+                                                    <rect key="frame" x="24" y="20" width="40" height="40"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="FpI-dH-SMU"/>
+                                                        <constraint firstAttribute="width" constant="40" id="tVQ-Zr-ptn"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JIM-3h-DnT" firstAttribute="centerY" secondItem="pf9-0u-T3f" secondAttribute="centerY" id="6j5-g9-oPa"/>
+                                                <constraint firstItem="JIM-3h-DnT" firstAttribute="leading" secondItem="pf9-0u-T3f" secondAttribute="leading" constant="24" id="Hnk-m9-Do5"/>
+                                                <constraint firstAttribute="trailing" secondItem="a5B-QV-3cJ" secondAttribute="trailing" constant="24" id="KDy-st-lFo"/>
+                                                <constraint firstItem="a5B-QV-3cJ" firstAttribute="leading" secondItem="JIM-3h-DnT" secondAttribute="trailing" constant="12" id="mPr-a7-Nfk"/>
+                                                <constraint firstItem="a5B-QV-3cJ" firstAttribute="centerY" secondItem="pf9-0u-T3f" secondAttribute="centerY" id="sFV-HC-6mV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventDateLabel" destination="W3T-CC-aSm" id="0BC-3q-73V"/>
+                                            <outlet property="eventTitleLabel" destination="bjz-zJ-rXN" id="ujq-ds-bpG"/>
+                                            <outlet property="userImageView" destination="JIM-3h-DnT" id="4Jv-2d-98e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iiq-EE-EhH" id="hSi-Ie-e3d"/>
+                                    <outlet property="delegate" destination="iiq-EE-EhH" id="trH-dA-909"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0b-lc-nVA">
+                                <rect key="frame" x="0.0" y="384" width="393" height="55.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, 8 May 2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJD-nn-x1R">
+                                        <rect key="frame" x="24" y="24" width="345" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Now-Bold" family="Now" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="MJD-nn-x1R" secondAttribute="bottom" constant="10" id="Ajy-Ob-PT3"/>
+                                    <constraint firstItem="MJD-nn-x1R" firstAttribute="leading" secondItem="i0b-lc-nVA" secondAttribute="leading" constant="24" id="Wmn-MA-gvo"/>
+                                    <constraint firstAttribute="trailing" secondItem="MJD-nn-x1R" secondAttribute="trailing" constant="24" id="eYZ-P9-56E"/>
+                                    <constraint firstItem="MJD-nn-x1R" firstAttribute="top" secondItem="i0b-lc-nVA" secondAttribute="top" constant="24" id="fke-9z-Bsg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Ss-Nh-wbo"/>
+                        <color key="backgroundColor" name="mint-background"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4Ss-Nh-wbo" firstAttribute="trailing" secondItem="Aga-NZ-zBy" secondAttribute="trailing" id="IRH-3i-sGG"/>
+                            <constraint firstAttribute="bottom" secondItem="CdJ-wX-cHf" secondAttribute="bottom" id="Mg8-eA-sIo"/>
+                            <constraint firstItem="i0b-lc-nVA" firstAttribute="top" secondItem="Aga-NZ-zBy" secondAttribute="bottom" constant="5" id="Oob-FQ-YzT"/>
+                            <constraint firstAttribute="trailing" secondItem="CdJ-wX-cHf" secondAttribute="trailing" id="Pmz-n0-dsd"/>
+                            <constraint firstItem="i0b-lc-nVA" firstAttribute="leading" secondItem="4Ss-Nh-wbo" secondAttribute="leading" id="RSj-zv-zEn"/>
+                            <constraint firstItem="Aga-NZ-zBy" firstAttribute="top" secondItem="4Ss-Nh-wbo" secondAttribute="top" id="bFt-qL-Tai"/>
+                            <constraint firstItem="4Ss-Nh-wbo" firstAttribute="trailing" secondItem="i0b-lc-nVA" secondAttribute="trailing" id="h5l-xA-ErE"/>
+                            <constraint firstItem="CdJ-wX-cHf" firstAttribute="leading" secondItem="ceF-kE-jNp" secondAttribute="leading" id="ldz-gv-wjW"/>
+                            <constraint firstItem="Aga-NZ-zBy" firstAttribute="leading" secondItem="4Ss-Nh-wbo" secondAttribute="leading" id="pQC-fi-lL7"/>
+                            <constraint firstItem="CdJ-wX-cHf" firstAttribute="top" secondItem="i0b-lc-nVA" secondAttribute="bottom" id="x3z-CW-Tqs"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wKl-7G-0S4" appends="YES" id="FDO-A5-LDJ"/>
+                            <outletCollection property="gestureRecognizers" destination="per-DH-e9W" appends="YES" id="uoI-cT-Xdj"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="MJg-2G-bzv">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="J7L-fM-phY">
+                            <connections>
+                                <segue destination="Efe-hn-nSE" kind="show" identifier="CalendarToEditEventSeg" id="ZrV-2S-wmz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendar" destination="Aga-NZ-zBy" id="Ja3-Eq-ORl"/>
+                        <outlet property="calendarHeightConstraint" destination="VJ4-kL-OM5" id="XjY-G0-59A"/>
+                        <outlet property="downGestureRecognizer" destination="per-DH-e9W" id="vQE-jl-HlH"/>
+                        <outlet property="eventsTableView" destination="CdJ-wX-cHf" id="mGK-b7-M5h"/>
+                        <outlet property="selectedDateLabel" destination="MJD-nn-x1R" id="uro-hp-zuU"/>
+                        <outlet property="topCardView" destination="i0b-lc-nVA" id="smc-XQ-leM"/>
+                        <outlet property="upSwipeGestureRecognizer" destination="wKl-7G-0S4" id="PeK-iJ-etV"/>
+                        <segue destination="qSi-ed-TtB" kind="show" identifier="CalendarToEventSeg" id="Qo8-cS-rYo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZM-hy-QVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="h6b-Rw-XQm" userLabel="Swipe Right"/>
+                <swipeGestureRecognizer direction="up" id="wKl-7G-0S4" userLabel="Swipe Up">
+                    <connections>
+                        <action selector="upSwipe:" destination="iiq-EE-EhH" id="yjm-Lg-B8Q"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="per-DH-e9W" userLabel="Swipe Down">
+                    <connections>
+                        <action selector="downSwipe:" destination="iiq-EE-EhH" id="H0w-RA-I7B"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="j5d-SM-8jC" userLabel="Swipe Left"/>
+            </objects>
+            <point key="canvasLocation" x="5165.6488549618316" y="778.87323943661977"/>
+        </scene>
+        <!--EditEvent-->
+        <scene sceneID="cBe-SN-bNI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditEvent" id="Efe-hn-nSE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jeS-Um-Q1u"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8S-Od-0Hn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7420" y="590"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="PGy-DG-xJp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" id="qSi-ed-TtB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oDu-BN-d3g"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3q-YT-ZgR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6281" y="1254"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MintAccent">
+            <color red="0.72156862745098038" green="0.8666666666666667" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black-opaque">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dark-mint">
+            <color red="0.34901960784313724" green="0.65098039215686276" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green-dark">
+            <color red="0.11764705882352941" green="0.28235294117647058" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint-background">
+            <color red="0.50980392156862742" green="0.73333333333333328" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

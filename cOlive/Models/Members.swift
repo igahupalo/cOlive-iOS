@@ -29,7 +29,7 @@ class Members {
             return completion()
         }
 
-        self.listener = db.collection("flats").document(flatId).collection("members").whereField("is_active", isEqualTo: true).addSnapshotListener { documentSnapshots, error in
+        self.listener = db.collection("flats").document(flatId).collection("members").addSnapshotListener { documentSnapshots, error in
             guard error == nil else {
                 completion()
                 return

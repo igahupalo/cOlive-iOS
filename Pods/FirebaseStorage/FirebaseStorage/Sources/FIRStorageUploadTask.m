@@ -178,8 +178,9 @@
 
     [strongSelf->_uploadFetcher
         beginFetchWithCompletionHandler:^(NSData *_Nullable data, NSError *_Nullable error) {
-          if (weakSelf.fetcherCompletion != nil) {
-            weakSelf.fetcherCompletion(data, error);
+          FIRStorageUploadTask *strongSelf = weakSelf;
+          if (strongSelf.fetcherCompletion) {
+            strongSelf.fetcherCompletion(data, error);
           }
         }];
   }];
@@ -211,7 +212,7 @@
         userInfo[NSUnderlyingErrorKey] = fileReachabilityError;
       }
 
-      *outError = [NSError errorWithDomain:FIRStorageErrorDomain
+      *outError = [NSError errorWithDomain:FIRStorageErrorDomainInternal
                                       code:FIRStorageErrorCodeUnknown
                                   userInfo:userInfo];
     }

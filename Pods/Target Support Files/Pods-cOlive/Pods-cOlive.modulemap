@@ -1,6 +1,0 @@
-framework module Pods_cOlive {
-  umbrella header "Pods-cOlive-umbrella.h"
-
-  export *
-  module * { export * }
-}

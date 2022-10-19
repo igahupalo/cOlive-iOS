@@ -1,6 +1,0 @@
-framework module Pods_cOlive_cOliveUITests {
-  umbrella header "Pods-cOlive-cOliveUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

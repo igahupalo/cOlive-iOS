@@ -1,5 +1,5 @@
 
-![Logo](/header@2x.png)
+![Logo](/media/header.png)
 
 # cOlive
 
@@ -18,13 +18,16 @@ The application was created with usage of UIKit and Firebase Realtime Database.
 - [x] Menaging profile settings
 - [x] Browsing group's virtual board, creating new notices or adding comments to exisitng ones
 - [x] Accessing group's shared calendar and menaging presented events
+
 ## UI examples
 
-[tba]
+![app_start](/media/app_start.mp4)
+
 ## Sample account
 
-- email: [tba]
-- password: [tba]
+- email: ritigat213@corylan.com
+- password: 123456
+
 ## Used third-party libraries
 - Firebase - https://cocoapods.org/pods/Firebase
 - JVFloatLabeledTextField - https://cocoapods.org/pods/JVFloatLabeledTextField

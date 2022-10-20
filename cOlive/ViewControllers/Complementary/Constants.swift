@@ -136,4 +136,8 @@ struct Constants {
     struct Colors {
         static let tintColorName = "mint-dark"
     }
+
+    struct Locales {
+        static let defaultLocale = Locale(identifier: "en_US")
+    }
 }

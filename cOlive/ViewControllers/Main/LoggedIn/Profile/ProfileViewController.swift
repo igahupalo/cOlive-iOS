@@ -147,6 +147,7 @@ extension ProfileViewController: ChangeNameDelegate, ChangePhoneNumberDelegate, 
     func updateBirthday() {
         if let birthday = user?.birthday {
             let formatter = DateFormatter()
+            formatter.locale = Constants.Locales.defaultLocale
             formatter.dateFormat = "dd/MM/yyyy"
             birthdayButton.setTitle(formatter.string(from: birthday), for: .normal)
             birthdayButton.setTitleColor(UIColor(named: "Black"), for: .normal)

@@ -65,6 +65,7 @@ class PostTableViewCell: UITableViewCell {
 
     func setupContent() {
         let formatter = RelativeDateTimeFormatter()
+        formatter.locale = Constants.Locales.defaultLocale
         let postInfo = "\(author?.user?.displayName ?? "Author") ⋅ \(formatter.string(for: post?.date ?? Date()) ?? "")"
         postInfoLabel.text = postInfo
         postTitleLabel.text = post?.title

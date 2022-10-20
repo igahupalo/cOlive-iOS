@@ -113,6 +113,7 @@ private extension PostViewController {
         postContentLabel.text = post?.content ?? ""
 
         let formatter = RelativeDateTimeFormatter()
+        formatter.locale = Constants.Locales.defaultLocale
         postDateLabel.text = formatter.string(for: post?.date ?? Date())
 
         if let image = post?.image {

@@ -131,6 +131,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
 private extension CalendarViewController {
     func setupView() {
         formatter = DateFormatter()
+        formatter?.locale = Constants.Locales.defaultLocale
         formatter?.dateFormat = "EEEE, d MMM yyyy"
         topCardView.layer.cornerRadius = 24
         topCardView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -141,6 +142,7 @@ private extension CalendarViewController {
     }
 
     func setupCalendar() {
+        calendar.locale = Constants.Locales.defaultLocale
         calendar.appearance.titleFont = UIFont(name: "Now", size: 14)
         calendar.appearance.headerTitleFont = UIFont(name: "Now-Bold", size: 16)
         calendar.appearance.weekdayFont = UIFont(name: "Now", size: 14)

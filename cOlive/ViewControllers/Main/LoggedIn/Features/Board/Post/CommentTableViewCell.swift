@@ -20,6 +20,7 @@ class CommentTableViewCell: UITableViewCell {
         authorImageView.user = author?.user
         contentLabel.text = comment?.content
         let formatter = RelativeDateTimeFormatter()
+        formatter.locale = Constants.Locales.defaultLocale
         infoLabel.text = "\(author?.user?.displayName ?? "Author") ⋅ \(formatter.string(for: comment?.date) ?? "")"
     }
 

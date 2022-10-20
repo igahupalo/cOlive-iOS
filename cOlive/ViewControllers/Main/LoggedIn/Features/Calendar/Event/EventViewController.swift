@@ -44,6 +44,7 @@ private extension EventViewController {
         authorImageView.user = author?.user
         authorNameLabel.text = author?.user?.displayName
         let formatter = RelativeDateTimeFormatter()
+        formatter.locale = Constants.Locales.defaultLocale
         createdDateLabel.text = formatter.localizedString(for: event?.date ?? Date(), relativeTo: Date())
 
         if user?.documentId != event?.authorId {
@@ -56,6 +57,7 @@ private extension EventViewController {
         titleLabel.text = event?.title
         descriptionLabel.text = event?.description ?? ""
         let formatter = DateIntervalFormatter()
+        formatter.locale = Constants.Locales.defaultLocale
         formatter.dateStyle = .medium
         let startDate = event?.startDate ?? Date()
         let endDate = event?.endDate ?? Date()

@@ -23,6 +23,7 @@ class EventTableViewCell: UITableViewCell {
             let startDate = event?.startDate ?? Date()
             let endDate = event?.endDate ?? Date()
             let formatter = DateIntervalFormatter()
+            formatter.locale = Constants.Locales.defaultLocale
             formatter.dateStyle = .medium
             eventDateLabel.text = formatter.string(from: startDate, to: endDate)
         }

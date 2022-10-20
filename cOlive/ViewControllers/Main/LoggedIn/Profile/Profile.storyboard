@@ -588,6 +588,7 @@
             <point key="canvasLocation" x="4453.6000000000004" y="-785.75712143928047"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="mint-dark"/>
     <resources>
         <image name="cross" width="13.333333015441895" height="13.333333015441895"/>
         <image name="indicator" width="6.6666665077209473" height="12"/>
@@ -599,6 +600,9 @@
             <color red="0.35686274509803922" green="0.69019607843137254" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="dark-mint">
+            <color red="0.34901960784313724" green="0.65098039215686276" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint-dark">
             <color red="0.34901960784313724" green="0.65098039215686276" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

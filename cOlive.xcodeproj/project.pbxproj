@@ -15,30 +15,16 @@
 		421BB3802508E2AA00AFA664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB37F2508E2AA00AFA664 /* SceneDelegate.swift */; };
 		421BB3822508E2AA00AFA664 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB3812508E2AA00AFA664 /* LogInViewController.swift */; };
 		421BB38A2508E2B400AFA664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421BB3882508E2B400AFA664 /* LaunchScreen.storyboard */; };
-		421BB3952508E2B400AFA664 /* cOliveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB3942508E2B400AFA664 /* cOliveTests.swift */; };
-		421BB3A02508E2B400AFA664 /* cOliveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BB39F2508E2B400AFA664 /* cOliveUITests.swift */; };
 		421C04CD25348EC400A18701 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C04CC25348EC300A18701 /* SessionManager.swift */; };
 		422A4B2028F8B71D002B62BB /* ChangeFlatName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422A4B1F28F8B71D002B62BB /* ChangeFlatName.storyboard */; };
 		422A4B2228F8B78B002B62BB /* FlatlessDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422A4B2128F8B78B002B62BB /* FlatlessDashboard.storyboard */; };
 		422A4B2428F8B7BC002B62BB /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422A4B2328F8B7BC002B62BB /* Dashboard.storyboard */; };
 		422DC73D25379E070056EBD8 /* Now-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72D25379DFC0056EBD8 /* Now-Medium.otf */; };
-		422DC73E25379E070056EBD8 /* Now-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72D25379DFC0056EBD8 /* Now-Medium.otf */; };
-		422DC73F25379E070056EBD8 /* Now-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72D25379DFC0056EBD8 /* Now-Medium.otf */; };
 		422DC74025379E070056EBD8 /* Now-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72E25379DFE0056EBD8 /* Now-Light.otf */; };
-		422DC74125379E070056EBD8 /* Now-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72E25379DFE0056EBD8 /* Now-Light.otf */; };
-		422DC74225379E070056EBD8 /* Now-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC72E25379DFE0056EBD8 /* Now-Light.otf */; };
 		422DC74625379E070056EBD8 /* Now-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73025379E000056EBD8 /* Now-Bold.otf */; };
-		422DC74725379E070056EBD8 /* Now-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73025379E000056EBD8 /* Now-Bold.otf */; };
-		422DC74825379E070056EBD8 /* Now-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73025379E000056EBD8 /* Now-Bold.otf */; };
 		422DC74F25379E070056EBD8 /* Now-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73325379E040056EBD8 /* Now-Regular.otf */; };
-		422DC75025379E070056EBD8 /* Now-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73325379E040056EBD8 /* Now-Regular.otf */; };
-		422DC75125379E070056EBD8 /* Now-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73325379E040056EBD8 /* Now-Regular.otf */; };
 		422DC75225379E070056EBD8 /* Now-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73425379E050056EBD8 /* Now-Thin.otf */; };
-		422DC75325379E070056EBD8 /* Now-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73425379E050056EBD8 /* Now-Thin.otf */; };
-		422DC75425379E070056EBD8 /* Now-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73425379E050056EBD8 /* Now-Thin.otf */; };
 		422DC75525379E070056EBD8 /* Now-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73525379E060056EBD8 /* Now-Black.otf */; };
-		422DC75625379E070056EBD8 /* Now-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73525379E060056EBD8 /* Now-Black.otf */; };
-		422DC75725379E070056EBD8 /* Now-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 422DC73525379E060056EBD8 /* Now-Black.otf */; };
 		423068A3250F734700624FF4 /* UINavigationController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423068A2250F734700624FF4 /* UINavigationController+NavigationBar.swift */; };
 		423068A52510DE7600624FF4 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423068A42510DE7600624FF4 /* AuthOptionsViewController.swift */; };
 		423068A7251110FA00624FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423068A6251110F900624FF4 /* Assets.xcassets */; };
@@ -121,27 +107,8 @@
 		42F2894A2562D96800EA8F20 /* FlatlessDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F289492562D96800EA8F20 /* FlatlessDashboardViewController.swift */; };
 		42F53D652563428300C33C43 /* OverlayingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F53D642563428300C33C43 /* OverlayingScrollView.swift */; };
 		42F6670D255C1A92008BC7E4 /* FeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6670C255C1A92008BC7E4 /* FeatureCollectionViewCell.swift */; };
-		61F4128E1EB40CC3A9049C55 /* Pods_cOliveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216DA1EC596B4C9AC81CE53E /* Pods_cOliveTests.framework */; };
 		B70263EE706CB5E54C348562 /* Pods_cOlive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC5385542D393D882458352 /* Pods_cOlive.framework */; };
-		C82D7AF0C5429B9177946C81 /* Pods_cOlive_cOliveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DB061FAB1601C02570278B /* Pods_cOlive_cOliveUITests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		421BB3912508E2B400AFA664 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 421BB3722508E2AA00AFA664 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 421BB3792508E2AA00AFA664;
-			remoteInfo = cOlive;
-		};
-		421BB39C2508E2B400AFA664 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 421BB3722508E2AA00AFA664 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 421BB3792508E2AA00AFA664;
-			remoteInfo = cOlive;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		216DA1EC596B4C9AC81CE53E /* Pods_cOliveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cOliveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,10 +122,8 @@
 		421BB3812508E2AA00AFA664 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		421BB3892508E2B400AFA664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		421BB38B2508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		421BB3902508E2B400AFA664 /* cOliveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cOliveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		421BB3942508E2B400AFA664 /* cOliveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cOliveTests.swift; sourceTree = "<group>"; };
 		421BB3962508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		421BB39B2508E2B400AFA664 /* cOliveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cOliveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		421BB39F2508E2B400AFA664 /* cOliveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cOliveUITests.swift; sourceTree = "<group>"; };
 		421BB3A12508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421C04CC25348EC300A18701 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -272,22 +237,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		421BB38D2508E2B400AFA664 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				61F4128E1EB40CC3A9049C55 /* Pods_cOliveTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		421BB3982508E2B400AFA664 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C82D7AF0C5429B9177946C81 /* Pods_cOlive_cOliveUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -331,8 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				421BB37A2508E2AA00AFA664 /* cOlive.app */,
-				421BB3902508E2B400AFA664 /* cOliveTests.xctest */,
-				421BB39B2508E2B400AFA664 /* cOliveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -788,45 +735,6 @@
 			productReference = 421BB37A2508E2AA00AFA664 /* cOlive.app */;
 			productType = "com.apple.product-type.application";
 		};
-		421BB38F2508E2B400AFA664 /* cOliveTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 421BB3A72508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOliveTests" */;
-			buildPhases = (
-				70C871FEEDEFD47F82CF8C82 /* [CP] Check Pods Manifest.lock */,
-				421BB38C2508E2B400AFA664 /* Sources */,
-				421BB38D2508E2B400AFA664 /* Frameworks */,
-				421BB38E2508E2B400AFA664 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				421BB3922508E2B400AFA664 /* PBXTargetDependency */,
-			);
-			name = cOliveTests;
-			productName = cOliveTests;
-			productReference = 421BB3902508E2B400AFA664 /* cOliveTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		421BB39A2508E2B400AFA664 /* cOliveUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 421BB3AA2508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOliveUITests" */;
-			buildPhases = (
-				E777499233C653038EBA1A64 /* [CP] Check Pods Manifest.lock */,
-				421BB3972508E2B400AFA664 /* Sources */,
-				421BB3982508E2B400AFA664 /* Frameworks */,
-				421BB3992508E2B400AFA664 /* Resources */,
-				E3226DE25D38283F718C75EE /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				421BB39D2508E2B400AFA664 /* PBXTargetDependency */,
-			);
-			name = cOliveUITests;
-			productName = cOliveUITests;
-			productReference = 421BB39B2508E2B400AFA664 /* cOliveUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -839,14 +747,6 @@
 				TargetAttributes = {
 					421BB3792508E2AA00AFA664 = {
 						CreatedOnToolsVersion = 11.7;
-					};
-					421BB38F2508E2B400AFA664 = {
-						CreatedOnToolsVersion = 11.7;
-						TestTargetID = 421BB3792508E2AA00AFA664;
-					};
-					421BB39A2508E2B400AFA664 = {
-						CreatedOnToolsVersion = 11.7;
-						TestTargetID = 421BB3792508E2AA00AFA664;
 					};
 				};
 			};
@@ -864,8 +764,6 @@
 			projectRoot = "";
 			targets = (
 				421BB3792508E2AA00AFA664 /* cOlive */,
-				421BB38F2508E2B400AFA664 /* cOliveTests */,
-				421BB39A2508E2B400AFA664 /* cOliveUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -911,57 +809,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		421BB38E2508E2B400AFA664 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				422DC75625379E070056EBD8 /* Now-Black.otf in Resources */,
-				422DC73E25379E070056EBD8 /* Now-Medium.otf in Resources */,
-				422DC74125379E070056EBD8 /* Now-Light.otf in Resources */,
-				422DC75325379E070056EBD8 /* Now-Thin.otf in Resources */,
-				422DC74725379E070056EBD8 /* Now-Bold.otf in Resources */,
-				422DC75025379E070056EBD8 /* Now-Regular.otf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		421BB3992508E2B400AFA664 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				422DC75725379E070056EBD8 /* Now-Black.otf in Resources */,
-				422DC73F25379E070056EBD8 /* Now-Medium.otf in Resources */,
-				422DC74225379E070056EBD8 /* Now-Light.otf in Resources */,
-				422DC75425379E070056EBD8 /* Now-Thin.otf in Resources */,
-				422DC74825379E070056EBD8 /* Now-Bold.otf in Resources */,
-				422DC75125379E070056EBD8 /* Now-Regular.otf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		70C871FEEDEFD47F82CF8C82 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cOliveTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A959FA343A131031EFD329E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -978,45 +828,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-cOlive-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3226DE25D38283F718C75EE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cOlive-cOliveUITests/Pods-cOlive-cOliveUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E777499233C653038EBA1A64 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cOlive-cOliveUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1117,36 +928,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		421BB38C2508E2B400AFA664 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				421BB3952508E2B400AFA664 /* cOliveTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		421BB3972508E2B400AFA664 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				421BB3A02508E2B400AFA664 /* cOliveUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		421BB3922508E2B400AFA664 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 421BB3792508E2AA00AFA664 /* cOlive */;
-			targetProxy = 421BB3912508E2B400AFA664 /* PBXContainerItemProxy */;
-		};
-		421BB39D2508E2B400AFA664 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 421BB3792508E2AA00AFA664 /* cOlive */;
-			targetProxy = 421BB39C2508E2B400AFA664 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		421BB3882508E2B400AFA664 /* LaunchScreen.storyboard */ = {
@@ -1320,94 +1102,6 @@
 			};
 			name = Release;
 		};
-		421BB3A82508E2B400AFA664 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CF42D06C6232D0B9B2BE937 /* Pods-cOliveTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H77979Y8DF;
-				INFOPLIST_FILE = cOliveTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.cOliveTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cOlive.app/cOlive";
-			};
-			name = Debug;
-		};
-		421BB3A92508E2B400AFA664 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFE18A780D9F0E3F56EFD8DA /* Pods-cOliveTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H77979Y8DF;
-				INFOPLIST_FILE = cOliveTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.cOliveTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cOlive.app/cOlive";
-			};
-			name = Release;
-		};
-		421BB3AB2508E2B400AFA664 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88B2E19B954E9E066A5EED80 /* Pods-cOlive-cOliveUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H77979Y8DF;
-				INFOPLIST_FILE = cOliveUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.cOliveUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = cOlive;
-			};
-			name = Debug;
-		};
-		421BB3AC2508E2B400AFA664 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69D9D8C9E7F94E2E72261A5C /* Pods-cOlive-cOliveUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H77979Y8DF;
-				INFOPLIST_FILE = cOliveUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.cOliveUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = cOlive;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1425,24 +1119,6 @@
 			buildConfigurations = (
 				421BB3A52508E2B400AFA664 /* Debug */,
 				421BB3A62508E2B400AFA664 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		421BB3A72508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOliveTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				421BB3A82508E2B400AFA664 /* Debug */,
-				421BB3A92508E2B400AFA664 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		421BB3AA2508E2B400AFA664 /* Build configuration list for PBXNativeTarget "cOliveUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				421BB3AB2508E2B400AFA664 /* Debug */,
-				421BB3AC2508E2B400AFA664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

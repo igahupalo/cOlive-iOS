@@ -122,10 +122,6 @@
 		421BB3812508E2AA00AFA664 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		421BB3892508E2B400AFA664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		421BB38B2508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		421BB3942508E2B400AFA664 /* cOliveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cOliveTests.swift; sourceTree = "<group>"; };
-		421BB3962508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		421BB39F2508E2B400AFA664 /* cOliveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cOliveUITests.swift; sourceTree = "<group>"; };
-		421BB3A12508E2B400AFA664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421C04CC25348EC300A18701 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		422A4B1F28F8B71D002B62BB /* ChangeFlatName.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangeFlatName.storyboard; sourceTree = "<group>"; };
 		422A4B2128F8B78B002B62BB /* FlatlessDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlatlessDashboard.storyboard; sourceTree = "<group>"; };
@@ -263,13 +259,18 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		4214DC982901941D00F7390C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		421BB3712508E2AA00AFA664 = {
 			isa = PBXGroup;
 			children = (
 				423068A6251110F900624FF4 /* Assets.xcassets */,
 				421BB37C2508E2AA00AFA664 /* cOlive */,
-				421BB3932508E2B400AFA664 /* cOliveTests */,
-				421BB39E2508E2B400AFA664 /* cOliveUITests */,
 				421BB37B2508E2AA00AFA664 /* Products */,
 				04FC010347919BB0285DC9F0 /* Pods */,
 				F5AB73F04636581C33DF3DD3 /* Frameworks */,
@@ -287,30 +288,13 @@
 		421BB37C2508E2AA00AFA664 /* cOlive */ = {
 			isa = PBXGroup;
 			children = (
+				4214DC982901941D00F7390C /* Repositories */,
 				42A564C628F8C2A8001C794D /* Config */,
 				421C04CB25348E4100A18701 /* Managers */,
 				42A9058F250ACFF800D9F2C4 /* ViewControllers */,
 				42A9058E250ACFEF00D9F2C4 /* Models */,
 			);
 			path = cOlive;
-			sourceTree = "<group>";
-		};
-		421BB3932508E2B400AFA664 /* cOliveTests */ = {
-			isa = PBXGroup;
-			children = (
-				421BB3942508E2B400AFA664 /* cOliveTests.swift */,
-				421BB3962508E2B400AFA664 /* Info.plist */,
-			);
-			path = cOliveTests;
-			sourceTree = "<group>";
-		};
-		421BB39E2508E2B400AFA664 /* cOliveUITests */ = {
-			isa = PBXGroup;
-			children = (
-				421BB39F2508E2B400AFA664 /* cOliveUITests.swift */,
-				421BB3A12508E2B400AFA664 /* Info.plist */,
-			);
-			path = cOliveUITests;
 			sourceTree = "<group>";
 		};
 		421C04CB25348E4100A18701 /* Managers */ = {

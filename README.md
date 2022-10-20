@@ -7,7 +7,6 @@ cOlive is an iOS application designed for roommates. It aims to simplify various
 
 The application was created with usage of UIKit and Firebase Realtime Database. 
 
-
 ## Requirements
 - iOS 13.0+
 ## Features
@@ -21,7 +20,7 @@ The application was created with usage of UIKit and Firebase Realtime Database.
 
 ## UI examples
 
-### App start, Sign up and log in
+### App start, sign up and log in
 
 https://user-images.githubusercontent.com/56322245/196964205-04d89a0c-6e5f-4d5c-a799-071d12e30813.mp4
 
@@ -53,3 +52,9 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 - FSCalendar - https://cocoapods.org/pods/FSCalendar
 - KKPinCodeTextField - https://github.com/kolesa-team/ios_pinCodeTextField
 - PhoneNumberKit - https://cocoapods.org/pods/PhoneNumberKit
+
+## TODOs
+- [] Fix dates in calendar events preview
+- [] Show number of comments in post preview
+- [] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
+- [] Fix labels of buttons in profile settings (phone number, birthday)

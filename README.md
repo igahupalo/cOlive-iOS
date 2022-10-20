@@ -1,5 +1,5 @@
 
-![Logo](/Assets.xcassets/Logo/logo.imageset/Logo@2x.png)
+![Logo](/header@2x.png)
 
 # cOlive
 
@@ -7,9 +7,9 @@ cOlive is an iOS application designed for roommates. It aims to simplify various
 
 The application was created with usage of UIKit and Firebase Realtime Database. 
 
+
 ## Requirements
 - iOS 13.0+
-- 
 ## Features
 
 - [x] User authentication
@@ -18,12 +18,9 @@ The application was created with usage of UIKit and Firebase Realtime Database.
 - [x] Menaging profile settings
 - [x] Browsing group's virtual board, creating new notices or adding comments to exisitng ones
 - [x] Accessing group's shared calendar and menaging presented events
-
-
 ## UI examples
 
 [tba]
-
 ## Sample account
 
 - email: [tba]

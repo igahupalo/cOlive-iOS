@@ -21,7 +21,25 @@ The application was created with usage of UIKit and Firebase Realtime Database.
 
 ## UI examples
 
-![app_start](/media/app_start.mp4)
+### App start, Sign up and log in
+
+https://user-images.githubusercontent.com/56322245/196964205-04d89a0c-6e5f-4d5c-a799-071d12e30813.mp4
+
+### Profile settings, switching flat and sharing invitation code
+
+https://user-images.githubusercontent.com/56322245/196964662-d186e0cd-441e-4b75-baec-c1a1d3be4a56.mp4
+
+### Checking in with new invitation code
+
+https://user-images.githubusercontent.com/56322245/196964791-f9dde82c-608c-4cb2-91ec-8fa657909461.mp4
+
+### Virtual board
+
+https://user-images.githubusercontent.com/56322245/196964897-10c86bd6-c364-4c2c-92e6-66239a392308.mp4
+
+### Shared calendar
+
+https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-ab1a-98c3512f739e.mp4
 
 ## Sample account
 

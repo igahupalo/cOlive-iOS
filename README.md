@@ -54,8 +54,8 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 - PhoneNumberKit - https://cocoapods.org/pods/PhoneNumberKit
 
 ## TODOs
-- [] Refactor data layer and models
-- [] Fix dates in calendar events preview
-- [] Show number of comments in post preview
-- [] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
-- [] Fix labels of buttons in profile settings (phone number, birthday)
+- [ ] Refactor data layer and models
+- [ ] Fix dates in calendar events preview
+- [ ] Show number of comments in post preview
+- [ ] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
+- [ ] Fix labels of buttons in profile settings (phone number, birthday)

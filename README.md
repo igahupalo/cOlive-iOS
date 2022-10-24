@@ -41,6 +41,13 @@ https://user-images.githubusercontent.com/56322245/196964897-10c86bd6-c364-4c2c-
 
 https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-ab1a-98c3512f739e.mp4
 
+## Running the App
+
+1. Clone this repository.
+1. Open shell window and navigate to project folder.
+1. Run `pod install`.
+1. Open `Furdresser.xcworkspace` and run the project on selected device or simulator.
+
 ## Sample account
 
 - email: ritigat213@corylan.com

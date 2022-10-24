@@ -1,5 +1,4 @@
-
-![Logo](/media/header.png)
+<img alt="header" src="https://user-images.githubusercontent.com/56322245/197550597-902d188c-3969-4322-975b-4434bd8f6345.png">
 
 # cOlive
 

@@ -7,7 +7,9 @@ cOlive is an iOS application designed for roommates. It aims to simplify various
 The application was created with usage of UIKit and Firebase Realtime Database. 
 
 ## Requirements
+
 - iOS 13.0+
+
 ## Features
 
 - [x] User authentication
@@ -58,3 +60,7 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 - [ ] Show number of comments in post preview
 - [ ] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
 - [ ] Fix labels of buttons in profile settings (phone number, birthday)
+
+## Design
+
+UI/UX design created by Alicja Łuszpińska - https://dribbble.com/aluszpinska.

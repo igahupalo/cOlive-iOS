@@ -61,6 +61,7 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 - [ ] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
 - [ ] Fix labels of buttons in profile settings (phone number, birthday)
 
-## Design
+## Credits
 
 UI/UX design created by Alicja Łuszpińska - https://dribbble.com/aluszpinska.
+App logo created by Kinga Gniedziejko - https://github.com/kingaGniedziejko.

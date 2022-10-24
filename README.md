@@ -64,4 +64,5 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 ## Credits
 
 UI/UX design created by Alicja Łuszpińska - https://dribbble.com/aluszpinska.
+
 App logo created by Kinga Gniedziejko - https://github.com/kingaGniedziejko.

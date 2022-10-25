@@ -46,7 +46,7 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 1. Clone this repository.
 1. Open shell window and navigate to project folder.
 1. Run `pod install`.
-1. Open `Furdresser.xcworkspace` and run the project on selected device or simulator.
+1. Open `cOlive.xcworkspace` and run the project on selected device or simulator.
 
 ## Sample account
 

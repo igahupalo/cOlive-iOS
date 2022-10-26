@@ -1,5 +1,4 @@
-
-![Logo](/media/header.png)
+<img alt="header" src="https://user-images.githubusercontent.com/56322245/197550597-902d188c-3969-4322-975b-4434bd8f6345.png">
 
 # cOlive
 
@@ -8,7 +7,9 @@ cOlive is an iOS application designed for roommates. It aims to simplify various
 The application was created with usage of UIKit and Firebase Realtime Database. 
 
 ## Requirements
+
 - iOS 13.0+
+
 ## Features
 
 - [x] User authentication
@@ -40,6 +41,13 @@ https://user-images.githubusercontent.com/56322245/196964897-10c86bd6-c364-4c2c-
 
 https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-ab1a-98c3512f739e.mp4
 
+## Running the App
+
+1. Clone this repository.
+1. Open shell window and navigate to project folder.
+1. Run `pod install`.
+1. Open `cOlive.xcworkspace` and run the project on selected device or simulator.
+
 ## Sample account
 
 - email: ritigat213@corylan.com
@@ -54,8 +62,14 @@ https://user-images.githubusercontent.com/56322245/196964973-db1af4a1-76fd-477f-
 - PhoneNumberKit - https://cocoapods.org/pods/PhoneNumberKit
 
 ## TODOs
-- [] Refactor data layer and models
-- [] Fix dates in calendar events preview
-- [] Show number of comments in post preview
-- [] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
-- [] Fix labels of buttons in profile settings (phone number, birthday)
+- [ ] Refactor data layer and models
+- [ ] Fix dates in calendar events preview
+- [ ] Show number of comments in post preview
+- [ ] Fix navigation bar appearence for smaller screen resolutions (ex. iPhone 8)
+- [ ] Fix labels of buttons in profile settings (phone number, birthday)
+
+## Credits
+
+UI/UX design created by Alicja Łuszpińska - https://dribbble.com/aluszpinska.
+
+App logo created by Kinga Gniedziejko - https://github.com/kingaGniedziejko.

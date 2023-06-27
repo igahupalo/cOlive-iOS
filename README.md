@@ -13,11 +13,11 @@ The application was created with usage of UIKit and Firebase Realtime Database.
 ## Features
 
 - [x] User authentication
-- [x] Creating a new group and sending out invitations or joining an existing one with usage of an invitation code
-- [x] Menaging group settings and members
-- [x] Menaging profile settings
-- [x] Browsing group's virtual board, creating new notices or adding comments to exisitng ones
-- [x] Accessing group's shared calendar and menaging presented events
+- [x] Creating a new group and sending out invitations or joining an existing one with the usage of an invitation code
+- [x] Managing group settings and members
+- [x] Managing profile settings
+- [x] Browsing the group's virtual board, creating new notices or adding comments to existing ones
+- [x] Accessing the group's shared calendar and managing presented events
 
 ## UI examples
 
